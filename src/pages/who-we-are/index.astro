@@ -15,7 +15,7 @@ import Base from "../../layouts/Base.astro";
   <section class="section">
     <div class="wrap">
       <div class="bio-block">
-        <img class="bio-img" src="/images/logo-large.jpg" alt="Trust Hashem" />
+          <img class="bio-img" src="/images/leah-donner-portrait.jpg" alt="Rebbetzin Leah Donner" />
         <div class="bio-text">
           <span class="eyebrow" style="color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:.75rem;font-weight:600;display:block;margin-bottom:.6rem">The teacher</span>
           <h2>Rebbetzin Leah Donner</h2>
@@ -42,7 +42,7 @@ import Base from "../../layouts/Base.astro";
       </div>
       <div class="card-grid">
         <article class="card">
-          <img class="card-thumb" src="/images/hero.webp" alt="Jerusalem skyline used on Trust Hashem" />
+          <img class="card-thumb" src="/images/photo-jerusalem.jpg" alt="Jerusalem" />
           <div class="card-body">
             <div class="card-tag">Place</div>
             <h3>Geula, Jerusalem</h3>
@@ -50,7 +50,7 @@ import Base from "../../layouts/Base.astro";
           </div>
         </article>
         <article class="card">
-          <img class="card-thumb" src="/images/meeting-with-hashem.jpeg" alt="Meeting with the King of Kings series" />
+          <img class="card-thumb" src="/images/photo-books.jpg" alt="Sacred books" />
           <div class="card-body">
             <div class="card-tag">Sources</div>
             <h3>Classic sefarim</h3>
@@ -58,7 +58,7 @@ import Base from "../../layouts/Base.astro";
           </div>
         </article>
         <article class="card">
-          <img class="card-thumb" src="/images/ahavat-israel.webp" alt="Ahavas Yisrael series artwork" />
+          <img class="card-thumb" src="/images/photo-light.jpg" alt="Warm light" />
           <div class="card-body">
             <div class="card-tag">Purpose</div>
             <h3>Free for Klal Yisrael</h3>
@@ -72,9 +72,15 @@ import Base from "../../layouts/Base.astro";
   <section class="section">
     <div class="wrap">
       <div class="section-header">
-        <span class="eyebrow">The work</span>
-        <h2>What you will find here</h2>
+        <span class="eyebrow">Also explore</span>
+        <h2>Podcasts & Mentorship</h2>
         <div class="divider"></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem">
+        <a class="btn btn-wine" href="/podcasts/">Browse Podcasts</a>
+        <a class="btn btn-gold" href="/mentorship/">Private Mentorship</a>
+        <a class="btn btn-wine" href="/library/">Open the library</a>
+        <a class="btn btn-gold" href="/contact-us/">Write to us</a>
       </div>
       <div class="attributes-grid">
         <div class="attr-item"><p>A complete audio library of Emunah and Bitachon shiurim, kept at the original lesson addresses.</p></div>
@@ -83,8 +89,6 @@ import Base from "../../layouts/Base.astro";
         <div class="attr-item"><p>A simple way to give through PayPal so the library can remain free.</p></div>
       </div>
       <div style="margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:1rem">
-        <a class="btn btn-wine" href="/library/">Open the library</a>
-        <a class="btn btn-gold" href="/contact-us/">Write to us</a>
         <a class="btn btn-wine" href={`mailto:${site.email}`}>{site.email}</a>
       </div>
     </div>

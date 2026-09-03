@@ -1,0 +1,286 @@
+---
+import Base from "../../layouts/Base.astro";
+---
+
+<Base
+  title="Private Spiritual Mentorship"
+  description="Stop performing. Start becoming. Private spiritual mentorship with Leah Donner — Peace, Power, Purpose. Discover. Align. Become."
+  image="/images/mentorship-you-within.jpg"
+>
+  <section class="mentor-hero">
+    <div class="mentor-hero-glow" aria-hidden="true"></div>
+    <div class="wrap mentor-hero-grid">
+      <div class="mentor-hero-copy">
+        <p class="mentor-pillars">Peace · Power · Purpose</p>
+        <h1>Private Spiritual Mentorship</h1>
+        <p class="mentor-lead">Stop performing. Start becoming.</p>
+        <p class="mentor-sub">Tap into the power of the real YOU.</p>
+        <div class="mentor-actions">
+          <a class="btn btn-mentor" href="mailto:Ask@LeahDonnerOfficial.com">Begin the conversation</a>
+          <a class="btn btn-mentor-outline" href="mailto:Ask@LeahDonnerOfficial.com">Ask@LeahDonnerOfficial.com</a>
+        </div>
+      </div>
+      <figure class="mentor-emblem">
+        <img
+          src="/images/mentorship-you-within.jpg"
+          alt="The YOU Within — Discover. Align. Become."
+          width="640"
+          height="640"
+        />
+        <figcaption>The YOU Within · Discover. Align. Become.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section mentor-invite">
+    <div class="wrap mentor-invite-grid">
+      <div>
+        <span class="eyebrow">An invitation</span>
+        <h2>This is not a course.<br/>It is a becoming.</h2>
+        <div class="divider"></div>
+        <p>
+          Private Spiritual Mentorship is a quiet, premium space to meet yourself honestly —
+          beyond roles, noise, and performance — and to realign with the soul Hashem placed within you.
+        </p>
+        <p>
+          Guided with warmth, clarity, and deep spiritual seriousness, this work is for women ready
+          to stop circling the same patterns and start living from the real YOU.
+        </p>
+        <ul class="mentor-points">
+          <li><strong>Peace</strong> — settle the inner noise and return to trust</li>
+          <li><strong>Power</strong> — reclaim the strength already planted in your soul</li>
+          <li><strong>Purpose</strong> — walk with direction, alignment, and dignity</li>
+        </ul>
+      </div>
+      <aside class="mentor-card">
+        <img class="mentor-portrait" src="/images/leah-donner-portrait.jpg" alt="Leah Donner" />
+        <div>
+          <p class="mentor-card-label">With</p>
+          <h3>Leah Donner</h3>
+          <p>
+            Teacher of Bitachon and Emunah. A private invitation to discover, align, and become.
+          </p>
+          <a class="btn btn-mentor" href="mailto:Ask@LeahDonnerOfficial.com">Ask@LeahDonnerOfficial.com</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="mentor-banner">
+    <div class="wrap mentor-banner-inner">
+      <p class="mentor-banner-kicker">The YOU Within</p>
+      <h2>Discover. Align. Become.</h2>
+      <p>When you are ready, write. The next step begins with a single message.</p>
+      <a class="btn btn-gold" href="mailto:Ask@LeahDonnerOfficial.com">Email Leah</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .mentor-hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(3.5rem, 8vw, 6.5rem) 0;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(201,160,89,0.18), transparent 50%),
+      linear-gradient(160deg, #0c1a12 0%, #13261c 45%, #1b3022 100%);
+    color: #f7f1e4;
+  }
+  .mentor-hero-glow {
+    position: absolute;
+    inset: -20% 40% auto -10%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(212,175,55,0.22), transparent 65%);
+    animation: mentorPulse 10s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+  .mentor-hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  .mentor-pillars {
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #d4af37;
+    font-weight: 600;
+    margin-bottom: 1.1rem;
+  }
+  .mentor-hero h1 {
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+    color: #fff;
+    max-width: 12ch;
+    margin-bottom: 1rem;
+  }
+  .mentor-lead {
+    font-family: var(--serif);
+    font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+    font-style: italic;
+    color: #f0e2c0;
+    margin-bottom: 0.55rem;
+  }
+  .mentor-sub {
+    font-size: 1.08rem;
+    color: rgba(247,241,228,0.78);
+    margin-bottom: 2rem;
+    max-width: 34rem;
+  }
+  .mentor-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+  .btn-mentor {
+    background: #d4af37;
+    color: #0c1a12 !important;
+    border-color: #d4af37;
+    font-weight: 700;
+  }
+  .btn-mentor:hover {
+    background: #e4c45a;
+    border-color: #e4c45a;
+    color: #0c1a12 !important;
+  }
+  .btn-mentor-outline {
+    background: transparent;
+    color: #f7f1e4 !important;
+    border-color: rgba(212,175,55,0.55);
+  }
+  .btn-mentor-outline:hover {
+    background: rgba(212,175,55,0.12);
+    color: #fff !important;
+  }
+  .mentor-emblem {
+    margin: 0;
+    text-align: center;
+  }
+  .mentor-emblem img {
+    width: min(100%, 420px);
+    margin-inline: auto;
+    border-radius: 50%;
+    border: 2px solid rgba(212,175,55,0.55);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 0 0 10px rgba(212,175,55,0.08);
+    animation: mentorFloat 8s ease-in-out infinite;
+  }
+  .mentor-emblem figcaption {
+    margin-top: 1.1rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(212,175,55,0.9);
+  }
+
+  .mentor-invite-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  .mentor-invite h2 {
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    margin-bottom: 0.75rem;
+  }
+  .mentor-invite p {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+  .mentor-points {
+    list-style: none;
+    margin-top: 1.75rem;
+    display: grid;
+    gap: 0.85rem;
+  }
+  .mentor-points li {
+    padding: 1rem 1.15rem;
+    border-left: 3px solid var(--gold);
+    background: var(--paper);
+    border-radius: 0 14px 14px 0;
+    color: var(--ink-soft);
+  }
+  .mentor-card {
+    background: linear-gradient(165deg, #13261c, #1b3022);
+    color: #f7f1e4;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(212,175,55,0.28);
+  }
+  .mentor-portrait {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .mentor-card > div { padding: 1.5rem 1.5rem 1.75rem; }
+  .mentor-card-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #d4af37;
+    margin-bottom: 0.35rem;
+  }
+  .mentor-card h3 {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 0.65rem;
+  }
+  .mentor-card p {
+    color: rgba(247,241,228,0.78);
+    margin-bottom: 1.25rem;
+  }
+
+  .mentor-banner {
+    padding: clamp(4rem, 8vw, 6rem) 0;
+    background:
+      linear-gradient(rgba(12,26,18,0.72), rgba(12,26,18,0.82)),
+      url("/images/photo-jerusalem.jpg") center / cover no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+  }
+  .mentor-banner-inner { max-width: 40rem; }
+  .mentor-banner-kicker {
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #d4af37;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  .mentor-banner h2 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: #fff;
+    margin-bottom: 0.85rem;
+  }
+  .mentor-banner p {
+    color: rgba(255,255,255,0.82);
+    margin-inline: auto;
+    margin-bottom: 1.75rem;
+  }
+
+  @keyframes mentorFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes mentorPulse {
+    from { opacity: 0.55; transform: scale(1); }
+    to { opacity: 1; transform: scale(1.08); }
+  }
+
+  @media (max-width: 900px) {
+    .mentor-hero-grid,
+    .mentor-invite-grid { grid-template-columns: 1fr; }
+    .mentor-hero h1 { max-width: none; }
+    .mentor-emblem img { width: min(100%, 320px); }
+    .mentor-banner { background-attachment: scroll; }
+  }
+  @media (max-width: 600px) {
+    .mentor-actions { flex-direction: column; }
+    .mentor-actions .btn { width: 100%; }
+  }
+</style>
