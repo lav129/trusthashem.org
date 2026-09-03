@@ -17,13 +17,14 @@ import { podcasts } from "../data/podcasts";
 
 const featuredPodcasts = podcasts.slice(0, 6);
 const popularTracks = homeTracks.slice(0, 5);
+const HERO_IMG = "/images/hero/hero-sky.jpg?v=20260903";
 ---
 
-<Base title="Trust Hashem" description={homeIntro} image="/images/hero/hero-city.jpg">
+<Base title="Trust Hashem" description={homeIntro} image="/images/hero/hero-sky.jpg">
 
   <!-- ═══ HERO ═══════════════════════════════════════════════════════════ -->
   <section class="hero">
-    <div class="hero-bg" style="background-image:url('/images/hero/hero-city.jpg')"></div>
+    <img class="hero-bg" src={HERO_IMG} alt="" />
     <div class="hero-content">
       <div class="wrap">
         <div class="hero-eyebrow">Emunah & Bitachon · Geula, Jerusalem</div>
@@ -52,10 +53,11 @@ const popularTracks = homeTracks.slice(0, 5);
   <!-- ═══ VISUAL BAND ══════════════════════════════════════════════════ -->
   <section class="photo-band" aria-hidden="true">
     <div class="photo-band-track">
-      <img src="/images/photo-jerusalem.jpg" alt="" />
+      <img src="/images/photo-sky.jpg" alt="" />
       <img src="/images/photo-light.jpg" alt="" />
       <img src="/images/photo-books.jpg" alt="" />
-      <img src="/images/photo-sky.jpg" alt="" />
+      <img src="/images/leah-donner-portrait.jpg" alt="" />
+      <img src="/images/mentorship-you-within.jpg" alt="" />
       <img src="/images/photo-hands.jpg" alt="" />
     </div>
   </section>
@@ -293,6 +295,7 @@ const popularTracks = homeTracks.slice(0, 5);
     height: 88px;
     border-radius: 14px;
     object-fit: cover;
+    object-position: center;
   }
   .home-podcast-card h3 {
     font-size: 0.98rem;
@@ -324,10 +327,15 @@ const popularTracks = homeTracks.slice(0, 5);
   }
   .home-mentor-emblem img {
     width: min(100%, 360px);
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
     margin-inline: auto;
     border-radius: 50%;
     border: 2px solid rgba(212,175,55,0.5);
     box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    background: #13261c;
   }
   .home-mentor-pillars {
     letter-spacing: 0.2em;

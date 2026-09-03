@@ -184,14 +184,11 @@ p { max-width: 66ch; }
 }
 .hero-bg {
   position: absolute;
-  inset: -4%;
-  background: center / cover no-repeat;
-  animation: heroKen 28s ease-in-out infinite alternate;
-  will-change: transform;
-}
-@keyframes heroKen {
-  from { transform: scale(1) translate3d(0, 0, 0); }
-  to { transform: scale(1.08) translate3d(-1.5%, -1%, 0); }
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
 }
 .photo-band {
   overflow: hidden;
@@ -200,20 +197,15 @@ p { max-width: 66ch; }
 }
 .photo-band-track {
   display: grid;
-  grid-template-columns: repeat(5, minmax(180px, 1fr));
+  grid-template-columns: repeat(6, minmax(160px, 1fr));
   gap: 0;
 }
 .photo-band-track img {
   width: 100%;
-  height: clamp(140px, 22vw, 240px);
+  height: clamp(160px, 24vw, 260px);
   object-fit: cover;
+  object-position: center;
   filter: saturate(1.05) contrast(1.02);
-  opacity: 0.92;
-  transition: opacity .3s, transform .6s;
-}
-.photo-band-track img:hover {
-  opacity: 1;
-  transform: scale(1.03);
 }
 .hero-content {
   position: relative;
@@ -348,6 +340,7 @@ p { max-width: 66ch; }
 .card-thumb {
   aspect-ratio: 4/3;
   object-fit: cover;
+  object-position: center;
   width: 100%;
   background: linear-gradient(135deg, #ede4d3, #d4c4a8);
 }
@@ -402,6 +395,7 @@ p { max-width: 66ch; }
   width: 72px; height: 72px;
   border-radius: 12px;
   object-fit: cover;
+  object-position: center;
   background: linear-gradient(135deg,#ede4d3,#d4c4a8);
   flex-shrink: 0;
 }
@@ -498,7 +492,10 @@ p { max-width: 66ch; }
 .lesson-page aside img {
   border-radius: 18px;
   width: 100%;
-  object-fit: cover;
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  background: #ede4d3;
 }
 
 /* ─── QUOTE ─────────────────────────────────────────────────────────────── */
@@ -536,7 +533,9 @@ p { max-width: 66ch; }
   width: 100%;
   border-radius: 24px;
   aspect-ratio: 3/4;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center top;
+  background: #1a120c;
   box-shadow: var(--shadow-lg);
   border: 3px solid var(--border-gold);
 }

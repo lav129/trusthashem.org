@@ -1,5 +1,5 @@
 ---
-import { mediaUrl } from "../data/site";
+import { audioType, mediaUrl } from "../data/site";
 
 interface Track {
   title: string;
@@ -35,8 +35,8 @@ const playable = tracks.filter((t) => t.audio || t.src).slice(0, 6);
           </span>
         </button>
         <div class="shiur-player" id={id} hidden>
-          <audio controls preload="none" controlsList="">
-            <source src={src} type="audio/ogg" />
+          <audio controls preload="none">
+            <source src={src} type={audioType(src)} />
           </audio>
           <a class="shiur-dl" href={`${src}${src.includes("?") ? "&" : "?"}download=1`} download rel="noopener">Download</a>
         </div>

@@ -1,9 +1,20 @@
 import content from "./content.json";
 
-export const mediaBase = "https://703cfe10ff531a.lhr.life";
+export const mediaBase = "https://trusthashem-media.thelavglow.workers.dev";
 
 export function mediaUrl(src = "") {
-  return src.replace("https://trusthashem.org/wp-content", `${mediaBase}/wp-content`);
+  return src
+    .replace("https://trusthashem.org/wp-content", `${mediaBase}/wp-content`)
+    .replace("http://trusthashem.org/wp-content", `${mediaBase}/wp-content`)
+    .replace("https://ftp.trusthashem.org/wp-content", `${mediaBase}/wp-content`);
+}
+
+export function audioType(src = "") {
+  const path = src.split("?")[0].toLowerCase();
+  if (path.endsWith(".mp3")) return "audio/mpeg";
+  if (path.endsWith(".wav")) return "audio/wav";
+  if (path.endsWith(".m4a")) return "audio/mp4";
+  return "audio/ogg";
 }
 
 export const site = {

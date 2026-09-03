@@ -1,5 +1,5 @@
 ---
-import { mediaUrl } from "../data/site";
+import { audioType, mediaUrl } from "../data/site";
 
 interface Track {
   title: string;
@@ -44,7 +44,7 @@ function fileNameFromUrl(url: string, title: string) {
           </div>
           <div class="audio-wrap">
             <audio controls preload="none">
-              <source src={src} type="audio/ogg" />
+              <source src={src} type={audioType(src)} />
               Your browser does not support the audio element.
             </audio>
           </div>
