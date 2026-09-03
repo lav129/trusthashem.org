@@ -1,24 +1,38 @@
 ---
 interface Track {
   title: string;
+  subtitle?: string;
   description?: string;
-  src: string;
+  audio?: string;
+  src?: string;
 }
 interface Props {
   tracks: Track[];
 }
 const { tracks } = Astro.props;
+
+const playable = tracks.filter((track) => track.audio || track.src);
 ---
 
-<div class="track-list">
-  {tracks.map((track) => (
-    <div class="track-item">
-      <h3>{track.title}</h3>
-      {track.description && <p>{track.description}</p>}
-      <audio controls preload="none">
-        <source src={track.src} />
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-  ))}
-</div>
+{playable.length > 0 ? (
+  <div class="track-list">
+    {playable.map((track) => {
+      const src = track.audio || track.src || "";
+      return (
+        <div class="track-item">
+          <h3>{track.title}</h3>
+          {(track.subtitle || track.description) && (
+            <p>{track.subtitle || track.description}</p>
+          )}
+          <audio controls preload="metadata">
+            <source src={src} type="audio/ogg" />
+            <source src={src.replace(/\.ogg$/i, ".mp3")} type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      );
+    })}
+  </div>
+) : (
+  <p class="empty-note">Audio for this series is being prepared. Please check back soon or email bitachon@trusthashem.org.</p>
+)}

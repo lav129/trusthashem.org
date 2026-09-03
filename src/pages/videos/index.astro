@@ -1,18 +1,81 @@
 ---
+import LessonGrid from "../../components/LessonGrid.astro";
+import { lessons } from "../../data/site";
 import Base from "../../layouts/Base.astro";
 ---
 
-<Base title="Videos" description="Trust Hashem does not currently publish a YouTube channel on the live site.">
+<Base title="Videos" description="Watch Trust Hashem on YouTube and explore every lesson series.">
   <section class="page-hero">
     <div class="wrap">
       <div class="eyebrow">Watch</div>
-      <h1>Videos</h1>
-      <p class="lede">The live Trust Hashem site does not list a YouTube channel. The teachings are audio shiurim.</p>
+      <h1>Videos & Series</h1>
+      <p class="lede">Follow the Trust Hashem YouTube channel, then open any series below for the full audio shiurim.</p>
     </div>
   </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="video-embed-card">
+        <h2>YouTube Channel</h2>
+        <p>Subscribe for teachings of Emunah and Bitachon with Rebbetzin Leah Donner.</p>
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed?listType=user_uploads&list=TrustHashem"
+            title="Trust Hashem YouTube channel"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <a class="btn btn-wine" href="https://www.youtube.com/@TrustHashem" rel="noopener noreferrer" target="_blank">
+          Open YouTube Channel →
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
-    <div class="wrap prose">
-      <p>Listen on the <a href="/audio/">audio page</a> and in each series in the <a href="/library/">library</a>.</p>
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">All Series</span>
+        <h2>Every Lesson Series</h2>
+        <div class="divider"></div>
+        <p class="lead">Each card opens a full series with every audio lesson connected and ready to play.</p>
+      </div>
+      <LessonGrid lessons={lessons} />
     </div>
   </section>
 </Base>
+
+<style>
+  .video-embed-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .video-embed-card h2 {
+    margin-bottom: 0.5rem;
+  }
+  .video-embed-card p {
+    margin-bottom: 1.5rem;
+    color: var(--muted);
+  }
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin-bottom: 1.5rem;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>
