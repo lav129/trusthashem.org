@@ -5,13 +5,17 @@ interface Lesson {
   description?: string;
   image?: string;
   count?: number;
+  tracks?: { title: string }[];
 }
 interface Props {
   lessons: Lesson[];
   limit?: number;
 }
 const { lessons, limit } = Astro.props;
-const displayed = limit ? lessons.slice(0, limit) : lessons;
+const displayed = (limit ? lessons.slice(0, limit) : lessons).map((lesson) => ({
+  ...lesson,
+  n: lesson.count || lesson.tracks?.length || 0,
+}));
 ---
 
 <div class="lesson-grid">
@@ -25,8 +29,8 @@ const displayed = limit ? lessons.slice(0, limit) : lessons;
       />
       <div class="lesson-card-body">
         <h3>{lesson.title}</h3>
-        {lesson.count && <p>{lesson.count} lesson{lesson.count !== 1 ? "s" : ""}</p>}
-        {lesson.description && !lesson.count && <p>{lesson.description.slice(0, 80)}{lesson.description.length > 80 ? "…" : ""}</p>}
+        {lesson.n > 0 && <p>{lesson.n} lesson{lesson.n !== 1 ? "s" : ""}</p>}
+        {lesson.description && !lesson.n && <p>{lesson.description.slice(0, 80)}{lesson.description.length > 80 ? "…" : ""}</p>}
       </div>
       <div class="lesson-card-arrow">
         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">

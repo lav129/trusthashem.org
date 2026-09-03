@@ -7,23 +7,91 @@ import Base from "../../layouts/Base.astro";
   <section class="page-hero">
     <div class="wrap">
       <div class="eyebrow">Reach us</div>
-      <h1>Contact Us</h1>
+      <h1>Contact</h1>
       <p class="lede">For WhatsApp groups and questions about the lessons, write to {site.email}.</p>
     </div>
   </section>
+
   <section class="section">
-    <div class="wrap">
-      <form class="form" action={`mailto:${site.email}`} method="post" enctype="text/plain">
-        <label>Name <input name="name" required /></label>
-        <label>Email <input type="email" name="email" required /></label>
-        <label>Subject <input name="subject" required /></label>
-        <label>Message <textarea name="message" rows="8"></textarea></label>
+    <div class="wrap contact-layout">
+      <div class="contact-cards">
+        <a class="contact-card" href={`mailto:${site.email}`}>
+          <span class="eyebrow">Email</span>
+          <h2>{site.email}</h2>
+          <p>The fastest way to reach Rebbetzin Donner&apos;s team about lessons and groups.</p>
+        </a>
+        <a class="contact-card" href={site.homeWhatsapp} rel="noopener noreferrer" target="_blank">
+          <span class="eyebrow">WhatsApp</span>
+          <h2>Daily lesson group</h2>
+          <p>Join the free WhatsApp group for a short Torah thought each day.</p>
+        </a>
+        <a class="contact-card" href="/donate/">
+          <span class="eyebrow">Support</span>
+          <h2>Give through PayPal</h2>
+          <p>Donations keep the library free for anyone who wants to learn Bitachon.</p>
+        </a>
+      </div>
+
+      <form class="donate-box contact-form" action={`mailto:${site.email}`} method="post" enctype="text/plain">
+        <h2>Send a message</h2>
+        <p>This opens your email app with the note addressed to {site.email}.</p>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="7" required></textarea>
+        </div>
         <button class="btn btn-wine" type="submit">Send by email</button>
       </form>
-      <p>
-        Or email directly: <a href={`mailto:${site.email}`}>{site.email}</a><br />
-        WhatsApp: <a href={site.homeWhatsapp} rel="noopener noreferrer">join the group</a>
-      </p>
     </div>
   </section>
 </Base>
+
+<style>
+  .contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .contact-cards {
+    display: grid;
+    gap: 1rem;
+  }
+  .contact-card {
+    display: block;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .contact-card h2 {
+    font-size: 1.35rem;
+    margin: 0.35rem 0 0.5rem;
+    word-break: break-word;
+  }
+  .contact-card p {
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .contact-form {
+    width: 100%;
+    max-width: none;
+  }
+  @media (max-width: 800px) {
+    .contact-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -3,15 +3,11 @@ import { site } from "../data/site";
 ---
 
 <div class="donate-box">
-  <form action="https://www.paypal.com/donate" method="post" target="_top">
+  <span class="eyebrow">PayPal</span>
+  <h2>Give securely</h2>
+  <p>Use the same PayPal donation that has always been on TrustHashem.org. Any amount helps keep the shiurim free.</p>
+  <form action="https://www.paypal.com/donate" method="post" target="_blank">
     <input type="hidden" name="hosted_button_id" value={site.paypalButtonId} />
-    <p>Give through the same PayPal donation that has always been on TrustHashem.org.</p>
-    <input
-      type="image"
-      src="https://www.paypalobjects.com/en_US/IL/i/btn/btn_donateCC_LG.gif"
-      name="submit"
-      title="PayPal - The safer, easier way to pay online!"
-      alt="Donate with PayPal button"
-    />
+    <button class="btn btn-gold" type="submit">Donate with PayPal</button>
   </form>
 </div>

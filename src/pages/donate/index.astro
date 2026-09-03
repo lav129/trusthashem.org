@@ -1,22 +1,48 @@
 ---
 import DonateForm from "../../components/DonateForm.astro";
-import { donationCopy } from "../../data/site";
+import { donationCopy, site } from "../../data/site";
 import Base from "../../layouts/Base.astro";
 ---
 
 <Base title="Donate" description={donationCopy.lead}>
   <section class="page-hero">
     <div class="wrap">
-      <div class="eyebrow">Support</div>
-      <h1>Donate now</h1>
+      <div class="eyebrow">Support this work</div>
+      <h1>Donate</h1>
       <p class="lede">{donationCopy.lead}</p>
     </div>
   </section>
+
   <section class="section">
-    <div class="wrap prose">
-      <h2>{donationCopy.title}</h2>
-      {donationCopy.body.map((p) => <p>{p}</p>)}
+    <div class="wrap donate-layout">
+      <div>
+        <h2>{donationCopy.title}</h2>
+        <div class="divider"></div>
+        {donationCopy.body.map((p) => <p class="donate-copy">{p}</p>)}
+        <p class="donate-copy">Questions about giving: <a href={`mailto:${site.email}`}>{site.email}</a></p>
+      </div>
       <DonateForm />
     </div>
   </section>
 </Base>
+
+<style>
+  .donate-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+    gap: 3rem;
+    align-items: start;
+  }
+  .donate-copy {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.1rem;
+    max-width: 46rem;
+  }
+  @media (max-width: 800px) {
+    .donate-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

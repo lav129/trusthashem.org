@@ -1,5 +1,11 @@
 import content from "./content.json";
 
+export const mediaBase = "https://trusthashem-media.thelavglow.workers.dev";
+
+export function mediaUrl(src = "") {
+  return src.replace("https://trusthashem.org/wp-content", `${mediaBase}/wp-content`);
+}
+
 export const site = {
   name: "Trust Hashem",
   hebrew: "בס״ד",

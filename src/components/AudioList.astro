@@ -1,4 +1,6 @@
 ---
+import { mediaUrl } from "../data/site";
+
 interface Track {
   title: string;
   subtitle?: string;
@@ -17,7 +19,7 @@ const playable = tracks.filter((track) => track.audio || track.src);
 {playable.length > 0 ? (
   <div class="track-list">
     {playable.map((track) => {
-      const src = track.audio || track.src || "";
+      const src = mediaUrl(track.audio || track.src || "");
       return (
         <div class="track-item">
           <h3>{track.title}</h3>
