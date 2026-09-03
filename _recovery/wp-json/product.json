@@ -1,0 +1,243 @@
+[
+  {
+    "id": 2701,
+    "date": "2024-09-11T15:59:34",
+    "date_gmt": "2024-09-11T15:59:34",
+    "guid": {
+      "rendered": "https://trusthashem.org/product/donation/"
+    },
+    "modified": "2024-09-11T15:59:34",
+    "modified_gmt": "2024-09-11T15:59:34",
+    "slug": "donation",
+    "status": "publish",
+    "type": "product",
+    "link": "https://trusthashem.org/product/donation/",
+    "title": {
+      "rendered": "Donation"
+    },
+    "content": {
+      "rendered": "",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "",
+      "protected": false
+    },
+    "featured_media": 2702,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "product_brand": [],
+    "product_cat": [],
+    "product_tag": [],
+    "class_list": [
+      "post-2701",
+      "product",
+      "type-product",
+      "status-publish",
+      "has-post-thumbnail",
+      "entry",
+      "has-media",
+      "first",
+      "instock",
+      "virtual",
+      "sold-individually",
+      "purchasable",
+      "product-type-simple",
+      "has-product-nav",
+      "col",
+      "span_1_of_3",
+      "owp-content-center",
+      "owp-thumbs-layout-horizontal",
+      "owp-btn-normal",
+      "owp-tabs-layout-horizontal",
+      "has-no-thumbnails"
+    ],
+    "_links": {
+      "self": [
+        {
+          "href": "https://trusthashem.org/wp-json/wp/v2/product/2701",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://trusthashem.org/wp-json/wp/v2/product"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://trusthashem.org/wp-json/wp/v2/types/product"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://trusthashem.org/wp-json/wp/v2/comments?post=2701"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://trusthashem.org/wp-json/wp/v2/media/2702"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://trusthashem.org/wp-json/wp/v2/media?parent=2701"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "product_brand",
+          "embeddable": true,
+          "href": "https://trusthashem.org/wp-json/wp/v2/product_brand?post=2701"
+        },
+        {
+          "taxonomy": "product_cat",
+          "embeddable": true,
+          "href": "https://trusthashem.org/wp-json/wp/v2/product_cat?post=2701"
+        },
+        {
+          "taxonomy": "product_tag",
+          "embeddable": true,
+          "href": "https://trusthashem.org/wp-json/wp/v2/product_tag?post=2701"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 2604,
+    "date": "2024-09-01T15:50:27",
+    "date_gmt": "2024-09-01T15:50:27",
+    "guid": {
+      "rendered": "https://trusthashem.org/?post_type=product&#038;p=2604"
+    },
+    "modified": "2025-04-18T11:24:40",
+    "modified_gmt": "2025-04-18T11:24:40",
+    "slug": "create-endless-blessings",
+    "status": "publish",
+    "type": "product",
+    "link": "https://trusthashem.org/product/create-endless-blessings/",
+    "title": {
+      "rendered": "Create endless blessings—one mitzvah leads to another, building a world of kindness and light"
+    },
+    "content": {
+      "rendered": "",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p><strong>Support Our Mission</strong></p>\n<p><strong>Make a difference with just 1 shekel – add as much as your heart desires and help support our cause</strong></p>\n<p>Your contribution helps us spread the wisdom of Torah and strengthen the faith of the Jewish people. Through our lessons and outreach, we inspire connection, learning, and spiritual growth.</p>\n<p>Every donation, no matter the size, allows us to continue providing free resources, Torah teachings, and programs that reach people across the world. Together, we can elevate the understanding of our traditions and bring light to those seeking guidance.</p>\n<p>Your generosity is deeply appreciated, and it makes a lasting impact.</p>\n<p>Thank you for your support!</p>\n<p>&nbsp;</p>\n",
+      "protected": false
+    },
+    "featured_media": 1086,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "product_brand": [],
+    "product_cat": [
+      18
+    ],
+    "product_tag": [],
+    "class_list": [
+      "post-2604",
+      "product",
+      "type-product",
+      "status-publish",
+      "has-post-thumbnail",
+      "product_cat-donations",
+      "entry",
+      "has-media",
+      "",
+      "instock",
+      "sold-individually",
+      "shipping-taxable",
+      "purchasable",
+      "product-type-simple",
+      "has-product-nav",
+      "col",
+      "span_1_of_3",
+      "owp-content-center",
+      "owp-thumbs-layout-horizontal",
+      "owp-btn-normal",
+      "owp-tabs-layout-horizontal",
+      "has-no-thumbnails"
+    ],
+    "_links": {
+      "self": [
+        {
+          "href": "https://trusthashem.org/wp-json/wp/v2/product/2604",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://trusthashem.org/wp-json/wp/v2/product"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://trusthashem.org/wp-json/wp/v2/types/product"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://trusthashem.org/wp-json/wp/v2/comments?post=2604"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://trusthashem.org/wp-json/wp/v2/media/1086"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://trusthashem.org/wp-json/wp/v2/media?parent=2604"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "product_brand",
+          "embeddable": true,
+          "href": "https://trusthashem.org/wp-json/wp/v2/product_brand?post=2604"
+        },
+        {
+          "taxonomy": "product_cat",
+          "embeddable": true,
+          "href": "https://trusthashem.org/wp-json/wp/v2/product_cat?post=2604"
+        },
+        {
+          "taxonomy": "product_tag",
+          "embeddable": true,
+          "href": "https://trusthashem.org/wp-json/wp/v2/product_tag?post=2604"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

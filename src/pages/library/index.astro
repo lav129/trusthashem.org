@@ -1,0 +1,20 @@
+---
+import LessonGrid from "../../components/LessonGrid.astro";
+import { lessons } from "../../data/site";
+import Base from "../../layouts/Base.astro";
+---
+
+<Base title="Library" description="All Trust Hashem lesson series, with their original addresses.">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Teachings</div>
+      <h1>Library</h1>
+      <p class="lede">The series taught on TrustHashem.org, kept at the same URLs.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <LessonGrid lessons={lessons} />
+    </div>
+  </section>
+</Base>

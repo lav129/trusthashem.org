@@ -1,0 +1,21 @@
+---
+import DonateForm from "../../../components/DonateForm.astro";
+import { donationCopy } from "../../../data/site";
+import Base from "../../../layouts/Base.astro";
+---
+
+<Base title={donationCopy.title} description={donationCopy.lead}>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Donations</div>
+      <h1>{donationCopy.title}</h1>
+      <p class="lede">{donationCopy.lead}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap prose">
+      {donationCopy.body.map((p) => <p>{p}</p>)}
+      <DonateForm />
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,740 @@
+[
+  {
+    "title": "Introduction",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/04/Introductionp.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/04/Introductionp.ogg",
+    "downloadFilename": "Introductionp.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Love For The Holy One Blessed Be He",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/04/Love-For-The-Holy-One-Blessed-Be-He.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/04/Love-For-The-Holy-One-Blessed-Be-He.ogg",
+    "downloadFilename": "Love-For-The-Holy-One-Blessed-Be-He.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Love For The Holy One Blessed Be He - Developing It",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/04/Love-For-The-Holy-One-Blessed-Be-He-Developing-It.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/04/Love-For-The-Holy-One-Blessed-Be-He-Developing-It.ogg",
+    "downloadFilename": "Love-For-The-Holy-One-Blessed-Be-He-Developing-It.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Love For The Holy One Blessed Be He - Practical Advice",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/04/Love-For-The-Holy-One-Blessed-Be-He-Practical-Advice.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/04/Love-For-The-Holy-One-Blessed-Be-He-Practical-Advice.ogg",
+    "downloadFilename": "Love-For-The-Holy-One-Blessed-Be-He-Practical-Advice.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Love of Torah and Mitzvot",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/04/Love-of-Torah-and-Mitzvot.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/04/Love-of-Torah-and-Mitzvot.ogg",
+    "downloadFilename": "Love-of-Torah-and-Mitzvot.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Self-Worth",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/04/Self-Worth.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/04/Self-Worth.ogg",
+    "downloadFilename": "Self-Worth.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Love For One's Children",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/04/Love-For-Ones-Children.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/04/Love-For-Ones-Children.ogg",
+    "downloadFilename": "Love-For-Ones-Children.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Love For One's Children Continued",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/04/Love-For-Ones-Children-Continued.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/04/Love-For-Ones-Children-Continued.ogg",
+    "downloadFilename": "Love-For-Ones-Children-Continued.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Love Between Husband and Wife",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/04/Love-Between-Husband-and-Wife.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/04/Love-Between-Husband-and-Wife.ogg",
+    "downloadFilename": "Love-Between-Husband-and-Wife.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Practical Advice",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/04/Practical-Advice.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/04/Practical-Advice.ogg",
+    "downloadFilename": "Practical-Advice.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "A Virtuous Wife",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/04/A-Virtuous-Wife.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/04/A-Virtuous-Wife.ogg",
+    "downloadFilename": "A-Virtuous-Wife.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Finance a Strife in the Home",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/04/Finance-a-Strife-in-the-Home.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/04/Finance-a-Strife-in-the-Home.ogg",
+    "downloadFilename": "Finance-a-Strife-in-the-Home.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Anger and Needless Quarreling",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/04/Anger-and-Needless-Quarreling.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/04/Anger-and-Needless-Quarreling.ogg",
+    "downloadFilename": "Anger-and-Needless-Quarreling.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Practical Advice",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/04/Practical-Advicea.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/04/Practical-Advicea.ogg",
+    "downloadFilename": "Practical-Advicea.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Love for Those Who Study Torah, Who Fear Hashem, and Give Thought to His Name",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/05/Love-for-Those-Who-Study-Torah-Who-Fear-Hashem-and-Give-Thought-to-His-Name.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/05/Love-for-Those-Who-Study-Torah-Who-Fear-Hashem-and-Give-Thought-to-His-Name.ogg",
+    "downloadFilename": "Love-for-Those-Who-Study-Torah-Who-Fear-Hashem-and-Give-Thought-to-His-Name.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Love For One's Fellow",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/05/Love-For-Ones-Fellow.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/05/Love-For-Ones-Fellow.ogg",
+    "downloadFilename": "Love-For-Ones-Fellow.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Obligation to Love Your Fellow",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/05/Obligation-to-Love-Your-Fellow.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/05/Obligation-to-Love-Your-Fellow.ogg",
+    "downloadFilename": "Obligation-to-Love-Your-Fellow.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Advice on Loving Your Fellow",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/05/Advice-on-Loving-Your-Fellow.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/05/Advice-on-Loving-Your-Fellow.ogg",
+    "downloadFilename": "Advice-on-Loving-Your-Fellow.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Mourning",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/05/Mourning.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/05/Mourning.ogg",
+    "downloadFilename": "Mourning.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Faith in Hashem",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/05/Faith-in-Hashem.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/05/Faith-in-Hashem.ogg",
+    "downloadFilename": "Faith-in-Hashem.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Emunah in The Torah",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/05/Emunah-in-The-Torah.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/05/Emunah-in-The-Torah.ogg",
+    "downloadFilename": "Emunah-in-The-Torah.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Eating and Drinking",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/05/Eating-and-Drinking.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/05/Eating-and-Drinking.ogg",
+    "downloadFilename": "Eating-and-Drinking.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Laws Regarding Eating",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/05/Laws-Regarding-Eating.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/05/Laws-Regarding-Eating.ogg",
+    "downloadFilename": "Laws-Regarding-Eating.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Kashrus",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/05/Kashrus.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/05/Kashrus.ogg",
+    "downloadFilename": "Kashrus.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Sanctifying Your Table",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/05/Sanctifying-Your-Table.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/05/Sanctifying-Your-Table.ogg",
+    "downloadFilename": "Sanctifying-Your-Table.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Truth",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/05/Truth.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/05/Truth.ogg",
+    "downloadFilename": "Truth.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Courage",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/05/Courage.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/05/Courage.ogg",
+    "downloadFilename": "Courage.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Eretz Yisrael",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/06/Eretz-Yisrael.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/06/Eretz-Yisrael.ogg",
+    "downloadFilename": "Eretz-Yisrael.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Eretz Yisrael (continued)",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/06/Eretz-Yisrael-continued.ogg",
+    "buyUrl": "",
+    "downloadUrl": "",
+    "downloadFilename": "",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Amen",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/06/Amen1.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/06/Amen1.ogg",
+    "downloadFilename": "Amen1.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Amen (continued)",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/06/Amen-continued.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/06/Amen-continued.ogg",
+    "downloadFilename": "Amen-continued.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Brothers",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/06/Brothers.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/06/Brothers.ogg",
+    "downloadFilename": "Brothers.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Unity",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/06/Unity.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/06/Unity.ogg",
+    "downloadFilename": "Unity.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "One Who Disparages the Torah",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/06/One-Who-Disparages-the-Torah.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/06/One-Who-Disparages-the-Torah.ogg",
+    "downloadFilename": "One-Who-Disparages-the-Torah.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Trade",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/06/Trade.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/06/Trade.ogg",
+    "downloadFilename": "Trade.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Torah Compilations",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/06/Torah-Compilations.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/06/Torah-Compilations.ogg",
+    "downloadFilename": "Torah-Compilations.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Torah Compilations (continued)",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/06/Torah-Compilations-continued.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/06/Torah-Compilations-continued.ogg",
+    "downloadFilename": "Torah-Compilations-continued.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Guests",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/06/Guests.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/06/Guests.ogg",
+    "downloadFilename": "Guests.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Guests Continued",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/06/Guests-Continued.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/06/Guests-Continued.ogg",
+    "downloadFilename": "Guests-Continued.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Guests - Continued2",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/06/Guests-Continued2.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/06/Guests-Continued2.ogg",
+    "downloadFilename": "Guests-Continued2.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Fraud Causing Distress",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/06/Fraud-Causing-Distress.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/06/Fraud-Causing-Distress.ogg",
+    "downloadFilename": "Fraud-Causing-Distress.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Unavoidable Circumstances",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/07/Unavoidable-Circumstances.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/07/Unavoidable-Circumstances.ogg",
+    "downloadFilename": "Unavoidable-Circumstances.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Blessings",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/07/Blessings.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/07/Blessings.ogg",
+    "downloadFilename": "Blessings.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Blessings continued",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/07/Blessings-continued.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/07/Blessings-continued.ogg",
+    "downloadFilename": "Blessings-continued.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Blessings continued2",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/07/Blessings-continued2.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/07/Blessings-continued2.ogg",
+    "downloadFilename": "Blessings-continued2.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Blessings continued3",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/07/Blessings-continued3.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/07/Blessings-continued3.ogg",
+    "downloadFilename": "Blessings-continued3.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Blessings continued4",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/07/Blessings-continued4.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/07/Blessings-continued4.ogg",
+    "downloadFilename": "Blessings-continued4.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Blessings continued5",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/07/Blessings-continued5.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/07/Blessings-continued5.ogg",
+    "downloadFilename": "Blessings-continued5.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Blessings continued6",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/07/Blessings-continued6.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/07/Blessings-continued6.ogg",
+    "downloadFilename": "Blessings-continued6.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "The Synagogue",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/07/The-Synagogue.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/07/The-Synagogue.ogg",
+    "downloadFilename": "The-Synagogue.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "The Synagogue Continued",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/07/The-Synagogue-Continued.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/07/The-Synagogue-Continued.ogg",
+    "downloadFilename": "The-Synagogue-Continued.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "The Synagogue Continued2",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/07/The-Synagogue-Continued2.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/07/The-Synagogue-Continued2.ogg",
+    "downloadFilename": "The-Synagogue-Continued2.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "The Study Hall Beis HaMedrash",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/07/The-Study-Hall-Beis-HaMedrash.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/07/The-Study-Hall-Beis-HaMedrash.ogg",
+    "downloadFilename": "The-Study-Hall-Beis-HaMedrash.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "The Study Hall Beis HaMedrash Continued",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/08/The-Study-Hall-Beis-HaMedrash-Continued.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/08/The-Study-Hall-Beis-HaMedrash-Continued.ogg",
+    "downloadFilename": "The-Study-Hall-Beis-HaMedrash-Continued.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Disgrace",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/08/Disgrace.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/08/Disgrace.ogg",
+    "downloadFilename": "Disgrace.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Sons",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/08/Sons.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/08/Sons.ogg",
+    "downloadFilename": "Sons.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Daughters",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/08/Daughters.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/08/Daughters.ogg",
+    "downloadFilename": "Daughters.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Daughters - Continued",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/08/Daughters-Continued.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/08/Daughters-Continued.ogg",
+    "downloadFilename": "Daughters-Continued.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Idling",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/08/Idling.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/08/Idling.ogg",
+    "downloadFilename": "Idling.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Weeping",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/08/Weeping.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/08/Weeping.ogg",
+    "downloadFilename": "Weeping.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Weeping Continued",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/09/Weeping-Continued.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/09/Weeping-Continued.ogg",
+    "downloadFilename": "Weeping-Continued.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Construction",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/09/Construction.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/09/Construction.ogg",
+    "downloadFilename": "Construction.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Fleeing from Danger",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/09/Fleeing-from-Danger.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/09/Fleeing-from-Danger.ogg",
+    "downloadFilename": "Fleeing-from-Danger.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Choosing",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/09/Choosing.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/09/Choosing.ogg",
+    "downloadFilename": "Choosing.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Youth",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/10/Youth.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/10/Youth.ogg",
+    "downloadFilename": "Youth.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Meat",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/10/Meat.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/10/Meat.ogg",
+    "downloadFilename": "Meat.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Imparting News",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/10/Imparting-News.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/10/Imparting-News.ogg",
+    "downloadFilename": "Imparting-News.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Animals",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/10/Animals.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/10/Animals.ogg",
+    "downloadFilename": "Animals.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/01/Screenshot-2024-01-22-224804.jpg"
+  },
+  {
+    "title": "First Fruits",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/10/First-Fruits.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/10/First-Fruits.ogg",
+    "downloadFilename": "First-Fruits.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Selected Judges",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/10/Selected-Judges.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/10/Selected-Judges.ogg",
+    "downloadFilename": "Selected-Judges.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/01/Screenshot-2024-01-22-224804.jpg"
+  },
+  {
+    "title": "Purity of Heart",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/11/Purity-of-Heart.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/11/Purity-of-Heart.ogg",
+    "downloadFilename": "Purity-of-Heart.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/01/Screenshot-2024-01-22-224804.jpg"
+  },
+  {
+    "title": "Extracting",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2024/11/Extracting.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2024/11/Extracting.ogg",
+    "downloadFilename": "Extracting.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Inspection",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2025/01/Inspection.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2025/01/Inspection.ogg",
+    "downloadFilename": "Inspection.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/01/Screenshot-2024-01-22-224804.jpg"
+  },
+  {
+    "title": "Os Gimmel - The Final Redemption",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2025/01/Os-Gimmel-The-Final-Redemption.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2025/01/Os-Gimmel-The-Final-Redemption.ogg",
+    "downloadFilename": "Os-Gimmel-The-Final-Redemption.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Haughtiness",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2025/01/Haughtiness.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2025/01/Haughtiness.ogg",
+    "downloadFilename": "Haughtiness.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Robbery",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2025/01/Robbery.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2025/01/Robbery.ogg",
+    "downloadFilename": "Robbery.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Theft",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2025/01/Theft.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2025/01/Theft.ogg",
+    "downloadFilename": "Theft.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Strength",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2025/01/Strength.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2025/01/Strength.ogg",
+    "downloadFilename": "Strength.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Exile",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2025/01/Exile.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2025/01/Exile.ogg",
+    "downloadFilename": "Exile.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Rebirth",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2025/04/Rebirth.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2025/04/Rebirth.ogg",
+    "downloadFilename": "Rebirth.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/01/Screenshot-2024-01-22-224804.jpg"
+  },
+  {
+    "title": "Sorjourner, Convert",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2025/04/Sorjourner.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2025/04/Sorjourner.ogg",
+    "downloadFilename": "Sorjourner.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  },
+  {
+    "title": "Greatness",
+    "subtitle": "Rebbetzin Leah Donner",
+    "audio": "https://trusthashem.org/wp-content/uploads/2025/04/Greatness.ogg",
+    "buyUrl": "",
+    "downloadUrl": "https://trusthashem.org/wp-content/uploads/2025/04/Greatness.ogg",
+    "downloadFilename": "Greatness.ogg",
+    "cover": "https://trusthashem.org/wp-content/uploads/2024/04/The-Pele-Yoetz-Giving-Meaning-to-Jewish-Life-WOMENS-GROUP-560x560.jpeg"
+  }
+]

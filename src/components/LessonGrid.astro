@@ -1,0 +1,26 @@
+---
+interface Props {
+  lessons: {
+    slug: string;
+    path: string;
+    title: string;
+    summary: string[];
+    image: string;
+    tracks: unknown[];
+  }[];
+}
+const { lessons } = Astro.props;
+---
+
+<div class="grid">
+  {lessons.map((lesson) => (
+    <a class="card" href={lesson.path}>
+      <img src={lesson.image} alt="" />
+      <div class="card-body">
+        <div class="count">{lesson.tracks.length} lessons</div>
+        <h3>{lesson.title}</h3>
+        <p>{lesson.summary[0]}</p>
+      </div>
+    </a>
+  ))}
+</div>

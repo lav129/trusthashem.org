@@ -1,0 +1,21 @@
+---
+import { bitachonAttributes, homeIntro } from "../../data/site";
+import Base from "../../layouts/Base.astro";
+---
+
+<Base title="Why Trust Hashem" description={homeIntro}>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Bitachon</div>
+      <h1>Why Trust Hashem</h1>
+      <p class="lede">{homeIntro}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <ol class="attributes">
+        {bitachonAttributes.map((item) => <li>{item}</li>)}
+      </ol>
+    </div>
+  </section>
+</Base>

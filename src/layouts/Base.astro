@@ -1,0 +1,115 @@
+---
+import "../styles/global.css";
+import { moreNav, nav, site } from "../data/site";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = "Teachings of Bitachon and Emunah with Rebbetzin Leah Donner in Geula, Jerusalem.",
+  image = "/images/hero.webp",
+} = Astro.props;
+const pageTitle = title.includes("Trust Hashem") ? title : `${title} · Trust Hashem`;
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const path = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/images/logo-192.jpeg" />
+    <link rel="apple-touch-icon" href="/images/logo-270.jpeg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, site.url).href} />
+    <meta property="og:url" content={canonical} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap">
+        <div class="topbar">
+          <span class="bsd">{site.hebrew}</span>
+          <span>{site.teacher} · {site.place}</span>
+        </div>
+        <div class="header-row">
+          <a class="brand" href="/">
+            <img src="/images/logo-270.jpeg" alt="Trust Hashem logo" />
+            <span>
+              <span class="brand-name">Trust Hashem</span>
+              <span class="brand-sub">Emunah & Bitachon</span>
+            </span>
+          </a>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false">Menu</button>
+          <nav class="nav" data-nav>
+            {nav.map((item) => (
+              <a
+                href={item.href}
+                class={item.label === "Donate" ? "donate" : undefined}
+                aria-current={path === item.href ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <strong>Trust Hashem</strong>
+          <p>Teachings of Bitachon and Emunah from Shaar Habitachon, the Beis HaLevi, Bilvavi, RaMCHaL, and the sages. Presented by {site.teacher}.</p>
+        </div>
+        <div>
+          <strong>Explore</strong>
+          <p>
+            {moreNav.map((item) => (
+              <>
+                <a href={item.href}>{item.label}</a>
+                <br />
+              </>
+            ))}
+          </p>
+        </div>
+        <div>
+          <strong>Connect</strong>
+          <p>
+            <a href={`mailto:${site.email}`}>{site.email}</a><br />
+            <a href={site.homeWhatsapp} rel="noopener noreferrer">WhatsApp group</a><br />
+            <a href="/donate/">Donate</a>
+          </p>
+        </div>
+      </div>
+      <div class="wrap webdream">
+        Built with care by <a href={site.webDream} rel="noopener noreferrer">Web Dream</a>
+      </div>
+    </footer>
+    <script>
+      const toggle = document.querySelector("[data-menu-toggle]");
+      const nav = document.querySelector("[data-nav]");
+      toggle?.addEventListener("click", () => {
+        const open = nav?.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    </script>
+  </body>
+</html>

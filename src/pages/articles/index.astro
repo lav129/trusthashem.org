@@ -1,0 +1,20 @@
+---
+import LessonGrid from "../../components/LessonGrid.astro";
+import { lessons } from "../../data/site";
+import Base from "../../layouts/Base.astro";
+---
+
+<Base title="Teachings" description="The Trust Hashem lesson series. This site does not publish a separate article blog.">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Writings</div>
+      <h1>Teachings</h1>
+      <p class="lede">Trust Hashem is a library of shiurim, not a news blog. The teachings are the series below.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <LessonGrid lessons={lessons} />
+    </div>
+  </section>
+</Base>

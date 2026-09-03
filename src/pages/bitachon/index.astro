@@ -1,0 +1,26 @@
+---
+import AudioList from "../../components/AudioList.astro";
+import LessonGrid from "../../components/LessonGrid.astro";
+import { bitachonSlugs, homeTracks, lessons } from "../../data/site";
+import Base from "../../layouts/Base.astro";
+
+const series = lessons.filter((lesson) => bitachonSlugs.includes(lesson.slug));
+---
+
+<Base title="Bitachon" description="Trust in Hashem: the homepage series and related shiurim.">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Trust</div>
+      <h1>Bitachon</h1>
+      <p class="lede">The core Trust Hashem series, with related gates of the heart and redemption.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <h2>Introduction to Emunah and Bitachon</h2>
+      <AudioList tracks={homeTracks} />
+      <h2>Related series</h2>
+      <LessonGrid lessons={series} />
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,22 @@
+---
+import LessonGrid from "../../components/LessonGrid.astro";
+import { emunahSlugs, lessons } from "../../data/site";
+import Base from "../../layouts/Base.astro";
+
+const series = lessons.filter((lesson) => emunahSlugs.includes(lesson.slug));
+---
+
+<Base title="Emunah" description="Series on emunah from the Trust Hashem library.">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Faith</div>
+      <h1>Emunah</h1>
+      <p class="lede">Lessons on the principles of faith, tefillah, and knowing Hashem, from the existing Trust Hashem series.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <LessonGrid lessons={series} />
+    </div>
+  </section>
+</Base>

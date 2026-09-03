@@ -1,0 +1,18 @@
+---
+import { teacherBio } from "../../data/site";
+import Base from "../../layouts/Base.astro";
+---
+
+<Base title="Who We Are" description="Rebbetzin Leah Donner teaches Bitachon and Emunah from Geula, Jerusalem.">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">About</div>
+      <h1>Who We Are</h1>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap prose">
+      <p>{teacherBio}</p>
+    </div>
+  </section>
+</Base>

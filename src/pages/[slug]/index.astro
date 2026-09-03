@@ -1,0 +1,39 @@
+---
+import AudioList from "../../components/AudioList.astro";
+import { lessons } from "../../data/site";
+import Base from "../../layouts/Base.astro";
+
+export function getStaticPaths() {
+  return lessons.map((lesson) => ({
+    params: { slug: lesson.slug },
+    props: { lesson },
+  }));
+}
+
+const { lesson } = Astro.props;
+---
+
+<Base title={lesson.title} description={lesson.summary[0] || lesson.title} image={lesson.image}>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Lesson series</div>
+      <h1>{lesson.h1}</h1>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap" style="display:grid;gap:2rem;grid-template-columns:minmax(0,2fr) minmax(220px,1fr);align-items:start">
+      <div class="prose">
+        {lesson.summary.map((p) => <p>{p}</p>)}
+        {lesson.whatsapp && (
+          <p>
+            <a class="btn btn-wine" href={lesson.whatsapp} rel="noopener noreferrer">Join the WhatsApp group</a>
+          </p>
+        )}
+        <AudioList tracks={lesson.tracks} />
+      </div>
+      <aside>
+        <img src={lesson.image} alt="" style="border-radius:18px;width:100%;object-fit:cover" />
+      </aside>
+    </div>
+  </section>
+</Base>

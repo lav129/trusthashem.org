@@ -1,0 +1,58 @@
+---
+import AudioList from "../components/AudioList.astro";
+import LessonGrid from "../components/LessonGrid.astro";
+import {
+  bitachonAttributes,
+  homeIntro,
+  homeTracks,
+  lessons,
+  teacherBio,
+} from "../data/site";
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Trust Hashem" description={homeIntro}>
+  <section class="hero" style="background-image: url('/images/hero.webp')">
+    <div class="wrap hero-inner">
+      <div class="eyebrow">Emunah & Bitachon</div>
+      <h1>Trust Hashem</h1>
+      <p>{homeIntro}</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="/library/">Enter the library</a>
+        <a class="btn btn-ghost" href="/donate/">Donate</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>The seven attributes of Bitachon</h2>
+      <ol class="attributes">
+        {bitachonAttributes.map((item) => <li>{item}</li>)}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>Who teaches</h2>
+      <p class="lede">{teacherBio}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>My lessons</h2>
+      <p class="lede">Every series keeps its original TrustHashem.org address.</p>
+      <LessonGrid lessons={lessons} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>Introduction to Emunah and Bitachon</h2>
+      <p class="lede">The homepage series, taught by Rebbetzin Leah Donner.</p>
+      <AudioList tracks={homeTracks} />
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,24 @@
+---
+import AudioList from "../../components/AudioList.astro";
+import LessonGrid from "../../components/LessonGrid.astro";
+import { homeTracks, lessons } from "../../data/site";
+import Base from "../../layouts/Base.astro";
+---
+
+<Base title="Audio" description="Audio lessons from Trust Hashem, taught by Rebbetzin Leah Donner.">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Listen</div>
+      <h1>Audio</h1>
+      <p class="lede">Start with the homepage series, then open any series in the library.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <h2>Introduction to Emunah and Bitachon</h2>
+      <AudioList tracks={homeTracks} />
+      <h2>All series</h2>
+      <LessonGrid lessons={lessons} />
+    </div>
+  </section>
+</Base>

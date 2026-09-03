@@ -1,0 +1,20 @@
+---
+import DonateForm from "../../components/DonateForm.astro";
+import Base from "../../layouts/Base.astro";
+---
+
+<Base title="Shop" description="Donations that support Trust Hashem.">
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Shop</h1>
+      <p class="lede">The original shop offered donation products. Give here, or open the full blessing page.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap prose">
+      <p><a href="/product/create-endless-blessings/">Create endless blessings</a></p>
+      <p><a href="/product/donation/">Donation</a></p>
+      <DonateForm />
+    </div>
+  </section>
+</Base>

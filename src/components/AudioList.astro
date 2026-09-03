@@ -1,0 +1,18 @@
+---
+interface Props {
+  tracks: { title: string; subtitle?: string; audio: string }[];
+}
+const { tracks } = Astro.props;
+---
+
+{tracks.length > 0 && (
+  <div class="player-list">
+    {tracks.map((track) => (
+      <article class="track">
+        <h3>{track.title}</h3>
+        {track.subtitle && <p>{track.subtitle}</p>}
+        <audio controls preload="none" src={track.audio}></audio>
+      </article>
+    ))}
+  </div>
+)}
