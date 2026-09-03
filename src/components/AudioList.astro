@@ -26,11 +26,12 @@ const playable = tracks.filter((track) => track.audio || track.src);
           {(track.subtitle || track.description) && (
             <p>{track.subtitle || track.description}</p>
           )}
-          <audio controls preload="metadata">
-            <source src={src} type="audio/ogg" />
-            <source src={src.replace(/\.ogg$/i, ".mp3")} type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
+          <div class="audio-wrap">
+            <audio controls preload="none" controlslist="nodownload">
+              <source src={src} type="audio/ogg" />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
         </div>
       );
     })}

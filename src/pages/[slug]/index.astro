@@ -21,7 +21,7 @@ const { lesson } = Astro.props;
     </div>
   </section>
   <section class="section">
-    <div class="wrap" style="display:grid;gap:2rem;grid-template-columns:minmax(0,2fr) minmax(220px,1fr);align-items:start">
+    <div class="wrap lesson-page">
       <div class="prose">
         {lesson.summary.map((p) => <p>{p}</p>)}
         {lesson.whatsapp && (
@@ -32,7 +32,7 @@ const { lesson } = Astro.props;
         <AudioList tracks={lesson.tracks} />
       </div>
       <aside>
-        <img src={lesson.image} alt="" style="border-radius:18px;width:100%;object-fit:cover" />
+        <img src={lesson.image} alt={lesson.title} />
       </aside>
     </div>
   </section>

@@ -1,5 +1,6 @@
 name = "trusthashem-media"
 main = "media.js"
-compatibility_date = "2024-11-01"
+compatibility_date = "2026-09-03"
+compatibility_flags = ["nodejs_compat"]
 account_id = "c41feade0545b8c24506226edb07ce55"
 workers_dev = true

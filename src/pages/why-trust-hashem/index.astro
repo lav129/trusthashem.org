@@ -11,11 +11,36 @@ import Base from "../../layouts/Base.astro";
       <p class="lede">{homeIntro}</p>
     </div>
   </section>
+
   <section class="section">
     <div class="wrap">
-      <ol class="attributes">
-        {bitachonAttributes.map((item) => <li>{item}</li>)}
-      </ol>
+      <div class="bio-block">
+        <img class="bio-img" src="/images/gods-plan.jpeg" alt="Knowing Hashem's plan" />
+        <div class="bio-text">
+          <h2>Bitachon is a way of seeing</h2>
+          <div class="divider" style="margin-bottom:1.5rem"></div>
+          <p>These lessons enter Shaar HaBitachon, the Beis HaLevi, Torah, and the sages so a person can find solace, resilience, and the peace that comes from trusting in Hashem’s love and protection.</p>
+          <p>Trust is not a slogan. It is built from clear truths about Who Hashem is — His compassion, strength, knowledge, and kindness — until the heart can rest.</p>
+          <a class="btn btn-wine" href="/bitachon/">Start the Bitachon series</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">Foundation</span>
+        <h2>Seven attributes of Bitachon</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="attributes-grid">
+        {bitachonAttributes.map((item) => (
+          <div class="attr-item">
+            <p>{item}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 </Base>

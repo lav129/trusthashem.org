@@ -6,15 +6,37 @@ import Base from "../../layouts/Base.astro";
 <Base title="Shop" description="Donations that support Trust Hashem.">
   <section class="page-hero">
     <div class="wrap">
+      <div class="eyebrow">Give</div>
       <h1>Shop</h1>
-      <p class="lede">The original shop offered donation products. Give here, or open the full blessing page.</p>
+      <p class="lede">The original shop offered donation products. The same PayPal giving is here, in the new site.</p>
     </div>
   </section>
   <section class="section">
-    <div class="wrap prose">
-      <p><a href="/product/create-endless-blessings/">Create endless blessings</a></p>
-      <p><a href="/product/donation/">Donation</a></p>
+    <div class="wrap donate-layout">
+      <div>
+        <h2>Create endless blessings</h2>
+        <div class="divider"></div>
+        <p class="donate-copy">There is no merchandise cart on this rebuilt site. If you came from an old shop link, you can still give securely below.</p>
+        <p><a class="btn btn-wine" href="/donate/">Open the Donate page</a></p>
+      </div>
       <DonateForm />
     </div>
   </section>
 </Base>
+
+<style>
+  .donate-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+    gap: 3rem;
+    align-items: start;
+  }
+  .donate-copy {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.1rem;
+  }
+  @media (max-width: 800px) {
+    .donate-layout { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>

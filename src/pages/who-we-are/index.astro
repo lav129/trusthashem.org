@@ -1,18 +1,92 @@
 ---
-import { teacherBio } from "../../data/site";
+import { teacherBio, site } from "../../data/site";
 import Base from "../../layouts/Base.astro";
 ---
 
-<Base title="Who We Are" description="Rebbetzin Leah Donner teaches Bitachon and Emunah from Geula, Jerusalem.">
+<Base title="Who We Are" description="Rebbetzin Leah Donner teaches Bitachon and Emunah from Geula, Jerusalem, with a free library of shiurim for Klal Yisrael.">
   <section class="page-hero">
     <div class="wrap">
       <div class="eyebrow">About</div>
       <h1>Who We Are</h1>
+      <p class="lede">Trust Hashem is a Torah teaching home for Emunah and Bitachon, presented by Rebbetzin Leah Donner from Geula, Jerusalem.</p>
     </div>
   </section>
+
   <section class="section">
-    <div class="wrap prose">
-      <p>{teacherBio}</p>
+    <div class="wrap">
+      <div class="bio-block">
+        <img class="bio-img" src="/images/logo-large.jpg" alt="Trust Hashem" />
+        <div class="bio-text">
+          <span class="eyebrow" style="color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:.75rem;font-weight:600;display:block;margin-bottom:.6rem">The teacher</span>
+          <h2>Rebbetzin Leah Donner</h2>
+          <div class="divider" style="margin-bottom:1.5rem"></div>
+          <p>{teacherBio}</p>
+          <div class="bio-blessings">
+            <span class="bio-blessing">HaGaon HaRav Yacov Moshe Hillel</span>
+            <span class="bio-blessing">Rabbi Israel Moshe Levinsohn</span>
+            <span class="bio-blessing">HaRav Yonason David</span>
+            <span class="bio-blessing">HaGaon HaRav Itamar Schwartz</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">From Geula</span>
+        <h2>A home for Bitachon</h2>
+        <div class="divider"></div>
+        <p class="lead">The work is simple and serious: record the shiurim, keep them free, and help people live with trust in Hashem.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <img class="card-thumb" src="/images/hero.webp" alt="Jerusalem skyline used on Trust Hashem" />
+          <div class="card-body">
+            <div class="card-tag">Place</div>
+            <h3>Geula, Jerusalem</h3>
+            <p>The teachings come from the heart of Jerusalem, offered to students near and far through audio, WhatsApp groups, and this library.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-thumb" src="/images/meeting-with-hashem.jpeg" alt="Meeting with the King of Kings series" />
+          <div class="card-body">
+            <div class="card-tag">Sources</div>
+            <h3>Classic sefarim</h3>
+            <p>Shaar HaBitachon, Chovos HaLevavos, Beis HaLevi, Bilvavi, RaMCHaL, Pele Yoetz, Tomer Devorah, and related works of Emunah.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-thumb" src="/images/ahavat-israel.webp" alt="Ahavas Yisrael series artwork" />
+          <div class="card-body">
+            <div class="card-tag">Purpose</div>
+            <h3>Free for Klal Yisrael</h3>
+            <p>More than a thousand recorded lessons stay online so anyone can learn, review, and share without a paywall.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">The work</span>
+        <h2>What you will find here</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="attributes-grid">
+        <div class="attr-item"><p>A complete audio library of Emunah and Bitachon shiurim, kept at the original lesson addresses.</p></div>
+        <div class="attr-item"><p>WhatsApp groups for daily connection, so the learning does not stay only on a website.</p></div>
+        <div class="attr-item"><p>A public YouTube channel for anyone who prefers to watch, at @TrustHashem.</p></div>
+        <div class="attr-item"><p>A simple way to give through PayPal so the library can remain free.</p></div>
+      </div>
+      <div style="margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:1rem">
+        <a class="btn btn-wine" href="/library/">Open the library</a>
+        <a class="btn btn-gold" href="/contact-us/">Write to us</a>
+        <a class="btn btn-wine" href={`mailto:${site.email}`}>{site.email}</a>
+      </div>
     </div>
   </section>
 </Base>

@@ -1,19 +1,67 @@
 ---
+import { site } from "../../data/site";
 import Base from "../../layouts/Base.astro";
 ---
 
-<Base title="What We Do" description="Free Torah audio lessons, WhatsApp groups, and a place to give.">
+<Base title="What We Do" description="Free Torah audio lessons, WhatsApp groups, YouTube teachings, and a place to give so the library stays open.">
   <section class="page-hero">
     <div class="wrap">
       <div class="eyebrow">About</div>
       <h1>What We Do</h1>
+      <p class="lede">We publish shiurim, keep a living WhatsApp community, and invite support so Bitachon can be learned anywhere.</p>
     </div>
   </section>
+
   <section class="section">
+    <div class="wrap">
+      <div class="card-grid">
+        <article class="card">
+          <img class="card-thumb" src="/images/gateway.webp" alt="Gateways to Hashem series" />
+          <div class="card-body">
+            <div class="card-tag">Library</div>
+            <h3>Recorded shiurim</h3>
+            <p>Twenty series covering Emunah, Bitachon, tefillah, middos, festivals, and the inner life of a Jew — with every audio lesson on its own page.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-thumb" src="/images/2024-07-WhatsApp-Image-2024-07-18-at-16.15.17.jpeg" alt="Learning group" />
+          <div class="card-body">
+            <div class="card-tag">Community</div>
+            <h3>WhatsApp groups</h3>
+            <p>Each series can have its own group. A daily thought keeps the teaching close, including for women who learn together during the week.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-thumb" src="/images/The-POWER-of-the-Festivals-Womens-Learning-Group.jpeg" alt="Festivals women's learning group" />
+          <div class="card-body">
+            <div class="card-tag">Calendar</div>
+            <h3>Moadim and middos</h3>
+            <p>Festival shiurim, Ahavas Yisrael, Pirkei Avos, and practical sefarim that help a person live with trust in ordinary days.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-thumb" src="/images/Yonah-Journey-of-the-Soul-Womens-Learning-Group-.jpeg" alt="Yonah Journey of the Soul" />
+          <div class="card-body">
+            <div class="card-tag">Support</div>
+            <h3>Keep the library free</h3>
+            <p>Donations through the same PayPal button that has always been on this site help recording, hosting, and outreach continue.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
     <div class="wrap prose">
-      <p>Trust Hashem publishes recorded shiurim so anyone can learn Bitachon and Emunah from the sources taught on this site: Shaar Habitachon, the Beis HaLevi, Bilvavi, RaMCHaL, Chovos HaLevavos, and related sefarim.</p>
-      <p>Each series has its own page, audio playlist, and WhatsApp group. The lessons are offered freely. Donations through PayPal help the work continue.</p>
-      <p><a href="/library/">See the library</a> · <a href="/contact-us/">Ask for a group</a></p>
+      <h2>How to use Trust Hashem</h2>
+      <p>Open a series from the library, play any lesson, and join a group if you want company in the learning. The lessons are offered freely. If a player does not start, refresh once — the audio is served from the original recordings.</p>
+      <p>For a group invitation or a question about a series, write to <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.5rem">
+        <a class="btn btn-wine" href="/library/">See the library</a>
+        <a class="btn btn-gold" href="/videos/">Watch on YouTube</a>
+        <a class="btn btn-wine" href="/donate/">Give</a>
+        <a class="btn btn-gold" href="/contact-us/">Ask for a group</a>
+      </div>
     </div>
   </section>
 </Base>

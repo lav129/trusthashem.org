@@ -2,11 +2,17 @@
 import Base from "../layouts/Base.astro";
 ---
 
-<Base title="Page not found">
+<Base title="Page not found" description="This Trust Hashem page is not here. Return home or open the library.">
   <section class="page-hero">
     <div class="wrap">
+      <div class="eyebrow">404</div>
       <h1>This page is not here</h1>
-      <p class="lede"><a href="/">Return home</a> or open the <a href="/library/">library</a>.</p>
+      <p class="lede">The address may have changed. The library, audio, and donation pages are all on the new site.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.5rem">
+        <a class="btn btn-wine" href="/">Return home</a>
+        <a class="btn btn-gold" href="/library/">Open the library</a>
+        <a class="btn btn-wine" href="/audio/">Listen</a>
+      </div>
     </div>
   </section>
 </Base>
