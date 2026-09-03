@@ -16,9 +16,11 @@ export const nav = [
   { href: "/", label: "Home" },
   { href: "/library/", label: "Library" },
   { href: "/audio/", label: "Audio" },
-  { href: "/who-we-are/", label: "Who We Are" },
-  { href: "/donate/", label: "Donate" },
+  { href: "/videos/", label: "Videos" },
+  { href: "/articles/", label: "Teachings" },
+  { href: "/who-we-are/", label: "About" },
   { href: "/contact-us/", label: "Contact" },
+  { href: "/donate/", label: "Donate" },
 ];
 
 export const moreNav = [

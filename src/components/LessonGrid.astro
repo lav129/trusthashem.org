@@ -1,25 +1,37 @@
 ---
-interface Props {
-  lessons: {
-    slug: string;
-    path: string;
-    title: string;
-    summary: string[];
-    image: string;
-    tracks: unknown[];
-  }[];
+interface Lesson {
+  slug: string;
+  title: string;
+  description?: string;
+  image?: string;
+  count?: number;
 }
-const { lessons } = Astro.props;
+interface Props {
+  lessons: Lesson[];
+  limit?: number;
+}
+const { lessons, limit } = Astro.props;
+const displayed = limit ? lessons.slice(0, limit) : lessons;
 ---
 
-<div class="grid">
-  {lessons.map((lesson) => (
-    <a class="card" href={lesson.path}>
-      <img src={lesson.image} alt="" />
-      <div class="card-body">
-        <div class="count">{lesson.tracks.length} lessons</div>
+<div class="lesson-grid">
+  {displayed.map((lesson) => (
+    <a class="lesson-card" href={`/${lesson.slug}/`}>
+      <img
+        class="lesson-card-thumb"
+        src={lesson.image || "/images/logo-270.jpeg"}
+        alt={lesson.title}
+        loading="lazy"
+      />
+      <div class="lesson-card-body">
         <h3>{lesson.title}</h3>
-        <p>{lesson.summary[0]}</p>
+        {lesson.count && <p>{lesson.count} lesson{lesson.count !== 1 ? "s" : ""}</p>}
+        {lesson.description && !lesson.count && <p>{lesson.description.slice(0, 80)}{lesson.description.length > 80 ? "…" : ""}</p>}
+      </div>
+      <div class="lesson-card-arrow">
+        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
     </a>
   ))}

@@ -1,18 +1,24 @@
 ---
+interface Track {
+  title: string;
+  description?: string;
+  src: string;
+}
 interface Props {
-  tracks: { title: string; subtitle?: string; audio: string }[];
+  tracks: Track[];
 }
 const { tracks } = Astro.props;
 ---
 
-{tracks.length > 0 && (
-  <div class="player-list">
-    {tracks.map((track) => (
-      <article class="track">
-        <h3>{track.title}</h3>
-        {track.subtitle && <p>{track.subtitle}</p>}
-        <audio controls preload="none" src={track.audio}></audio>
-      </article>
-    ))}
-  </div>
-)}
+<div class="track-list">
+  {tracks.map((track) => (
+    <div class="track-item">
+      <h3>{track.title}</h3>
+      {track.description && <p>{track.description}</p>}
+      <audio controls preload="none">
+        <source src={track.src} />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  ))}
+</div>

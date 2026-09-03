@@ -1,58 +1,183 @@
 ---
-import AudioList from "../components/AudioList.astro";
+import Base from "../layouts/Base.astro";
 import LessonGrid from "../components/LessonGrid.astro";
+import AudioList from "../components/AudioList.astro";
 import {
   bitachonAttributes,
   homeIntro,
   homeTracks,
   lessons,
   teacherBio,
+  site,
+  content,
 } from "../data/site";
-import Base from "../layouts/Base.astro";
 ---
 
 <Base title="Trust Hashem" description={homeIntro}>
-  <section class="hero" style="background-image: url('/images/hero.webp')">
-    <div class="wrap hero-inner">
-      <div class="eyebrow">Emunah & Bitachon</div>
-      <h1>Trust Hashem</h1>
-      <p>{homeIntro}</p>
-      <div class="actions">
-        <a class="btn btn-gold" href="/library/">Enter the library</a>
-        <a class="btn btn-ghost" href="/donate/">Donate</a>
+
+  <!-- ═══ HERO ═══════════════════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image:url('/images/hero.webp')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="wrap">
+        <div class="hero-eyebrow">Emunah & Bitachon · Geula, Jerusalem</div>
+        <h1>Trust&nbsp;Hashem.<br/>Find Your Peace.</h1>
+        <p class="hero-subtitle">{homeIntro}</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="/library/">Explore the Library</a>
+          <a class="btn btn-outline" href="/who-we-are/">About Rebbetzin Donner</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- ═══ INTRO QUOTE ══════════════════════════════════════════════════ -->
+  <section class="section section-alt">
     <div class="wrap">
-      <h2>The seven attributes of Bitachon</h2>
-      <ol class="attributes">
-        {bitachonAttributes.map((item) => <li>{item}</li>)}
-      </ol>
+      <div class="pull-quote">
+        <blockquote>
+          "Bitachon is not passive resignation — it is the active knowledge that Hashem is with you, guiding every detail of your life with infinite wisdom and love."
+        </blockquote>
+        <cite>— Shaar HaBitachon, Chovos HaLevavos</cite>
+      </div>
     </div>
   </section>
 
+  <!-- ═══ 7 ATTRIBUTES OF BITACHON ══════════════════════════════════════ -->
   <section class="section">
     <div class="wrap">
-      <h2>Who teaches</h2>
-      <p class="lede">{teacherBio}</p>
+      <div class="section-header">
+        <span class="eyebrow">Foundation</span>
+        <h2>The Seven Attributes of Bitachon</h2>
+        <div class="divider"></div>
+        <p class="lead">
+          Chovos HaLevavos outlines seven foundational truths about Hashem that give a person complete trust and security.
+        </p>
+      </div>
+      <div class="attributes-grid">
+        {bitachonAttributes.map((attr) => (
+          <div class="attr-item">
+            <p>{attr}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- ═══ LESSON SERIES ════════════════════════════════════════════════ -->
+  <section class="section section-alt">
     <div class="wrap">
-      <h2>My lessons</h2>
-      <p class="lede">Every series keeps its original TrustHashem.org address.</p>
+      <div class="section-header">
+        <span class="eyebrow">Teachings</span>
+        <h2>Lesson Series</h2>
+        <div class="divider"></div>
+        <p class="lead">
+          Dive deep into Torah wisdom with these complete series by Rebbetzin Leah Donner — each one a transformative journey.
+        </p>
+      </div>
       <LessonGrid lessons={lessons} />
+      <div style="margin-top:2.5rem">
+        <a class="btn btn-wine" href="/library/">View all series →</a>
+      </div>
     </div>
   </section>
 
+  <!-- ═══ WHO TEACHES ══════════════════════════════════════════════════ -->
   <section class="section">
     <div class="wrap">
-      <h2>Introduction to Emunah and Bitachon</h2>
-      <p class="lede">The homepage series, taught by Rebbetzin Leah Donner.</p>
-      <AudioList tracks={homeTracks} />
+      <div class="bio-block">
+        <div>
+          <img
+            class="bio-img"
+            src="/images/logo-270.jpeg"
+            alt="Rebbetzin Leah Donner"
+          />
+        </div>
+        <div class="bio-text">
+          <span class="eyebrow" style="color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:.75rem;font-weight:600;display:block;margin-bottom:.6rem">The Teacher</span>
+          <h2>Rebbetzin Leah Donner</h2>
+          <div class="divider" style="margin-bottom:1.5rem"></div>
+          <p>{teacherBio}</p>
+          <div class="bio-blessings">
+            <span class="bio-blessing">HaGaon HaRav Yacov Moshe Hillel</span>
+            <span class="bio-blessing">Rabbi Yonason David</span>
+            <span class="bio-blessing">HaRav Itamar Schwartz</span>
+          </div>
+          <div style="margin-top:2rem">
+            <a class="btn btn-gold" href="/who-we-are/">Learn more</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- ═══ INTRO AUDIO ══════════════════════════════════════════════════ -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">Listen</span>
+        <h2>Introduction to Emunah & Bitachon</h2>
+        <div class="divider"></div>
+        <p class="lead">Begin your journey here. These foundational lessons will open the gates of trust.</p>
+      </div>
+      <AudioList tracks={homeTracks} />
+      <div style="margin-top:2.5rem">
+        <a class="btn btn-wine" href="/audio/">Browse all audio →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DONATE ════════════════════════════════════════════════════════ -->
+  <section class="section section-gold">
+    <div class="wrap">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+        <div>
+          <span style="font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--gold-light);display:block;margin-bottom:.75rem">Support This Work</span>
+          <h2 style="color:#fff;font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:1rem">Help Spread the Light of Torah</h2>
+          <p style="color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:2rem">
+            Your contribution — of any size — keeps these teachings free and accessible to Jewish people everywhere. Every donation creates a ripple of learning, faith, and connection to Hashem.
+          </p>
+          <a class="btn btn-gold" href="/donate/">Donate Now</a>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:24px;padding:2.5rem">
+          <p style="color:rgba(255,255,255,.7);font-size:1rem;margin-bottom:1.5rem;font-style:italic">"One mitzvah leads to another, building a world of kindness and light."</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value={content.paypalButtonId} />
+            <input type="hidden" name="currency_code" value="USD" />
+            <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">
+              Donate via PayPal
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHATSAPP / DAILY LESSON ════════════════════════════════════════ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="whatsapp-banner">
+        <div class="whatsapp-icon">💬</div>
+        <div>
+          <h3>Receive a Daily Lesson on WhatsApp</h3>
+          <p>A short, inspiring Torah thought — delivered to your phone every day. Free and easy to join.</p>
+          <a class="btn btn-gold btn-sm" href={site.homeWhatsapp} rel="noopener noreferrer" target="_blank">
+            Join the WhatsApp Group
+          </a>
+          <p style="font-size:.8rem;opacity:.7;margin-top:.75rem;margin-bottom:0">
+            If the group is full, email <a href={`mailto:${site.email}`} style="color:var(--gold-light)">{site.email}</a> to join a new group.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </Base>
+
+<style>
+  @media (max-width: 700px) {
+    .section-gold > .wrap > div { grid-template-columns: 1fr !important; }
+  }
+</style>
