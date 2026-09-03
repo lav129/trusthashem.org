@@ -18,25 +18,70 @@ const displayed = (limit ? lessons.slice(0, limit) : lessons).map((lesson) => ({
 }));
 ---
 
-<div class="lesson-grid">
+<div class="series-grid">
   {displayed.map((lesson) => (
-    <a class="lesson-card" href={`/${lesson.slug}/`}>
+    <a class="series-card" href={`/${lesson.slug}/`}>
       <img
-        class="lesson-card-thumb"
-        src={lesson.image || "/images/logo-270.jpeg"}
-        alt={lesson.title}
+        class="series-card-media"
+        src={lesson.image || "/images/podcasts/bitachon.jpg"}
+        alt=""
         loading="lazy"
       />
-      <div class="lesson-card-body">
+      <div class="series-card-body">
         <h3>{lesson.title}</h3>
         {lesson.n > 0 && <p>{lesson.n} lesson{lesson.n !== 1 ? "s" : ""}</p>}
-        {lesson.description && !lesson.n && <p>{lesson.description.slice(0, 80)}{lesson.description.length > 80 ? "…" : ""}</p>}
-      </div>
-      <div class="lesson-card-arrow">
-        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
       </div>
     </a>
   ))}
 </div>
+
+<style>
+  .series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.15rem;
+  }
+  .series-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow-sm);
+    transition: transform .22s, box-shadow .22s, border-color .22s;
+    min-width: 0;
+  }
+  .series-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-gold);
+  }
+  .series-card-media {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    background: #ede4d3;
+  }
+  .series-card-body {
+    padding: 0.95rem 1rem 1.1rem;
+  }
+  .series-card-body h3 {
+    font-size: 1.02rem;
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+    overflow-wrap: anywhere;
+  }
+  .series-card-body p {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+  @media (max-width: 600px) {
+    .series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+    .series-card-body { padding: 0.75rem; }
+    .series-card-body h3 { font-size: 0.92rem; }
+  }
+</style>

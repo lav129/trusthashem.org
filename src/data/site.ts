@@ -85,6 +85,36 @@ export const bitachonSlugs = [
   "yonah-journey-of-the-soul",
 ];
 
+/** Prefer real podcast artwork over legacy screenshots. */
+const lessonCoverBySlug: Record<string, string> = {
+  "laws-of-lashon-hara": "/images/podcasts/lashonhara.jpg",
+  "book-of-psalms": "/images/podcasts/tehillim.jpg",
+  "ahavas-yisrael": "/images/podcasts/ahavasyisrael.jpg",
+  "meeting-with-the-king-of-kings": "/images/podcasts/trusthashem.jpg",
+  "understanding-shema-amidah-tefillah-what-are-you-really-saying":
+    "/images/podcasts/knowwhatyousaytefillah.jpg",
+  "knowing-gods-plan": "/images/podcasts/knowinggdsplanramchal.jpg",
+  "the-path-of-the-just": "/images/podcasts/ramchal.jpg",
+  "the-10-gates-of-chovos-halevavos": "/images/podcasts/10_gates.jpg",
+  "yonah-journey-of-the-soul": "/images/podcasts/yonah-thejourneyofthesoul.jpg",
+  "pirkei-avot-ethics-of-our-fathers": "/images/podcasts/pirkeiavot.jpg",
+  "secrets-of-redemption": "/images/podcasts/hageulah.jpg",
+  "the-pele-yoetz": "/images/podcasts/peleyoetz.jpg",
+  "the-power-of-the-festivals": "/images/podcasts/festivals.jpg",
+  "the-tomer-devorah": "/images/podcasts/thetomerdevorah.jpg",
+  "roni-akarah-guide-for-the-childless": "/images/podcasts/havingchildren.jpg",
+  "shidduchim-mine-or-hashems": "/images/podcasts/shidduchim.jpg",
+  "gateways-to-hashem": "/images/podcasts/gatewaystohashem.jpg",
+  "master-your-words-master-your-life": "/images/podcasts/lashonhara.jpg",
+  "how-to-create-the-neshama-of-a-mitzvah-sefer-kaasher-tzivah-hashem":
+    "/images/podcasts/bitachon.jpg",
+  "the-13-principles-of-faith": "/images/podcasts/the13principles.jpg",
+};
+
 export { content };
-export const lessons = content.lessons;
+export const lessons = (content.lessons || []).map((lesson: any) => ({
+  ...lesson,
+  image: lessonCoverBySlug[lesson.slug] || lesson.image,
+  count: lesson.count || lesson.tracks?.length || 0,
+}));
 export const homeTracks = content.homeTracks;

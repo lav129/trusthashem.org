@@ -14,20 +14,36 @@ interface Props {
 const { tracks } = Astro.props;
 
 const playable = tracks.filter((track) => track.audio || track.src);
+
+function fileNameFromUrl(url: string, title: string) {
+  try {
+    const last = new URL(url).pathname.split("/").pop() || "";
+    if (last.toLowerCase().endsWith(".ogg") || last.toLowerCase().endsWith(".mp3")) return last;
+  } catch {}
+  return `${title.replace(/[^\w\s-]+/g, "").trim().replace(/\s+/g, "-") || "track"}.ogg`;
+}
 ---
 
 {playable.length > 0 ? (
   <div class="track-list">
     {playable.map((track) => {
       const src = mediaUrl(track.audio || track.src || "");
+      const fileName = fileNameFromUrl(src, track.title);
       return (
         <div class="track-item">
-          <h3>{track.title}</h3>
-          {(track.subtitle || track.description) && (
-            <p>{track.subtitle || track.description}</p>
-          )}
+          <div class="track-head">
+            <div>
+              <h3>{track.title}</h3>
+              {(track.subtitle || track.description) && (
+                <p>{track.subtitle || track.description}</p>
+              )}
+            </div>
+            <a class="track-download" href={`${src}${src.includes("?") ? "&" : "?"}download=1`} download={fileName} rel="noopener">
+              Download
+            </a>
+          </div>
           <div class="audio-wrap">
-            <audio controls preload="none" controlslist="nodownload">
+            <audio controls preload="none">
               <source src={src} type="audio/ogg" />
               Your browser does not support the audio element.
             </audio>
@@ -39,3 +55,36 @@ const playable = tracks.filter((track) => track.audio || track.src);
 ) : (
   <p class="empty-note">Audio for this series is being prepared. Please check back soon or email bitachon@trusthashem.org.</p>
 )}
+
+<style>
+  .track-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.35rem;
+  }
+  .track-head h3 { margin-bottom: 0.2rem; }
+  .track-head p { margin-bottom: 0; }
+  .track-download {
+    flex-shrink: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    border: 1px solid var(--border-gold);
+    border-radius: 999px;
+    padding: 0.4rem 0.8rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .track-download:hover {
+    background: var(--border-gold);
+    color: var(--ink);
+  }
+  @media (max-width: 600px) {
+    .track-head { flex-direction: column; gap: 0.55rem; }
+    .track-download { align-self: flex-start; }
+  }
+</style>

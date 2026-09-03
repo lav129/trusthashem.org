@@ -15,9 +15,21 @@ import Base from "../../layouts/Base.astro";
   </section>
   <section class="section">
     <div class="wrap">
-      <h2>Introduction to Emunah and Bitachon</h2>
-      <AudioList tracks={homeTracks} />
-      <h2>All series</h2>
+      <div class="section-header">
+        <span class="eyebrow">Start here</span>
+        <h2>Introduction to Emunah & Bitachon</h2>
+        <div class="divider"></div>
+        <p class="lead">A short set of foundational lessons — play or download each track.</p>
+      </div>
+      <AudioList tracks={homeTracks.slice(0, 8)} />
+      <div style="margin:2rem 0 2.5rem">
+        <a class="btn btn-wine" href="/library/">Browse every series →</a>
+      </div>
+      <div class="section-header">
+        <span class="eyebrow">Series</span>
+        <h2>Continue by topic</h2>
+        <div class="divider"></div>
+      </div>
       <LessonGrid lessons={lessons} />
     </div>
   </section>

@@ -16,20 +16,19 @@ import { podcasts } from "../data/podcasts";
 const featuredPodcasts = podcasts.slice(0, 6);
 ---
 
-<Base title="Trust Hashem" description={homeIntro} image="/images/photo-jerusalem.jpg">
+<Base title="Trust Hashem" description={homeIntro} image="/images/hero/hero-city.jpg">
 
   <!-- ═══ HERO ═══════════════════════════════════════════════════════════ -->
   <section class="hero">
-    <div class="hero-bg" style="background-image:url('/images/photo-jerusalem.jpg')"></div>
-    <div class="hero-overlay"></div>
+    <div class="hero-bg" style="background-image:url('/images/hero/hero-city.jpg')"></div>
     <div class="hero-content">
       <div class="wrap">
         <div class="hero-eyebrow">Emunah & Bitachon · Geula, Jerusalem</div>
         <h1>Trust&nbsp;Hashem.<br/>Find Your Peace.</h1>
         <p class="hero-subtitle">{homeIntro}</p>
         <div class="hero-actions">
-          <a class="btn btn-gold" href="/library/">Explore the Library</a>
-          <a class="btn btn-outline" href="/podcasts/">Listen to Podcasts</a>
+          <a class="btn btn-gold" href="/audio/">Explore Audio</a>
+          <a class="btn btn-outline" href="/library/">Browse Library</a>
         </div>
       </div>
     </div>
@@ -183,7 +182,7 @@ const featuredPodcasts = podcasts.slice(0, 6);
         <div class="divider"></div>
         <p class="lead">Begin your journey here. These foundational lessons will open the gates of trust.</p>
       </div>
-      <AudioList tracks={homeTracks} />
+      <AudioList tracks={homeTracks.slice(0, 6)} />
       <div style="margin-top:2.5rem">
         <a class="btn btn-wine" href="/audio/">Browse all audio →</a>
       </div>

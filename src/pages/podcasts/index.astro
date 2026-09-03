@@ -83,12 +83,17 @@ import { podcasts } from "../../data/podcasts";
   .podcasts-hero-bg {
     position: absolute;
     inset: 0;
-    background:
-      linear-gradient(120deg, rgba(253,248,240,.94) 35%, rgba(253,248,240,.55) 70%, rgba(253,248,240,.2)),
-      url("/images/photo-books.jpg") center / cover no-repeat;
+    background: url("/images/photo-books.jpg") center / cover no-repeat;
     animation: panBg 28s ease-in-out infinite alternate;
     z-index: 0;
   }
+  .podcasts-hero .eyebrow,
+  .podcasts-hero h1,
+  .podcasts-hero .lede {
+    color: #fff;
+    text-shadow: 0 2px 16px rgba(0,0,0,.5);
+  }
+  .podcasts-hero .lede { color: rgba(255,255,255,.92); }
   .podcasts-hero .wrap { position: relative; z-index: 1; }
 
   .podcast-toolbar {

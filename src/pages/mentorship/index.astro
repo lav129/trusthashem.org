@@ -236,9 +236,7 @@ import Base from "../../layouts/Base.astro";
 
   .mentor-banner {
     padding: clamp(4rem, 8vw, 6rem) 0;
-    background:
-      linear-gradient(rgba(12,26,18,0.72), rgba(12,26,18,0.82)),
-      url("/images/photo-jerusalem.jpg") center / cover no-repeat;
+    background: url("/images/photo-jerusalem.jpg") center / cover no-repeat;
     background-attachment: fixed;
     color: #fff;
     text-align: center;
@@ -251,16 +249,19 @@ import Base from "../../layouts/Base.astro";
     font-size: 0.78rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
+    text-shadow: 0 1px 10px rgba(0,0,0,.45);
   }
   .mentor-banner h2 {
     font-size: clamp(2rem, 5vw, 3.2rem);
     color: #fff;
     margin-bottom: 0.85rem;
+    text-shadow: 0 2px 16px rgba(0,0,0,.55);
   }
   .mentor-banner p {
-    color: rgba(255,255,255,0.82);
+    color: rgba(255,255,255,0.95);
     margin-inline: auto;
     margin-bottom: 1.75rem;
+    text-shadow: 0 2px 12px rgba(0,0,0,.5);
   }
 
   @keyframes mentorFloat {
