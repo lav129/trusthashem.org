@@ -1,6 +1,6 @@
 import content from "./content.json";
 
-export const mediaBase = "https://trusthashem-media.thelavglow.workers.dev";
+export const mediaBase = "https://tender-stars-mate.loca.lt";
 
 export function mediaUrl(src = "") {
   return src.replace("https://trusthashem.org/wp-content", `${mediaBase}/wp-content`);
