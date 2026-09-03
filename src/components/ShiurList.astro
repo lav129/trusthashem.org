@@ -1,0 +1,155 @@
+---
+import { mediaUrl } from "../data/site";
+
+interface Track {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  audio?: string;
+  src?: string;
+}
+interface Props {
+  tracks: Track[];
+  moreHref?: string;
+  moreLabel?: string;
+}
+const { tracks, moreHref = "/audio/", moreLabel = "Browse all →" } = Astro.props;
+const playable = tracks.filter((t) => t.audio || t.src).slice(0, 6);
+---
+
+<div class="shiur-list">
+  {playable.map((track, i) => {
+    const src = mediaUrl(track.audio || track.src || "");
+    const id = `shiur-${i}`;
+    return (
+      <div class="shiur-row" data-shiur>
+        <button type="button" class="shiur-toggle" aria-expanded="false" aria-controls={id} data-src={src}>
+          <span class="shiur-play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          <span class="shiur-meta">
+            <span class="shiur-title">{track.title}</span>
+            {(track.subtitle || track.description) && (
+              <span class="shiur-sub">{track.subtitle || track.description}</span>
+            )}
+          </span>
+        </button>
+        <div class="shiur-player" id={id} hidden>
+          <audio controls preload="none" controlsList="">
+            <source src={src} type="audio/ogg" />
+          </audio>
+          <a class="shiur-dl" href={`${src}${src.includes("?") ? "&" : "?"}download=1`} download rel="noopener">Download</a>
+        </div>
+      </div>
+    );
+  })}
+</div>
+{moreHref && (
+  <div class="shiur-more">
+    <a href={moreHref}>{moreLabel}</a>
+  </div>
+)}
+
+<style>
+  .shiur-list {
+    border-top: 1px solid var(--border);
+  }
+  .shiur-row {
+    border-bottom: 1px solid var(--border);
+  }
+  .shiur-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0.15rem;
+    background: none;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+  }
+  .shiur-toggle:hover .shiur-title { color: var(--wine); }
+  .shiur-play {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-gold);
+    display: grid;
+    place-items: center;
+    color: var(--wine);
+    background: var(--paper);
+  }
+  .shiur-toggle[aria-expanded="true"] .shiur-play {
+    background: var(--wine);
+    color: #fff;
+    border-color: var(--wine);
+  }
+  .shiur-meta { min-width: 0; display: grid; gap: 0.2rem; }
+  .shiur-title {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .shiur-sub {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+  }
+  .shiur-player {
+    padding: 0 0 1rem 3.4rem;
+    display: grid;
+    gap: 0.65rem;
+  }
+  .shiur-player[hidden] { display: none; }
+  .shiur-player audio { width: 100%; }
+  .shiur-dl {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    text-decoration: none;
+    width: fit-content;
+  }
+  .shiur-more {
+    margin-top: 1.5rem;
+  }
+  .shiur-more a {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--wine);
+    text-decoration: none;
+  }
+  .shiur-more a:hover { color: var(--gold-deep); }
+  @media (max-width: 600px) {
+    .shiur-player { padding-left: 0; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-shiur]").forEach((row) => {
+    const btn = row.querySelector<HTMLButtonElement>(".shiur-toggle");
+    const panel = row.querySelector<HTMLElement>(".shiur-player");
+    const audio = panel?.querySelector("audio");
+    btn?.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-expanded") === "true";
+      document.querySelectorAll<HTMLButtonElement>(".shiur-toggle").forEach((other) => {
+        if (other === btn) return;
+        other.setAttribute("aria-expanded", "false");
+        const p = other.closest("[data-shiur]")?.querySelector<HTMLElement>(".shiur-player");
+        const a = p?.querySelector("audio");
+        if (p) p.hidden = true;
+        a?.pause();
+      });
+      btn.setAttribute("aria-expanded", open ? "false" : "true");
+      if (panel) panel.hidden = open;
+      if (open) audio?.pause();
+      else audio?.play().catch(() => {});
+    });
+  });
+</script>

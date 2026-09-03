@@ -1,0 +1,65 @@
+---
+interface Topic {
+  title: string;
+  blurb: string;
+  href: string;
+}
+interface Props {
+  topics: Topic[];
+}
+const { topics } = Astro.props;
+---
+
+<div class="topic-grid">
+  {topics.map((topic) => (
+    <a class="topic-card" href={topic.href}>
+      <h3>{topic.title}</h3>
+      <p>{topic.blurb}</p>
+      <span>Explore →</span>
+    </a>
+  ))}
+</div>
+
+<style>
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .topic-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 1.35rem 1.25rem 1.2rem;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    min-height: 100%;
+    transition: border-color .2s, transform .2s;
+  }
+  .topic-card:hover {
+    border-color: var(--border-gold);
+    transform: translateY(-2px);
+  }
+  .topic-card h3 {
+    font-size: 1.15rem;
+    margin: 0;
+    line-height: 1.25;
+  }
+  .topic-card p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+    flex: 1;
+  }
+  .topic-card span {
+    margin-top: 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--wine);
+  }
+</style>

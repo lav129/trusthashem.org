@@ -1,15 +1,15 @@
 ---
 import LessonGrid from "../../components/LessonGrid.astro";
-import { lessons } from "../../data/site";
+import { featuredSeries } from "../../data/site";
 import Base from "../../layouts/Base.astro";
 ---
 
-<Base title="Videos" description="Watch Trust Hashem on YouTube and explore every lesson series.">
+<Base title="Videos" description="Watch Trust Hashem on YouTube and explore featured lesson series.">
   <section class="page-hero">
     <div class="wrap">
       <div class="eyebrow">Watch</div>
-      <h1>Videos & Series</h1>
-      <p class="lede">Follow the Trust Hashem YouTube channel, then open any series below for the full audio shiurim.</p>
+      <h1>Videos</h1>
+      <p class="lede">Play the Trust Hashem YouTube channel here, then continue into a featured series.</p>
     </div>
   </section>
 
@@ -37,12 +37,15 @@ import Base from "../../layouts/Base.astro";
   <section class="section">
     <div class="wrap">
       <div class="section-header">
-        <span class="eyebrow">All Series</span>
-        <h2>Every Lesson Series</h2>
+        <span class="eyebrow">Continue</span>
+        <h2>Featured Series</h2>
         <div class="divider"></div>
-        <p class="lead">Each card opens a full series with every audio lesson connected and ready to play.</p>
+        <p class="lead">Open a series for the full audio lessons — play and download on-site.</p>
       </div>
-      <LessonGrid lessons={lessons} />
+      <LessonGrid lessons={featuredSeries as any} />
+      <div style="margin-top:2.5rem">
+        <a class="btn btn-wine" href="/library/">Browse all series →</a>
+      </div>
     </div>
   </section>
 </Base>

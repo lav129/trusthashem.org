@@ -1,36 +1,74 @@
 ---
-import AudioList from "../../components/AudioList.astro";
 import LessonGrid from "../../components/LessonGrid.astro";
-import { homeTracks, lessons } from "../../data/site";
+import SeriesRows from "../../components/SeriesRows.astro";
+import ShiurList from "../../components/ShiurList.astro";
+import TopicBrowse from "../../components/TopicBrowse.astro";
+import {
+  audioTopics,
+  featuredSeries,
+  homeTracks,
+  lessonsBySlugs,
+} from "../../data/site";
 import Base from "../../layouts/Base.astro";
+
+const popular = homeTracks.slice(0, 5);
 ---
 
-<Base title="Audio" description="Audio lessons from Trust Hashem, taught by Rebbetzin Leah Donner.">
+<Base title="Audio" description="Browse Trust Hashem audio by topic — neat series lists, not endless players.">
   <section class="page-hero">
     <div class="wrap">
       <div class="eyebrow">Listen</div>
       <h1>Audio</h1>
-      <p class="lede">Start with the homepage series, then open any series in the library.</p>
+      <p class="lede">Browse by topic, start with a few popular lessons, then open any series.</p>
     </div>
   </section>
+
   <section class="section">
     <div class="wrap">
       <div class="section-header">
         <span class="eyebrow">Start here</span>
-        <h2>Introduction to Emunah & Bitachon</h2>
+        <h2>Browse by Topic</h2>
         <div class="divider"></div>
-        <p class="lead">A short set of foundational lessons — play or download each track.</p>
+        <p class="lead">Begin with the path that speaks to where you are now.</p>
       </div>
-      <AudioList tracks={homeTracks.slice(0, 8)} />
-      <div style="margin:2rem 0 2.5rem">
-        <a class="btn btn-wine" href="/library/">Browse every series →</a>
-      </div>
-      <div class="section-header">
-        <span class="eyebrow">Series</span>
-        <h2>Continue by topic</h2>
-        <div class="divider"></div>
-      </div>
-      <LessonGrid lessons={lessons} />
+      <TopicBrowse topics={audioTopics.map(({ title, blurb, href }) => ({ title, blurb, href }))} />
     </div>
   </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">Essential</span>
+        <h2>Featured Series</h2>
+        <div class="divider"></div>
+      </div>
+      <LessonGrid lessons={featuredSeries as any} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">Popular</span>
+        <h2>Introduction to Emunah & Bitachon</h2>
+        <div class="divider"></div>
+        <p class="lead">Five foundational lessons — tap to play, download anytime.</p>
+      </div>
+      <ShiurList tracks={popular} moreHref="/library/" moreLabel="Browse every series →" />
+    </div>
+  </section>
+
+  {audioTopics.map((topic) => (
+    <section class="section" id={topic.id}>
+      <div class="wrap">
+        <div class="section-header">
+          <span class="eyebrow">Series</span>
+          <h2>{topic.title}</h2>
+          <div class="divider"></div>
+          <p class="lead">{topic.blurb}</p>
+        </div>
+        <SeriesRows lessons={lessonsBySlugs(topic.slugs) as any} />
+      </div>
+    </section>
+  ))}
 </Base>

@@ -1,20 +1,46 @@
 ---
-import LessonGrid from "../../components/LessonGrid.astro";
-import { lessons } from "../../data/site";
+import SeriesRows from "../../components/SeriesRows.astro";
+import TopicBrowse from "../../components/TopicBrowse.astro";
+import { audioTopics, lessonsBySlugs } from "../../data/site";
 import Base from "../../layouts/Base.astro";
 ---
 
-<Base title="Library" description="All Trust Hashem lesson series, with their original addresses.">
+<Base title="Library" description="Trust Hashem lesson series organized by topic.">
   <section class="page-hero">
     <div class="wrap">
       <div class="eyebrow">Teachings</div>
       <h1>Library</h1>
-      <p class="lede">The series taught on TrustHashem.org, kept at the same URLs.</p>
+      <p class="lede">Series organized by topic — open one path at a time.</p>
     </div>
   </section>
+
   <section class="section">
     <div class="wrap">
-      <LessonGrid lessons={lessons} />
+      <div class="section-header">
+        <span class="eyebrow">Browse</span>
+        <h2>By Topic</h2>
+        <div class="divider"></div>
+      </div>
+      <TopicBrowse
+        topics={audioTopics.map(({ title, blurb, id }) => ({
+          title,
+          blurb,
+          href: `#${id}`,
+        }))}
+      />
     </div>
   </section>
+
+  {audioTopics.map((topic) => (
+    <section class="section section-alt" id={topic.id}>
+      <div class="wrap">
+        <div class="section-header">
+          <h2>{topic.title}</h2>
+          <div class="divider"></div>
+          <p class="lead">{topic.blurb}</p>
+        </div>
+        <SeriesRows lessons={lessonsBySlugs(topic.slugs) as any} />
+      </div>
+    </section>
+  ))}
 </Base>

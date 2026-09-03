@@ -118,3 +118,75 @@ export const lessons = (content.lessons || []).map((lesson: any) => ({
   count: lesson.count || lesson.tracks?.length || 0,
 }));
 export const homeTracks = content.homeTracks;
+
+export const featuredSeriesSlugs = [
+  "the-10-gates-of-chovos-halevavos",
+  "laws-of-lashon-hara",
+  "book-of-psalms",
+  "the-power-of-the-festivals",
+];
+
+export const featuredSeries = featuredSeriesSlugs
+  .map((slug) => lessons.find((l: any) => l.slug === slug))
+  .filter(Boolean);
+
+export const audioTopics = [
+  {
+    id: "bitachon",
+    title: "Bitachon & Trust",
+    blurb: "Live with quiet confidence in Hashem’s care.",
+    href: "/audio/#bitachon",
+    slugs: bitachonSlugs,
+  },
+  {
+    id: "emunah",
+    title: "Emunah & Faith",
+    blurb: "Foundations of belief and knowing Hashem.",
+    href: "/audio/#emunah",
+    slugs: emunahSlugs,
+  },
+  {
+    id: "classic",
+    title: "Classic Sefarim",
+    blurb: "Mesillat Yesharim, Pele Yoetz, Pirkei Avot, and more.",
+    href: "/audio/#classic",
+    slugs: [
+      "the-path-of-the-just",
+      "the-pele-yoetz",
+      "pirkei-avot-ethics-of-our-fathers",
+      "the-tomer-devorah",
+      "laws-of-lashon-hara",
+      "master-your-words-master-your-life",
+    ],
+  },
+  {
+    id: "life",
+    title: "Life & Relationships",
+    blurb: "Shidduchim, family, speech, and daily living.",
+    href: "/audio/#life",
+    slugs: [
+      "shidduchim-mine-or-hashems",
+      "roni-akarah-guide-for-the-childless",
+      "ahavas-yisrael",
+      "how-to-create-the-neshama-of-a-mitzvah-sefer-kaasher-tzivah-hashem",
+    ],
+  },
+  {
+    id: "festivals",
+    title: "Festivals & Prayer",
+    blurb: "The Jewish year, Tehillim, and tefillah.",
+    href: "/audio/#festivals",
+    slugs: [
+      "the-power-of-the-festivals",
+      "book-of-psalms",
+      "understanding-shema-amidah-tefillah-what-are-you-really-saying",
+      "meeting-with-the-king-of-kings",
+    ],
+  },
+];
+
+export function lessonsBySlugs(slugs: string[]) {
+  return slugs
+    .map((slug) => lessons.find((l: any) => l.slug === slug))
+    .filter(Boolean);
+}

@@ -1,12 +1,14 @@
 ---
 import Base from "../layouts/Base.astro";
 import LessonGrid from "../components/LessonGrid.astro";
-import AudioList from "../components/AudioList.astro";
+import ShiurList from "../components/ShiurList.astro";
+import TopicBrowse from "../components/TopicBrowse.astro";
 import {
   bitachonAttributes,
   homeIntro,
   homeTracks,
-  lessons,
+  featuredSeries,
+  audioTopics,
   teacherBio,
   site,
   content,
@@ -14,6 +16,7 @@ import {
 import { podcasts } from "../data/podcasts";
 
 const featuredPodcasts = podcasts.slice(0, 6);
+const popularTracks = homeTracks.slice(0, 5);
 ---
 
 <Base title="Trust Hashem" description={homeIntro} image="/images/hero/hero-city.jpg">
@@ -107,20 +110,31 @@ const featuredPodcasts = podcasts.slice(0, 6);
     </div>
   </section>
 
-  <!-- ═══ LESSON SERIES ════════════════════════════════════════════════ -->
+  <!-- ═══ BROWSE BY TOPIC ══════════════════════════════════════════════ -->
   <section class="section">
     <div class="wrap">
       <div class="section-header">
-        <span class="eyebrow">Teachings</span>
-        <h2>Lesson Series</h2>
+        <span class="eyebrow">Begin here</span>
+        <h2>Browse by Topic</h2>
         <div class="divider"></div>
-        <p class="lead">
-          Dive deep into Torah wisdom with these complete series by Rebbetzin Leah Donner — each one a transformative journey.
-        </p>
+        <p class="lead">Choose the path that speaks to where you are now.</p>
       </div>
-      <LessonGrid lessons={lessons} />
+      <TopicBrowse topics={audioTopics.map(({ title, blurb, href }) => ({ title, blurb, href }))} />
+    </div>
+  </section>
+
+  <!-- ═══ FEATURED SERIES ══════════════════════════════════════════════ -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">Teachings</span>
+        <h2>Featured Series</h2>
+        <div class="divider"></div>
+        <p class="lead">A few essential series to start with — not the whole library at once.</p>
+      </div>
+      <LessonGrid lessons={featuredSeries as any} />
       <div style="margin-top:2.5rem">
-        <a class="btn btn-wine" href="/library/">View all series →</a>
+        <a class="btn btn-wine" href="/library/">Browse all series →</a>
       </div>
     </div>
   </section>
@@ -173,19 +187,16 @@ const featuredPodcasts = podcasts.slice(0, 6);
     </div>
   </section>
 
-  <!-- ═══ INTRO AUDIO ══════════════════════════════════════════════════ -->
+  <!-- ═══ LISTEN ═══════════════════════════════════════════════════════ -->
   <section class="section section-alt">
     <div class="wrap">
       <div class="section-header">
         <span class="eyebrow">Listen</span>
-        <h2>Introduction to Emunah & Bitachon</h2>
+        <h2>Popular Lessons</h2>
         <div class="divider"></div>
-        <p class="lead">Begin your journey here. These foundational lessons will open the gates of trust.</p>
+        <p class="lead">A short start to Emunah & Bitachon — tap a title to play.</p>
       </div>
-      <AudioList tracks={homeTracks.slice(0, 6)} />
-      <div style="margin-top:2.5rem">
-        <a class="btn btn-wine" href="/audio/">Browse all audio →</a>
-      </div>
+      <ShiurList tracks={popularTracks} moreHref="/audio/" moreLabel="Browse all audio →" />
     </div>
   </section>
 

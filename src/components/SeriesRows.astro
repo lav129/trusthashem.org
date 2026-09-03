@@ -1,0 +1,62 @@
+---
+interface Lesson {
+  slug: string;
+  title: string;
+  count?: number;
+  tracks?: { title: string }[];
+}
+interface Props {
+  lessons: Lesson[];
+  limit?: number;
+}
+const { lessons, limit } = Astro.props;
+const rows = (limit ? lessons.slice(0, limit) : lessons).map((lesson) => ({
+  ...lesson,
+  n: lesson.count || lesson.tracks?.length || 0,
+}));
+---
+
+<div class="series-rows">
+  {rows.map((lesson) => (
+    <a class="series-row" href={`/${lesson.slug}/`}>
+      <span class="series-row-title">{lesson.title}</span>
+      {lesson.n > 0 && (
+        <span class="series-row-meta">{lesson.n}-Part Series</span>
+      )}
+    </a>
+  ))}
+</div>
+
+<style>
+  .series-rows {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--border);
+  }
+  .series-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.95rem 0.1rem;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+  }
+  .series-row:hover .series-row-title { color: var(--wine); }
+  .series-row-title {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .series-row-meta {
+    flex-shrink: 0;
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 600px) {
+    .series-row { flex-direction: column; gap: 0.25rem; }
+  }
+</style>
