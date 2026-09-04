@@ -827,40 +827,40 @@ p { max-width: 66ch; }
   .hero-content { padding: 4.25rem 0 2.5rem; }
   .hero-copy { max-width: none; }
   .hero-with-cutout {
-    min-height: min(78vh, 620px);
+    min-height: min(82vh, 680px);
     align-items: flex-end;
   }
   .hero-woman {
     position: absolute;
-    right: -18%;
+    right: -22%;
     left: auto;
-    bottom: -4%;
+    bottom: -8%;
     margin: 0;
-    height: min(48vh, 360px);
-    max-width: min(78vw, 280px);
+    height: min(54vh, 400px);
+    max-width: min(88vw, 300px);
     z-index: 0;
-    opacity: 0.88;
-    -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 8%, #000 100%);
-    mask-image: linear-gradient(to top, transparent 0%, #000 8%, #000 100%);
+    opacity: 0.95;
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 10%, #000 100%);
+    mask-image: linear-gradient(to top, transparent 0%, #000 10%, #000 100%);
   }
   .hero-with-cutout .hero-content {
-    padding-top: 3.25rem;
-    padding-bottom: 2.5rem;
+    padding-top: 3rem;
+    padding-bottom: 2.75rem;
   }
   .hero-with-cutout .hero-copy {
     position: relative;
     z-index: 2;
-    max-width: 92%;
+    max-width: 100%;
   }
   .hero-with-cutout h1,
   .hero-with-cutout .hero-subtitle,
   .hero-with-cutout .hero-eyebrow {
-    text-shadow: 0 1px 0 rgba(247,241,228,0.9), 0 0 18px rgba(247,241,228,0.85);
+    text-shadow: 0 1px 0 rgba(247,241,228,1), 0 0 22px rgba(247,241,228,1);
   }
   .hero-with-cutout .hero-wash {
     background:
-      linear-gradient(180deg, rgba(247,241,228,0.98) 0%, rgba(247,241,228,0.94) 42%, rgba(247,241,228,0.55) 68%, rgba(247,241,228,0.82) 100%),
-      linear-gradient(105deg, rgba(247,241,228,0.98) 0%, rgba(247,241,228,0.88) 52%, rgba(247,241,228,0.28) 100%);
+      linear-gradient(180deg, #f7f1e4 0%, rgba(247,241,228,0.97) 48%, rgba(247,241,228,0.55) 72%, rgba(247,241,228,0.8) 100%),
+      linear-gradient(115deg, #f7f1e4 0%, rgba(247,241,228,0.92) 46%, rgba(247,241,228,0.35) 72%, rgba(247,241,228,0.15) 100%);
   }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; justify-content: center; white-space: normal; }
