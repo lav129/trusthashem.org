@@ -834,7 +834,7 @@ p { max-width: 66ch; }
     position: absolute;
     left: 50%;
     right: auto;
-    bottom: 6%;
+    bottom: 14%;
     margin: 0;
     margin-left: -38%;
     height: min(76vh, 540px);
