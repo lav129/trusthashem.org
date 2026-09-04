@@ -810,7 +810,13 @@ p { max-width: 66ch; }
   .main-nav a { padding: 0.65rem 0.75rem; font-size: 1rem; }
   .main-nav .nav-cta { margin-left: 0; text-align: center; }
   .bio-block { grid-template-columns: 1fr; }
-  .bio-img { max-height: 380px; border-radius: 16px; }
+  .bio-img {
+    max-height: none;
+    width: min(100%, 380px);
+    margin-inline: auto;
+    display: block;
+    border-radius: 16px;
+  }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .lesson-grid { grid-template-columns: 1fr; }
   .lesson-page { grid-template-columns: 1fr; }
