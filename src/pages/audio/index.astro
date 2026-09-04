@@ -1,4 +1,5 @@
 ---
+import ExploreMore from "../../components/ExploreMore.astro";
 import LessonGrid from "../../components/LessonGrid.astro";
 import SeriesRows from "../../components/SeriesRows.astro";
 import ShiurList from "../../components/ShiurList.astro";
@@ -43,6 +44,7 @@ const popular = homeTracks.slice(0, 5);
         <div class="divider"></div>
       </div>
       <LessonGrid lessons={featuredSeries as any} />
+      <ExploreMore href="/library/" />
     </div>
   </section>
 
@@ -54,7 +56,8 @@ const popular = homeTracks.slice(0, 5);
         <div class="divider"></div>
         <p class="lead">Five foundational lessons — tap to play, download anytime.</p>
       </div>
-      <ShiurList tracks={popular} moreHref="/library/" moreLabel="Browse every series →" />
+      <ShiurList tracks={popular} />
+      <ExploreMore href="/library/" label="Explore Library" />
     </div>
   </section>
 
@@ -68,6 +71,7 @@ const popular = homeTracks.slice(0, 5);
           <p class="lead">{topic.blurb}</p>
         </div>
         <SeriesRows lessons={lessonsBySlugs(topic.slugs) as any} />
+        <ExploreMore href="/library/" />
       </div>
     </section>
   ))}

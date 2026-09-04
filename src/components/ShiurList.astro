@@ -13,7 +13,7 @@ interface Props {
   moreHref?: string;
   moreLabel?: string;
 }
-const { tracks, moreHref = "/audio/", moreLabel = "Browse all →" } = Astro.props;
+const { tracks, moreHref = "", moreLabel = "Browse all →" } = Astro.props;
 const playable = tracks.filter((t) => t.audio || t.src).slice(0, 6);
 ---
 

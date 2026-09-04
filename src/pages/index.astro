@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import LessonGrid from "../components/LessonGrid.astro";
 import ShiurList from "../components/ShiurList.astro";
 import TopicBrowse from "../components/TopicBrowse.astro";
+import ExploreMore from "../components/ExploreMore.astro";
 import {
   bitachonAttributes,
   homeIntro,
@@ -17,22 +18,25 @@ import { podcasts } from "../data/podcasts";
 
 const featuredPodcasts = podcasts.slice(0, 6);
 const popularTracks = homeTracks.slice(0, 5);
-const HERO_IMG = "/images/hero/hero-sky.jpg?v=20260903";
+const HERO_WOMAN = "/images/hero/hero-woman.png?v=20260904";
 ---
 
-<Base title="Trust Hashem" description={homeIntro} image="/images/hero/hero-sky.jpg">
+<Base title="Trust Hashem" description={homeIntro} image="/images/hero/hero-woman.png">
 
   <!-- ═══ HERO ═══════════════════════════════════════════════════════════ -->
-  <section class="hero">
-    <img class="hero-bg" src={HERO_IMG} alt="" />
+  <section class="hero hero-with-cutout">
+    <div class="hero-wash" aria-hidden="true"></div>
+    <img class="hero-woman" src={HERO_WOMAN} alt="Rebbetzin Leah Donner" />
     <div class="hero-content">
-      <div class="wrap">
-        <div class="hero-eyebrow">Emunah & Bitachon · Geula, Jerusalem</div>
-        <h1>Trust&nbsp;Hashem.<br/>Find Your Peace.</h1>
-        <p class="hero-subtitle">{homeIntro}</p>
-        <div class="hero-actions">
-          <a class="btn btn-gold" href="/audio/">Explore Audio</a>
-          <a class="btn btn-outline" href="/library/">Browse Library</a>
+      <div class="wrap hero-split">
+        <div class="hero-copy">
+          <div class="hero-eyebrow">Emunah & Bitachon · Geula, Jerusalem</div>
+          <h1>Trust&nbsp;Hashem.<br/>Find Your Peace.</h1>
+          <p class="hero-subtitle">{homeIntro}</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="/audio/">Explore Audio</a>
+            <a class="btn btn-outline-dark" href="/library/">Browse Library</a>
+          </div>
         </div>
       </div>
     </div>
@@ -106,8 +110,8 @@ const HERO_IMG = "/images/hero/hero-sky.jpg?v=20260903";
           </a>
         ))}
       </div>
-      <div style="margin-top:2.5rem">
-        <a class="btn btn-wine" href="/podcasts/">Browse all podcasts →</a>
+      <div style="margin-top:0.5rem">
+        <ExploreMore href="/podcasts/" />
       </div>
     </div>
   </section>
@@ -122,6 +126,7 @@ const HERO_IMG = "/images/hero/hero-sky.jpg?v=20260903";
         <p class="lead">Choose the path that speaks to where you are now.</p>
       </div>
       <TopicBrowse topics={audioTopics.map(({ title, blurb, href }) => ({ title, blurb, href }))} />
+      <ExploreMore href="/audio/" />
     </div>
   </section>
 
@@ -135,9 +140,7 @@ const HERO_IMG = "/images/hero/hero-sky.jpg?v=20260903";
         <p class="lead">A few essential series to start with — not the whole library at once.</p>
       </div>
       <LessonGrid lessons={featuredSeries as any} />
-      <div style="margin-top:2.5rem">
-        <a class="btn btn-wine" href="/library/">Browse all series →</a>
-      </div>
+      <ExploreMore href="/library/" />
     </div>
   </section>
 
@@ -198,7 +201,8 @@ const HERO_IMG = "/images/hero/hero-sky.jpg?v=20260903";
         <div class="divider"></div>
         <p class="lead">A short start to Emunah & Bitachon — tap a title to play.</p>
       </div>
-      <ShiurList tracks={popularTracks} moreHref="/audio/" moreLabel="Browse all audio →" />
+      <ShiurList tracks={popularTracks} moreHref="" moreLabel="" />
+      <ExploreMore href="/audio/" />
     </div>
   </section>
 

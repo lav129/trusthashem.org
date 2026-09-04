@@ -38,6 +38,12 @@ const path = Astro.url.pathname;
     <meta name="theme-color" content="#6b241d" />
   </head>
   <body>
+    <div id="welcome-splash" class="welcome-splash" hidden>
+      <div class="welcome-splash-card">
+        <img src="/images/logo-270.jpeg" alt="Trust Hashem" width="72" height="72" />
+        <p>Welcome to Trust Hashem</p>
+      </div>
+    </div>
     <a class="skip" href="#main">Skip to content</a>
 
     <header class="site-header">
@@ -128,13 +134,28 @@ const path = Astro.url.pathname;
         const open = nav?.classList.toggle("open");
         btn.setAttribute("aria-expanded", open ? "true" : "false");
       });
-      // close on outside click
       document.addEventListener("click", (e) => {
         if (!btn?.contains(e.target as Node) && !nav?.contains(e.target as Node)) {
           nav?.classList.remove("open");
           btn?.setAttribute("aria-expanded", "false");
         }
       });
+
+      const splash = document.getElementById("welcome-splash");
+      try {
+        if (splash && !sessionStorage.getItem("th-welcome")) {
+          splash.hidden = false;
+          sessionStorage.setItem("th-welcome", "1");
+          window.setTimeout(() => {
+            splash.classList.add("is-leaving");
+            window.setTimeout(() => splash.remove(), 420);
+          }, 1000);
+        } else {
+          splash?.remove();
+        }
+      } catch {
+        splash?.remove();
+      }
     </script>
   </body>
 </html>

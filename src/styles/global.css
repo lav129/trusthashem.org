@@ -176,11 +176,36 @@ p { max-width: 66ch; }
 /* ─── HERO ──────────────────────────────────────────────────────────────── */
 .hero {
   position: relative;
-  min-height: min(90vh, 800px);
+  min-height: min(88vh, 780px);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  color: #fff;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 78% 30%, rgba(212,175,55,0.18), transparent 42%),
+    linear-gradient(155deg, #f7f1e4 0%, #ebe0cc 45%, #d9c7a8 100%);
+}
+.hero-with-cutout .hero-wash {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(247,241,228,0.96) 0%, rgba(247,241,228,0.72) 42%, transparent 68%),
+    linear-gradient(180deg, transparent 55%, rgba(247,241,228,0.55) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-woman {
+  position: absolute;
+  right: clamp(-2%, 2vw, 6%);
+  bottom: 0;
+  height: min(92%, 720px);
+  width: auto;
+  max-width: min(48vw, 520px);
+  object-fit: contain;
+  object-position: bottom center;
+  z-index: 1;
+  filter: drop-shadow(0 18px 40px rgba(40,24,8,0.22));
+  pointer-events: none;
 }
 .hero-bg {
   position: absolute;
@@ -211,7 +236,29 @@ p { max-width: 66ch; }
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 6rem 0 5rem;
+  padding: 5.5rem 0 4.5rem;
+}
+.hero-split { max-width: 72rem; }
+.hero-copy { max-width: min(36rem, 54%); }
+.hero-with-cutout .hero-eyebrow { color: var(--wine); text-shadow: none; }
+.hero-with-cutout .hero-eyebrow::before { background: var(--gold); }
+.hero-with-cutout h1 {
+  color: var(--ink);
+  text-shadow: none;
+}
+.hero-with-cutout .hero-subtitle {
+  color: var(--ink-soft);
+  text-shadow: none;
+}
+.btn-outline-dark {
+  background: transparent;
+  color: var(--ink);
+  border-color: rgba(107,36,29,0.35);
+}
+.btn-outline-dark:hover {
+  background: rgba(107,36,29,0.08);
+  color: var(--ink);
+  border-color: var(--wine);
 }
 .hero-eyebrow {
   display: inline-flex;
@@ -677,6 +724,43 @@ p { max-width: 66ch; }
 .footer-bottom a { color: rgba(255,255,255,.45); }
 .footer-bottom a:hover { color: var(--gold-light); }
 
+/* ─── WELCOME SPLASH ────────────────────────────────────────────────────── */
+.welcome-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: rgba(247,241,228,0.94);
+  transition: opacity .4s ease, transform .4s ease;
+}
+.welcome-splash.is-leaving {
+  opacity: 0;
+  transform: translateY(-18px) scale(0.96);
+  pointer-events: none;
+}
+.welcome-splash-card {
+  text-align: center;
+  animation: welcomeIn .35s ease;
+}
+.welcome-splash-card img {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  box-shadow: var(--shadow-md);
+  object-fit: cover;
+}
+.welcome-splash-card p {
+  margin: 0.85rem 0 0;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+@keyframes welcomeIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+
 /* ─── HEBREW ────────────────────────────────────────────────────────────── */
 .bsd {
   font-family: var(--hebrew);
@@ -719,7 +803,28 @@ p { max-width: 66ch; }
 }
 @media (max-width: 600px) {
   .hero h1 { font-size: clamp(1.7rem, 9vw, 2.1rem); max-width: none; }
-  .hero-content { padding: 4.5rem 0 3rem; }
+  .hero-content { padding: 4.25rem 0 2.5rem; }
+  .hero-copy { max-width: none; }
+  .hero-woman {
+    position: relative;
+    right: auto;
+    left: auto;
+    display: block;
+    margin: 0.5rem auto -1rem;
+    height: min(48vh, 340px);
+    max-width: min(86vw, 300px);
+    z-index: 2;
+  }
+  .hero-with-cutout {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    min-height: auto;
+    padding-top: 1rem;
+  }
+  .hero-with-cutout .hero-wash {
+    background:
+      linear-gradient(180deg, rgba(247,241,228,0.2) 0%, rgba(247,241,228,0.85) 70%, #f7f1e4 100%);
+  }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; justify-content: center; white-space: normal; }
   .btn { white-space: normal; text-align: center; }

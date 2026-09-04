@@ -1,4 +1,5 @@
 ---
+import ExploreMore from "../../components/ExploreMore.astro";
 import SeriesRows from "../../components/SeriesRows.astro";
 import TopicBrowse from "../../components/TopicBrowse.astro";
 import { audioTopics, lessonsBySlugs } from "../../data/site";
@@ -28,6 +29,7 @@ import Base from "../../layouts/Base.astro";
           href: `#${id}`,
         }))}
       />
+      <ExploreMore href="/audio/" label="Explore Audio" />
     </div>
   </section>
 

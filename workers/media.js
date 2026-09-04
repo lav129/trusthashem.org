@@ -1,4 +1,5 @@
-const ORIGIN = "https://ftp.trusthashem.org";
+/** Proxies audio via local media proxy exposed at ORIGIN (localhost.run). */
+const ORIGIN = "https://66f540d5644890.lhr.life";
 
 const cors = {
   "Access-Control-Allow-Origin": "*",
@@ -15,13 +16,16 @@ export default {
     if (!url.pathname.startsWith("/wp-content/")) {
       return new Response("Not found", { status: 404, headers: cors });
     }
+
     const headers = new Headers();
     if (request.headers.get("Range")) headers.set("Range", request.headers.get("Range"));
     headers.set("User-Agent", "TrustHashemMedia/1.0");
+
     const res = await fetch(ORIGIN + url.pathname, {
       method: request.method === "HEAD" ? "HEAD" : "GET",
       headers,
     });
+
     const out = new Headers(res.headers);
     out.set("Access-Control-Allow-Origin", "*");
     out.set(
@@ -29,6 +33,8 @@ export default {
       "Content-Length, Content-Range, Accept-Ranges, Content-Disposition",
     );
     out.delete("Set-Cookie");
+    if (!out.has("Cache-Control")) out.set("Cache-Control", "public, max-age=3600");
+
     const fileName = decodeURIComponent(url.pathname.split("/").pop() || "lesson.ogg");
     out.set(
       "Content-Disposition",
@@ -36,6 +42,7 @@ export default {
         ? `attachment; filename="${fileName.replace(/"/g, "")}"`
         : "inline",
     );
+
     return new Response(res.body, { status: res.status, headers: out });
   },
 };

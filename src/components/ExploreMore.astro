@@ -1,0 +1,46 @@
+---
+/** Small Joey-style "Explore More" link */
+interface Props {
+  href: string;
+  label?: string;
+}
+const { href, label = "Explore More" } = Astro.props;
+---
+
+<a class="explore-more" href={href}>
+  <span>{label}</span>
+  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+    <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</a>
+
+<style>
+  .explore-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 1.75rem;
+    padding: 0.55rem 1.05rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--wine);
+    background: rgba(255,255,255,0.72);
+    border: 1px solid var(--border-gold);
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+    transition: transform .18s, background .18s, border-color .18s, color .18s;
+  }
+  .explore-more:hover {
+    transform: translateY(-1px);
+    background: #fff;
+    border-color: var(--wine);
+    color: var(--ink);
+  }
+  .section-alt .explore-more,
+  .section-gold .explore-more {
+    background: rgba(255,255,255,0.9);
+  }
+</style>
