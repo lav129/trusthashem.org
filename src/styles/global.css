@@ -857,26 +857,26 @@ p { max-width: 66ch; }
     z-index: 2;
     max-width: 100%;
   }
-  .hero-with-cutout .hero-eyebrow {
-    color: rgba(255, 236, 200, 0.95);
+  .hero.hero-with-cutout .hero-eyebrow {
+    color: #fff;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
   }
-  .hero-with-cutout .hero-eyebrow::before {
+  .hero.hero-with-cutout .hero-eyebrow::before {
     background: rgba(255, 214, 140, 0.95);
   }
-  .hero-with-cutout h1 {
+  .hero.hero-with-cutout h1 {
     color: #fff;
     text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.35);
   }
-  .hero-with-cutout .hero-subtitle {
-    color: rgba(255, 252, 246, 0.92);
+  .hero.hero-with-cutout .hero-subtitle {
+    color: rgba(255, 255, 255, 0.94);
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
   }
-  .hero-with-cutout .btn-outline-dark {
+  .hero.hero-with-cutout .btn-outline-dark {
     color: #fff;
-    border-color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.75);
   }
-  .hero-with-cutout .btn-outline-dark:hover {
+  .hero.hero-with-cutout .btn-outline-dark:hover {
     background: rgba(255, 255, 255, 0.14);
     color: #fff;
     border-color: #fff;
