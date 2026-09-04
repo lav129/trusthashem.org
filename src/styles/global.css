@@ -873,12 +873,16 @@ p { max-width: 66ch; }
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
   }
   .hero.hero-with-cutout .btn-outline-dark {
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.75);
+    color: var(--ink);
+    background: rgba(247, 241, 228, 0.94);
+    border-color: rgba(247, 241, 228, 0.98);
+    font-weight: 700;
+    text-shadow: none;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
   }
   .hero.hero-with-cutout .btn-outline-dark:hover {
-    background: rgba(255, 255, 255, 0.14);
-    color: #fff;
+    background: #fff;
+    color: var(--ink);
     border-color: #fff;
   }
   .hero-with-cutout .hero-wash {
