@@ -840,11 +840,11 @@ p { max-width: 66ch; }
     height: min(76vh, 540px);
     max-width: min(96vw, 360px);
     z-index: 0;
-    opacity: 0.82;
+    opacity: 0.95;
     object-position: top center;
     filter:
-      contrast(1.08) saturate(1.05) brightness(0.96)
-      drop-shadow(0 16px 32px rgba(40, 24, 8, 0.2));
+      contrast(1.12) saturate(1.04) brightness(0.72)
+      drop-shadow(0 16px 32px rgba(20, 12, 6, 0.35));
     -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 10%, #000 100%);
     mask-image: linear-gradient(to top, transparent 0%, #000 10%, #000 100%);
   }
@@ -858,21 +858,33 @@ p { max-width: 66ch; }
     max-width: 100%;
   }
   .hero-with-cutout .hero-eyebrow {
-    color: rgba(107, 36, 29, 0.78);
-    text-shadow: 0 1px 0 rgba(247,241,228,0.95), 0 0 16px rgba(247,241,228,0.85);
+    color: rgba(255, 236, 200, 0.95);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+  }
+  .hero-with-cutout .hero-eyebrow::before {
+    background: rgba(255, 214, 140, 0.95);
   }
   .hero-with-cutout h1 {
-    color: rgba(48, 32, 22, 0.9);
-    text-shadow: 0 1px 0 rgba(247,241,228,0.98), 0 0 22px rgba(247,241,228,0.95);
+    color: #fff;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.35);
   }
   .hero-with-cutout .hero-subtitle {
-    color: rgba(72, 54, 40, 0.86);
-    text-shadow: 0 1px 0 rgba(247,241,228,0.95), 0 0 18px rgba(247,241,228,0.9);
+    color: rgba(255, 252, 246, 0.92);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+  }
+  .hero-with-cutout .btn-outline-dark {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+  .hero-with-cutout .btn-outline-dark:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    border-color: #fff;
   }
   .hero-with-cutout .hero-wash {
     background:
-      linear-gradient(180deg, rgba(247,241,228,0.78) 0%, rgba(247,241,228,0.42) 26%, rgba(247,241,228,0.12) 48%, rgba(247,241,228,0.35) 74%, rgba(247,241,228,0.92) 100%),
-      linear-gradient(100deg, rgba(247,241,228,0.7) 0%, rgba(247,241,228,0.2) 55%, transparent 100%);
+      linear-gradient(180deg, rgba(28, 18, 10, 0.42) 0%, rgba(28, 18, 10, 0.28) 32%, rgba(28, 18, 10, 0.18) 55%, rgba(247,241,228,0.55) 82%, #f7f1e4 100%),
+      linear-gradient(105deg, rgba(28, 18, 10, 0.35) 0%, rgba(28, 18, 10, 0.12) 48%, transparent 78%);
   }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; justify-content: center; white-space: normal; }
