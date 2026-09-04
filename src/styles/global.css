@@ -204,8 +204,9 @@ p { max-width: 66ch; }
   object-fit: contain;
   object-position: bottom center;
   z-index: 1;
+  mix-blend-mode: multiply;
   filter:
-    drop-shadow(0 28px 55px rgba(40, 24, 8, 0.2));
+    drop-shadow(0 28px 55px rgba(40, 24, 8, 0.16));
   -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 5%, #000 100%);
   mask-image: linear-gradient(to top, transparent 0%, #000 5%, #000 100%);
   pointer-events: none;
