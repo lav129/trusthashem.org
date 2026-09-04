@@ -30,6 +30,7 @@ const displayed = (limit ? lessons.slice(0, limit) : lessons).map((lesson) => ({
       <div class="series-card-body">
         <h3>{lesson.title}</h3>
         {lesson.n > 0 && <p>{lesson.n} lesson{lesson.n !== 1 ? "s" : ""}</p>}
+        <span class="series-explore">Explore More →</span>
       </div>
     </a>
   ))}
@@ -79,6 +80,13 @@ const displayed = (limit ? lessons.slice(0, limit) : lessons).map((lesson) => ({
     font-size: 0.82rem;
     color: var(--ink-muted);
     margin: 0;
+  }
+  .series-explore {
+    display: inline-block;
+    margin-top: 0.65rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #3a6ea5;
   }
   @media (max-width: 600px) {
     .series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }

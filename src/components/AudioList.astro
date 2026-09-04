@@ -38,7 +38,12 @@ function fileNameFromUrl(url: string, title: string) {
                 <p>{track.subtitle || track.description}</p>
               )}
             </div>
-            <a class="track-download" href={`${src}${src.includes("?") ? "&" : "?"}download=1`} download={fileName} rel="noopener">
+            <a
+              class="track-download js-audio-download"
+              href={`${src}${src.includes("?") ? "&" : "?"}download=1`}
+              data-filename={fileName}
+              rel="noopener"
+            >
               Download
             </a>
           </div>

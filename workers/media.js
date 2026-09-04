@@ -1,5 +1,5 @@
 /** Proxies audio via local media proxy exposed at ORIGIN (localhost.run). */
-const ORIGIN = "https://66f540d5644890.lhr.life";
+const ORIGIN = "https://e5242d972fbc58.lhr.life";
 
 const cors = {
   "Access-Control-Allow-Origin": "*",

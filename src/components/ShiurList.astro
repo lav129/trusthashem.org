@@ -38,7 +38,12 @@ const playable = tracks.filter((t) => t.audio || t.src).slice(0, 6);
           <audio controls preload="none">
             <source src={src} type={audioType(src)} />
           </audio>
-          <a class="shiur-dl" href={`${src}${src.includes("?") ? "&" : "?"}download=1`} download rel="noopener">Download</a>
+          <a
+            class="shiur-dl js-audio-download"
+            href={`${src}${src.includes("?") ? "&" : "?"}download=1`}
+            data-filename={(src.split("/").pop() || "lesson.ogg").split("?")[0]}
+            rel="noopener"
+          >Download</a>
         </div>
       </div>
     );

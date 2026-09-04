@@ -40,7 +40,7 @@ const path = Astro.url.pathname;
   <body>
     <div id="welcome-splash" class="welcome-splash" hidden>
       <div class="welcome-splash-card">
-        <img src="/images/logo-270.jpeg" alt="Trust Hashem" width="72" height="72" />
+        <img src="/images/logo-270.jpeg" alt="Trust Hashem" width="220" height="220" />
         <p>Welcome to Trust Hashem</p>
       </div>
     </div>
@@ -156,6 +156,33 @@ const path = Astro.url.pathname;
       } catch {
         splash?.remove();
       }
+
+      document.addEventListener("click", async (e) => {
+        const link = (e.target as HTMLElement | null)?.closest?.("a.js-audio-download") as HTMLAnchorElement | null;
+        if (!link) return;
+        e.preventDefault();
+        const url = link.href;
+        const fileName = link.dataset.filename || decodeURIComponent(url.split("/").pop()?.split("?")[0] || "lesson.ogg");
+        const prev = link.textContent;
+        link.textContent = "Saving…";
+        try {
+          const res = await fetch(url);
+          if (!res.ok) throw new Error(String(res.status));
+          const blob = await res.blob();
+          const objectUrl = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = objectUrl;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(objectUrl);
+        } catch {
+          window.open(url, "_blank", "noopener");
+        } finally {
+          link.textContent = prev || "Download";
+        }
+      });
     </script>
   </body>
 </html>

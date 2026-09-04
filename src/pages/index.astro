@@ -54,18 +54,6 @@ const HERO_WOMAN = "/images/hero/hero-woman.png?v=20260904";
     </div>
   </section>
 
-  <!-- ═══ VISUAL BAND ══════════════════════════════════════════════════ -->
-  <section class="photo-band" aria-hidden="true">
-    <div class="photo-band-track">
-      <img src="/images/photo-sky.jpg" alt="" />
-      <img src="/images/photo-light.jpg" alt="" />
-      <img src="/images/photo-books.jpg" alt="" />
-      <img src="/images/leah-donner-portrait.jpg" alt="" />
-      <img src="/images/mentorship-you-within.jpg" alt="" />
-      <img src="/images/photo-hands.jpg" alt="" />
-    </div>
-  </section>
-
   <!-- ═══ 7 ATTRIBUTES OF BITACHON ══════════════════════════════════════ -->
   <section class="section">
     <div class="wrap">
@@ -95,24 +83,23 @@ const HERO_WOMAN = "/images/hero/hero-woman.png?v=20260904";
         <h2>Podcasts</h2>
         <div class="divider"></div>
         <p class="lead">
-          Classic sefarim, festivals, Bitachon, and women's learning groups — listen on JewishPodcasts.fm.
+          Classic sefarim, festivals, Bitachon, and women's learning groups — play every show on Trust Hashem.
         </p>
       </div>
       <div class="home-podcast-grid">
         {featuredPodcasts.map((show) => (
-          <a class="home-podcast-card" href={show.href} target="_blank" rel="noopener noreferrer">
+          <a class="home-podcast-card" href={`/podcasts/#${show.slug}`}>
             <img src={show.image || "/images/photo-books.jpg"} alt="" loading="lazy" />
             <div>
               {show.tag && <span class="card-tag">{show.tag}</span>}
               <h3>{show.title}</h3>
               <p>{show.blurb}</p>
+              <span class="home-podcast-listen">Listen →</span>
             </div>
           </a>
         ))}
       </div>
-      <div style="margin-top:0.5rem">
-        <ExploreMore href="/podcasts/" />
-      </div>
+      <ExploreMore href="/podcasts/" label="Explore More" />
     </div>
   </section>
 
@@ -133,14 +120,16 @@ const HERO_WOMAN = "/images/hero/hero-woman.png?v=20260904";
   <!-- ═══ FEATURED SERIES ══════════════════════════════════════════════ -->
   <section class="section section-alt">
     <div class="wrap">
-      <div class="section-header">
-        <span class="eyebrow">Teachings</span>
-        <h2>Featured Series</h2>
-        <div class="divider"></div>
-        <p class="lead">A few essential series to start with — not the whole library at once.</p>
+      <div class="section-header section-header-row">
+        <div>
+          <span class="eyebrow">Teachings</span>
+          <h2>Featured Series</h2>
+          <div class="divider"></div>
+          <p class="lead">A few essential series to start with — not the whole library at once.</p>
+        </div>
+        <ExploreMore href="/library/" label="Explore More" align="end" />
       </div>
       <LessonGrid lessons={featuredSeries as any} />
-      <ExploreMore href="/library/" />
     </div>
   </section>
 
@@ -311,6 +300,23 @@ const HERO_WOMAN = "/images/hero/hero-woman.png?v=20260904";
     font-size: 0.82rem;
     color: var(--ink-muted);
     margin: 0;
+  }
+  .home-podcast-listen {
+    display: inline-block;
+    margin-top: 0.45rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #3a6ea5;
+  }
+  .section-header-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .section-header-row .explore-more { margin-top: 0.35rem; }
+  @media (max-width: 700px) {
+    .section-header-row { flex-direction: column; gap: 0.5rem; }
   }
   .home-mentor {
     padding: clamp(4rem, 8vw, 6.5rem) 0;

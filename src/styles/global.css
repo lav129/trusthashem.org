@@ -189,23 +189,32 @@ p { max-width: 66ch; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(247,241,228,0.96) 0%, rgba(247,241,228,0.72) 42%, transparent 68%),
-    linear-gradient(180deg, transparent 55%, rgba(247,241,228,0.55) 100%);
+    linear-gradient(90deg, rgba(247,241,228,0.97) 0%, rgba(247,241,228,0.78) 38%, rgba(247,241,228,0.15) 62%, transparent 78%),
+    linear-gradient(180deg, transparent 50%, rgba(247,241,228,0.72) 100%);
   z-index: 1;
   pointer-events: none;
 }
 .hero-woman {
   position: absolute;
-  right: clamp(-2%, 2vw, 6%);
+  right: clamp(0%, 3vw, 7%);
   bottom: 0;
-  height: min(92%, 720px);
+  height: min(94%, 740px);
   width: auto;
-  max-width: min(48vw, 520px);
+  max-width: min(46vw, 500px);
   object-fit: contain;
   object-position: bottom center;
   z-index: 1;
-  filter: drop-shadow(0 18px 40px rgba(40,24,8,0.22));
+  filter:
+    drop-shadow(0 22px 48px rgba(40, 24, 8, 0.18))
+    drop-shadow(0 2px 0 rgba(247, 241, 228, 0.35));
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 4%, #000 100%);
+  mask-image: linear-gradient(to top, transparent 0%, #000 4%, #000 100%);
   pointer-events: none;
+  animation: heroWomanIn 0.9s ease both;
+}
+@keyframes heroWomanIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
 }
 .hero-bg {
   position: absolute;
@@ -744,17 +753,24 @@ p { max-width: 66ch; }
   animation: welcomeIn .35s ease;
 }
 .welcome-splash-card img {
-  width: 72px;
-  height: 72px;
-  border-radius: 18px;
-  box-shadow: var(--shadow-md);
+  width: min(42vw, 220px);
+  height: min(42vw, 220px);
+  border-radius: 36px;
+  box-shadow: 0 28px 70px rgba(40, 24, 8, 0.22);
   object-fit: cover;
 }
 .welcome-splash-card p {
-  margin: 0.85rem 0 0;
+  margin: 1.15rem 0 0;
   font-family: var(--serif);
-  font-size: 1.15rem;
+  font-size: clamp(1.15rem, 3.5vw, 1.45rem);
   color: var(--ink);
+}
+@media (max-width: 600px) {
+  .welcome-splash-card img {
+    width: min(58vw, 168px);
+    height: min(58vw, 168px);
+    border-radius: 28px;
+  }
 }
 @keyframes welcomeIn {
   from { opacity: 0; transform: translateY(10px) scale(0.97); }
@@ -810,10 +826,12 @@ p { max-width: 66ch; }
     right: auto;
     left: auto;
     display: block;
-    margin: 0.5rem auto -1rem;
-    height: min(48vh, 340px);
-    max-width: min(86vw, 300px);
+    margin: 0.25rem auto -0.5rem;
+    height: min(42vh, 300px);
+    max-width: min(78vw, 260px);
     z-index: 2;
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 6%, #000 100%);
+    mask-image: linear-gradient(to top, transparent 0%, #000 6%, #000 100%);
   }
   .hero-with-cutout {
     flex-direction: column-reverse;

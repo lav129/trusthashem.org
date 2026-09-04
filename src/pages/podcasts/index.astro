@@ -1,11 +1,18 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { podcasts } from "../../data/podcasts";
+import { podcasts, fetchPodcastEpisodes } from "../../data/podcasts";
+
+const shows = await Promise.all(
+  podcasts.map(async (show) => ({
+    ...show,
+    episodes: await fetchPodcastEpisodes(show.showId, 5),
+  })),
+);
 ---
 
 <Base
   title="Podcasts"
-  description="Explore Trust Hashem podcasts on JewishPodcasts.fm — Bitachon, Emunah, festivals, classic sefarim, and women's learning groups."
+  description="Listen to Trust Hashem podcasts directly on this site — Bitachon, Emunah, festivals, classic sefarim, and women's learning groups."
   image="/images/photo-books.jpg"
 >
   <section class="page-hero podcasts-hero">
@@ -14,7 +21,7 @@ import { podcasts } from "../../data/podcasts";
       <div class="eyebrow">Listen anywhere</div>
       <h1>Podcasts</h1>
       <p class="lede">
-        Shiurim you can take with you — festivals, classic mussar, Bitachon, Tehillim, and women's learning groups, all on JewishPodcasts.fm.
+        Shiurim you can take with you — festivals, classic mussar, Bitachon, Tehillim, and women's learning groups. Play every show right here.
       </p>
     </div>
   </section>
@@ -39,32 +46,53 @@ import { podcasts } from "../../data/podcasts";
         </div>
       </div>
 
-      <p class="podcast-count" id="podcast-count" aria-live="polite">{podcasts.length} shows</p>
+      <p class="podcast-count" id="podcast-count" aria-live="polite">{shows.length} shows</p>
 
       <div class="podcast-grid" id="podcast-grid">
-        {podcasts.map((show) => (
-          <a
+        {shows.map((show) => (
+          <article
             class="podcast-card"
-            href={show.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            id={show.slug}
             data-title={show.title.toLowerCase()}
             data-blurb={show.blurb.toLowerCase()}
             data-tag={show.tag || ""}
           >
             <div class="podcast-card-media">
               <img src={show.image || "/images/photo-books.jpg"} alt="" loading="lazy" />
-              <span class="podcast-play" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </span>
             </div>
             <div class="podcast-card-body">
               {show.tag && <span class="card-tag">{show.tag}</span>}
               <h2>{show.title}</h2>
               <p>{show.blurb}</p>
-              <span class="podcast-cta">Listen on JewishPodcasts →</span>
+
+              {show.episodes.length > 0 ? (
+                <div class="podcast-episodes">
+                  {show.episodes.map((ep) => (
+                    <div class="podcast-ep">
+                      <div class="podcast-ep-head">
+                        <h3>{ep.title}</h3>
+                        <a
+                          class="js-audio-download"
+                          href={ep.src}
+                          data-filename={`${ep.title.replace(/[^\w\s-]+/g, "").trim().replace(/\s+/g, "-") || "episode"}.mp3`}
+                          rel="noopener"
+                        >Download</a>
+                      </div>
+                      <audio controls preload="none">
+                        <source src={ep.src} type="audio/mpeg" />
+                      </audio>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p class="podcast-fallback">Episodes are loading shortly. You can also open the full show externally.</p>
+              )}
+
+              <a class="podcast-cta" href={show.href} target="_blank" rel="noopener noreferrer">
+                Full show on JewishPodcasts →
+              </a>
             </div>
-          </a>
+          </article>
         ))}
       </div>
 
@@ -146,7 +174,7 @@ import { podcasts } from "../../data/podcasts";
   }
   .podcast-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.35rem;
   }
   .podcast-card {
@@ -156,16 +184,10 @@ import { podcasts } from "../../data/podcasts";
     border: 1px solid var(--border);
     border-radius: 22px;
     overflow: hidden;
-    text-decoration: none;
     color: inherit;
     box-shadow: var(--shadow-sm);
-    transition: transform .25s, box-shadow .25s, border-color .25s;
     min-width: 0;
-  }
-  .podcast-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--border-gold);
+    scroll-margin-top: 6rem;
   }
   .podcast-card-media {
     position: relative;
@@ -178,20 +200,6 @@ import { podcasts } from "../../data/podcasts";
     height: 100%;
     object-fit: contain;
     object-position: center;
-    transition: transform 0.7s ease;
-  }
-  .podcast-card:hover .podcast-card-media img { transform: scale(1.05); }
-  .podcast-play {
-    position: absolute;
-    inset: auto 1rem 1rem auto;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(114,42,34,0.92);
-    color: #fff;
-    display: grid;
-    place-items: center;
-    box-shadow: var(--shadow-md);
   }
   .podcast-card-body {
     padding: 1.2rem 1.3rem 1.4rem;
@@ -205,19 +213,60 @@ import { podcasts } from "../../data/podcasts";
     line-height: 1.3;
     overflow-wrap: anywhere;
   }
-  .podcast-card-body p {
+  .podcast-card-body > p {
     font-size: 0.9rem;
     color: var(--ink-muted);
     margin: 0;
+  }
+  .podcast-episodes {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 0.55rem;
+  }
+  .podcast-ep {
+    padding: 0.75rem 0 0;
+    border-top: 1px solid var(--border);
+  }
+  .podcast-ep-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+  }
+  .podcast-ep h3 {
+    font-family: var(--sans, inherit);
+    font-size: 0.86rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0;
+    color: var(--ink);
+  }
+  .podcast-ep audio { width: 100%; }
+  .podcast-ep .js-audio-download {
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    text-decoration: none;
+  }
+  .podcast-fallback {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    margin: 0.5rem 0 0;
   }
   .podcast-cta {
     margin-top: auto;
     padding-top: 0.85rem;
     font-size: 0.82rem;
     font-weight: 700;
-    color: var(--gold-deep);
-    letter-spacing: 0.02em;
+    color: #3a6ea5;
+    letter-spacing: 0.01em;
+    text-decoration: none;
   }
+  .podcast-cta:hover { color: var(--wine); }
   .podcast-empty {
     text-align: center;
     color: var(--ink-muted);
@@ -235,7 +284,7 @@ import { podcasts } from "../../data/podcasts";
 <script>
   const search = document.getElementById("podcast-search") as HTMLInputElement | null;
   const chips = document.querySelectorAll<HTMLButtonElement>(".filter-chip");
-  const cards = document.querySelectorAll<HTMLAnchorElement>(".podcast-card");
+  const cards = document.querySelectorAll<HTMLElement>(".podcast-card");
   const count = document.getElementById("podcast-count");
   const empty = document.getElementById("podcast-empty");
   let activeTag = "all";
@@ -266,4 +315,9 @@ import { podcasts } from "../../data/podcasts";
       applyFilters();
     });
   });
+
+  if (location.hash) {
+    const el = document.querySelector(location.hash);
+    el?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 </script>
