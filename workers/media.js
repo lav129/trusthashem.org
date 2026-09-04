@@ -1,5 +1,5 @@
-/** Proxies audio via local media proxy exposed at ORIGIN (localhost.run). */
-const ORIGIN = "https://e5242d972fbc58.lhr.life";
+/** Proxies existing FTP audio via local media proxy (localhost.run). No extra storage. */
+const ORIGIN = "https://e4e76878c119c9.lhr.life";
 
 const cors = {
   "Access-Control-Allow-Origin": "*",
@@ -21,10 +21,15 @@ export default {
     if (request.headers.get("Range")) headers.set("Range", request.headers.get("Range"));
     headers.set("User-Agent", "TrustHashemMedia/1.0");
 
-    const res = await fetch(ORIGIN + url.pathname, {
-      method: request.method === "HEAD" ? "HEAD" : "GET",
-      headers,
-    });
+    let res;
+    try {
+      res = await fetch(ORIGIN + url.pathname, {
+        method: request.method === "HEAD" ? "HEAD" : "GET",
+        headers,
+      });
+    } catch {
+      return new Response("Upstream unreachable", { status: 502, headers: cors });
+    }
 
     const out = new Headers(res.headers);
     out.set("Access-Control-Allow-Origin", "*");

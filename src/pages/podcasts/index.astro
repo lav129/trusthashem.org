@@ -74,6 +74,7 @@ const shows = await Promise.all(
                         <a
                           class="js-audio-download"
                           href={ep.src}
+                          download
                           data-filename={`${ep.title.replace(/[^\w\s-]+/g, "").trim().replace(/\s+/g, "-") || "episode"}.mp3`}
                           rel="noopener"
                         >Download</a>

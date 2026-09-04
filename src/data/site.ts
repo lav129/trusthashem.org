@@ -144,7 +144,7 @@ export const featuredSeries = featuredSeriesSlugs
 export const audioTopics = [
   {
     id: "bitachon",
-    title: "Bitachon & Trust",
+    title: "Bitachon",
     blurb: "Live with quiet confidence in Hashem’s care.",
     href: "/audio/#bitachon",
     image: "/images/podcasts/bitachon.jpg",
@@ -152,7 +152,7 @@ export const audioTopics = [
   },
   {
     id: "emunah",
-    title: "Emunah & Faith",
+    title: "Emunah",
     blurb: "Foundations of belief and knowing Hashem.",
     href: "/audio/#emunah",
     image: "/images/podcasts/gatewaystohashem.jpg",

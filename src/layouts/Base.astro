@@ -164,23 +164,34 @@ const path = Astro.url.pathname;
         const url = link.href;
         const fileName = link.dataset.filename || decodeURIComponent(url.split("/").pop()?.split("?")[0] || "lesson.ogg");
         const prev = link.textContent;
+        link.setAttribute("aria-busy", "true");
         link.textContent = "Saving…";
         try {
-          const res = await fetch(url);
+          const res = await fetch(url, { mode: "cors", credentials: "omit" });
           if (!res.ok) throw new Error(String(res.status));
           const blob = await res.blob();
           const objectUrl = URL.createObjectURL(blob);
           const a = document.createElement("a");
           a.href = objectUrl;
           a.download = fileName;
+          a.rel = "noopener";
           document.body.appendChild(a);
           a.click();
           a.remove();
           URL.revokeObjectURL(objectUrl);
         } catch {
-          window.open(url, "_blank", "noopener");
+          // Fallback: open the existing source URL (no copied storage). Browser may still save via Content-Disposition.
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = fileName;
+          a.target = "_blank";
+          a.rel = "noopener";
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
         } finally {
           link.textContent = prev || "Download";
+          link.removeAttribute("aria-busy");
         }
       });
     </script>

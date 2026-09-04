@@ -23,9 +23,8 @@ import Base from "../../layouts/Base.astro";
         <div class="divider"></div>
       </div>
       <TopicBrowse
-        topics={audioTopics.map(({ title, blurb, id, image }) => ({
+        topics={audioTopics.map(({ title, id, image }) => ({
           title,
-          blurb,
           href: `#${id}`,
           image,
         }))}
