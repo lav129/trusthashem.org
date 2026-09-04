@@ -32,7 +32,7 @@ const popular = homeTracks.slice(0, 5);
         <div class="divider"></div>
         <p class="lead">Begin with the path that speaks to where you are now.</p>
       </div>
-      <TopicBrowse topics={audioTopics.map(({ title, blurb, href }) => ({ title, blurb, href }))} />
+      <TopicBrowse topics={audioTopics.map(({ title, blurb, href, image }) => ({ title, blurb, href, image }))} />
     </div>
   </section>
 

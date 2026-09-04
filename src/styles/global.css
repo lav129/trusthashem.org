@@ -189,8 +189,8 @@ p { max-width: 66ch; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(247,241,228,0.97) 0%, rgba(247,241,228,0.78) 38%, rgba(247,241,228,0.15) 62%, transparent 78%),
-    linear-gradient(180deg, transparent 50%, rgba(247,241,228,0.72) 100%);
+    linear-gradient(90deg, rgba(247,241,228,0.98) 0%, rgba(247,241,228,0.88) 34%, rgba(247,241,228,0.35) 55%, rgba(247,241,228,0.08) 72%, transparent 86%),
+    linear-gradient(180deg, transparent 42%, rgba(247,241,228,0.55) 78%, rgba(247,241,228,0.88) 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -203,7 +203,7 @@ p { max-width: 66ch; }
   max-width: min(48vw, 540px);
   object-fit: contain;
   object-position: bottom center;
-  z-index: 1;
+  z-index: 0;
   filter:
     drop-shadow(0 28px 55px rgba(40, 24, 8, 0.16));
   -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 5%, #000 100%);
@@ -826,32 +826,30 @@ p { max-width: 66ch; }
   .hero h1 { font-size: clamp(1.7rem, 9vw, 2.1rem); max-width: none; }
   .hero-content { padding: 4.25rem 0 2.5rem; }
   .hero-copy { max-width: none; }
-  .hero-woman {
-    position: relative;
-    right: auto;
-    left: auto;
-    display: block;
-    order: -1;
-    margin: 0 auto -0.75rem;
-    height: min(40vh, 280px);
-    max-width: min(72vw, 240px);
-    z-index: 2;
-    -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 6%, #000 100%);
-    mask-image: linear-gradient(to top, transparent 0%, #000 6%, #000 100%);
-  }
   .hero-with-cutout {
-    flex-direction: column;
-    align-items: stretch;
-    min-height: auto;
-    padding-top: 0.25rem;
+    min-height: min(78vh, 620px);
+    align-items: flex-end;
+  }
+  .hero-woman {
+    position: absolute;
+    right: -6%;
+    left: auto;
+    bottom: 0;
+    margin: 0;
+    height: min(62vh, 440px);
+    max-width: min(92vw, 340px);
+    z-index: 0;
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 7%, #000 100%);
+    mask-image: linear-gradient(to top, transparent 0%, #000 7%, #000 100%);
   }
   .hero-with-cutout .hero-content {
-    padding-top: 1.25rem;
-    padding-bottom: 2.25rem;
+    padding-top: 3.5rem;
+    padding-bottom: 2.5rem;
   }
   .hero-with-cutout .hero-wash {
     background:
-      linear-gradient(180deg, rgba(247,241,228,0.2) 0%, rgba(247,241,228,0.85) 70%, #f7f1e4 100%);
+      linear-gradient(180deg, rgba(247,241,228,0.96) 0%, rgba(247,241,228,0.82) 38%, rgba(247,241,228,0.42) 62%, rgba(247,241,228,0.78) 100%),
+      linear-gradient(90deg, rgba(247,241,228,0.92) 0%, rgba(247,241,228,0.55) 48%, rgba(247,241,228,0.2) 100%);
   }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; justify-content: center; white-space: normal; }

@@ -18,7 +18,7 @@ import { podcasts } from "../data/podcasts";
 
 const featuredPodcasts = podcasts.slice(0, 6);
 const popularTracks = homeTracks.slice(0, 5);
-const HERO_WOMAN = "/images/hero/hero-woman.png?v=20260904d";
+const HERO_WOMAN = "/images/hero/hero-woman.png?v=20260904e";
 ---
 
 <Base title="Trust Hashem" description={homeIntro} image="/images/hero/hero-woman.png">
@@ -112,7 +112,7 @@ const HERO_WOMAN = "/images/hero/hero-woman.png?v=20260904d";
         <div class="divider"></div>
         <p class="lead">Choose the path that speaks to where you are now.</p>
       </div>
-      <TopicBrowse topics={audioTopics.map(({ title, blurb, href }) => ({ title, blurb, href }))} />
+      <TopicBrowse topics={audioTopics.map(({ title, blurb, href, image }) => ({ title, blurb, href, image }))} />
       <ExploreMore href="/audio/" />
     </div>
   </section>

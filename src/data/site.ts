@@ -147,6 +147,7 @@ export const audioTopics = [
     title: "Bitachon & Trust",
     blurb: "Live with quiet confidence in Hashem’s care.",
     href: "/audio/#bitachon",
+    image: "/images/podcasts/bitachon.jpg",
     slugs: bitachonSlugs,
   },
   {
@@ -154,6 +155,7 @@ export const audioTopics = [
     title: "Emunah & Faith",
     blurb: "Foundations of belief and knowing Hashem.",
     href: "/audio/#emunah",
+    image: "/images/podcasts/gatewaystohashem.jpg",
     slugs: emunahSlugs,
   },
   {
@@ -161,6 +163,7 @@ export const audioTopics = [
     title: "Classic Sefarim",
     blurb: "Mesillat Yesharim, Pele Yoetz, Pirkei Avot, and more.",
     href: "/audio/#classic",
+    image: "/images/photo-books.jpg",
     slugs: [
       "the-path-of-the-just",
       "the-pele-yoetz",
@@ -175,6 +178,7 @@ export const audioTopics = [
     title: "Life & Relationships",
     blurb: "Shidduchim, family, speech, and daily living.",
     href: "/audio/#life",
+    image: "/images/podcasts/ahavasyisrael.jpg",
     slugs: [
       "shidduchim-mine-or-hashems",
       "roni-akarah-guide-for-the-childless",
@@ -187,6 +191,7 @@ export const audioTopics = [
     title: "Festivals & Prayer",
     blurb: "The Jewish year, Tehillim, and tefillah.",
     href: "/audio/#festivals",
+    image: "/images/podcasts/festivals.jpg",
     slugs: [
       "the-power-of-the-festivals",
       "book-of-psalms",

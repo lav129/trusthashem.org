@@ -23,10 +23,11 @@ import Base from "../../layouts/Base.astro";
         <div class="divider"></div>
       </div>
       <TopicBrowse
-        topics={audioTopics.map(({ title, blurb, id }) => ({
+        topics={audioTopics.map(({ title, blurb, id, image }) => ({
           title,
           blurb,
           href: `#${id}`,
+          image,
         }))}
       />
       <ExploreMore href="/audio/" label="Explore Audio" />
