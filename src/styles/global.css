@@ -2,28 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap');
 
 :root {
-  /* Colors — original warm stone + wine, with a little more gold and sky */
-  --ink:          #16100b;
-  --ink-soft:     #4a3728;
-  --ink-muted:    #7a6554;
-  --cream:        #f7f1e8;
-  --paper:        #fffdf9;
+  /* Colors — sapphire, purple, and gold */
+  --ink:          #161428;
+  --ink-soft:     #3d3558;
+  --ink-muted:    #6d6580;
+  --cream:        #f4f0fb;
+  --paper:        #fffcfa;
   --warm-white:   #ffffff;
-  --gold:         #c49a32;
-  --gold-light:   #e4c57a;
-  --gold-deep:    #8a5f18;
-  --wine:         #6b241d;
-  --wine-dark:    #431611;
-  --sapphire:     #3a6ea5;
+  --gold:         #c9a227;
+  --gold-light:   #e8c96a;
+  --gold-deep:    #8a6a14;
+  --wine:         #1a4f9c;
+  --wine-dark:    #12366d;
+  --sapphire:     #1a4f9c;
+  --sapphire-deep:#12366d;
+  --purple:       #5b3a9e;
+  --purple-deep:  #3d246e;
   --sage:         #4f6a4d;
-  --sky:          #3a6a92;
+  --sky:          #2e6bb0;
   --forest:       #13261c;
-  --border:       rgba(22,16,11,0.10);
-  --border-gold:  rgba(196,154,50,0.36);
-  --shadow-sm:    0 2px 10px rgba(22,16,11,0.06);
-  --shadow-md:    0 12px 36px rgba(22,16,11,0.10);
-  --shadow-lg:    0 24px 70px rgba(22,16,11,0.14);
-  --shadow-gold:  0 6px 28px rgba(196,154,50,0.24);
+  --border:       rgba(22,20,40,0.10);
+  --border-gold:  rgba(201,162,39,0.38);
+  --shadow-sm:    0 2px 10px rgba(26,20,60,0.06);
+  --shadow-md:    0 12px 36px rgba(26,20,60,0.10);
+  --shadow-lg:    0 24px 70px rgba(26,20,60,0.14);
+  --shadow-gold:  0 6px 28px rgba(201,162,39,0.24);
 
   /* Typography */
   --serif:  'Cormorant Garamond', 'Frank Ruhl Libre', Georgia, serif;
@@ -43,9 +46,9 @@ body {
   font-family: var(--sans);
   color: var(--ink);
   background:
-    radial-gradient(ellipse at top left, rgba(196,154,50,0.10), transparent 42%),
-    radial-gradient(ellipse at top right, rgba(58,106,146,0.07), transparent 48%),
-    linear-gradient(180deg, #faf6ef 0%, var(--cream) 40%, #f3ebe0 100%);
+    radial-gradient(ellipse at top left, rgba(91,58,158,0.10), transparent 42%),
+    radial-gradient(ellipse at top right, rgba(26,79,156,0.10), transparent 46%),
+    linear-gradient(180deg, #f7f3ff 0%, var(--cream) 42%, #efe8f8 100%);
   line-height: 1.7;
   overflow-x: hidden;
 }
@@ -79,7 +82,7 @@ p { max-width: 66ch; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(253,248,240,0.96);
+  background: rgba(250,247,255,0.96);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-bottom: 1px solid var(--border-gold);
@@ -142,7 +145,7 @@ p { max-width: 66ch; }
 .main-nav a:hover,
 .main-nav a[aria-current="page"] { background: var(--border-gold); color: var(--gold-deep); }
 .main-nav .nav-highlight {
-  color: var(--gold-deep);
+  color: var(--sapphire);
   font-weight: 700;
 }
 .main-nav .nav-sessions {
@@ -152,18 +155,18 @@ p { max-width: 66ch; }
   line-height: 1.15;
   font-size: 0.78rem;
   padding: 0.35rem 0.6rem;
-  border: 1px solid var(--border-gold);
-  background: rgba(196,154,50,0.10);
+  border: 1px solid rgba(26,79,156,0.28);
+  background: rgba(26,79,156,0.08);
 }
 .main-nav .nav-cta {
-  background: var(--wine);
+  background: linear-gradient(135deg, var(--gold) 0%, #a07a18 100%);
   color: #fff !important;
   padding: 0.45rem 1rem;
   border-radius: 999px;
   margin-left: 0.35rem;
-  font-weight: 600;
+  font-weight: 700;
 }
-.main-nav .nav-cta:hover { background: var(--wine-dark) !important; }
+.main-nav .nav-cta:hover { background: var(--gold-deep) !important; }
 
 /* Hamburger */
 .menu-btn {
@@ -198,15 +201,15 @@ p { max-width: 66ch; }
   overflow: hidden;
   color: var(--ink);
   background:
-    radial-gradient(ellipse at 78% 30%, rgba(196,154,50,0.22), transparent 42%),
-    linear-gradient(155deg, #f7f1e4 0%, #ebe4d4 45%, #d5c7ae 100%);
+    radial-gradient(ellipse at 78% 30%, rgba(201,162,39,0.22), transparent 42%),
+    linear-gradient(155deg, #efe8ff 0%, #dce6f8 45%, #c9d4f0 100%);
 }
 .hero-with-cutout .hero-wash {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(247,241,228,0.98) 0%, rgba(247,241,228,0.88) 34%, rgba(247,241,228,0.35) 55%, rgba(247,241,228,0.08) 72%, transparent 86%),
-    linear-gradient(180deg, transparent 42%, rgba(247,241,228,0.55) 78%, rgba(247,241,228,0.88) 100%);
+    linear-gradient(90deg, rgba(239,232,255,0.98) 0%, rgba(239,232,255,0.88) 34%, rgba(220,230,248,0.35) 55%, rgba(220,230,248,0.08) 72%, transparent 86%),
+    linear-gradient(180deg, transparent 42%, rgba(239,232,255,0.55) 78%, rgba(239,232,255,0.88) 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -310,7 +313,7 @@ p { max-width: 66ch; }
   text-shadow: 0 2px 14px rgba(0,0,0,.5), 0 1px 2px rgba(0,0,0,.4);
 }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
-.hero.hero-with-cutout .hero-eyebrow { color: var(--wine); text-shadow: none; }
+.hero.hero-with-cutout .hero-eyebrow { color: var(--sapphire); text-shadow: none; }
 .hero.hero-with-cutout .hero-eyebrow::before { background: var(--gold); }
 .hero.hero-with-cutout h1 {
   color: var(--ink);
@@ -350,7 +353,7 @@ p { max-width: 66ch; }
 .section { padding: var(--section-gap) 0; }
 .section-alt { background: var(--paper); }
 .section-dark { background: var(--ink); color: #fff; }
-.section-gold { background: linear-gradient(135deg, #8a5f18 0%, #4e2e0a 100%); color: #fff; }
+.section-gold { background: linear-gradient(135deg, #3d246e 0%, #12366d 58%, #1a4f9c 100%); color: #fff; }
 
 .section-header { margin-bottom: 3rem; }
 .section-header .eyebrow {
@@ -619,19 +622,19 @@ p { max-width: 66ch; }
   margin-top: 1.5rem;
 }
 .bio-blessing {
-  background: var(--border-gold);
-  border: 1px solid var(--gold);
+  background: rgba(26,79,156,0.08);
+  border: 1px solid rgba(26,79,156,0.28);
   padding: 0.35rem 0.9rem;
   border-radius: 999px;
   font-size: 0.82rem;
-  color: var(--gold-deep);
+  color: var(--sapphire);
   font-weight: 600;
   text-decoration: none;
 }
 a.bio-blessing:hover {
-  background: var(--gold);
+  background: var(--sapphire);
   color: #fff;
-  border-color: var(--gold);
+  border-color: var(--sapphire);
 }
 
 /* ─── DONATE SECTION ────────────────────────────────────────────────────── */
@@ -789,7 +792,7 @@ a.bio-blessing:hover {
   font-family: var(--serif);
   font-style: italic;
   font-size: clamp(1.05rem, 3vw, 1.35rem);
-  color: var(--gold-deep);
+  color: var(--sapphire);
   max-width: 22rem;
 }
 .welcome-splash-inner h2 {
