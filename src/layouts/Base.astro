@@ -10,7 +10,7 @@ interface Props {
 
 const {
   title,
-  description = "Teachings of Bitachon and Emunah with Rebbetzin Leah Donner in Geula, Yerushalayim.",
+  description = "Teachings of Bitachon and Emunah with Rebbetzin Leah Donner in Geula, Jerusalem.",
   image = "/images/hero/hero-sky.jpg",
 } = Astro.props;
 
@@ -35,15 +35,13 @@ const path = Astro.url.pathname;
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#1a4f9c" />
+    <meta name="theme-color" content="#6b241d" />
   </head>
   <body>
     <div id="welcome-splash" class="welcome-splash" hidden>
-      <div class="welcome-splash-inner">
-        <img src="/images/welcome-tree.png" alt="Trust Hashem tree" width="260" height="260" />
-        <p class="welcome-bitachon">When we trust, we are never alone.</p>
-        <h2>Welcome to Trust in Hashem</h2>
-        <p class="welcome-url">trusthashem.org</p>
+      <div class="welcome-splash-card">
+        <img src="/images/logo-270.jpeg" alt="Trust Hashem" width="220" height="220" />
+        <p>Welcome to Trust Hashem</p>
       </div>
     </div>
     <a class="skip" href="#main">Skip to content</a>
@@ -70,11 +68,7 @@ const path = Astro.url.pathname;
             <a
               href={item.href}
               aria-current={path === item.href ? "page" : undefined}
-              class:list={[
-                item.cta && "nav-cta",
-                item.highlight && "nav-highlight",
-                item.sessions && "nav-sessions",
-              ]}
+              class={item.label === "Donate" ? "nav-cta" : undefined}
             >
               {item.label}
             </a>
@@ -99,7 +93,7 @@ const path = Astro.url.pathname;
                 <span class="brand-tagline bsd">בס״ד</span>
               </div>
             </a>
-            <p>Teachings of Bitachon and Emunah presented by Rebbetzin Leah Donner from Geula, Yerushalayim. Rooted in the wisdom of Shaar Habitachon, the Beis HaLevi, and the sages.</p>
+            <p>Teachings of Bitachon and Emunah presented by Rebbetzin Leah Donner from Geula, Jerusalem. Rooted in the wisdom of Shaar Habitachon, the Beis HaLevi, and the sages.</p>
           </div>
 
           <!-- Learn -->
@@ -118,14 +112,11 @@ const path = Astro.url.pathname;
           <div class="footer-col">
             <h4>Connect</h4>
             <a href={`mailto:${site.email}`}>{site.email}</a>
-            <a href={`mailto:${site.mentorshipEmail}`}>{site.mentorshipEmail}</a>
-            <a href="/mentorship/">Schedule Group/Private Sessions</a>
-            <a href={site.url}>LeahDonnerOfficial.com</a>
+            <a href="mailto:Ask@LeahDonnerOfficial.com">Mentorship</a>
             <a href={site.homeWhatsapp} rel="noopener noreferrer" target="_blank">WhatsApp Group</a>
             <a href="/donate/">Support This Work</a>
-            <a href={site.youtube} rel="noopener noreferrer" target="_blank">YouTube Channel</a>
+            <a href="https://www.youtube.com/@TrustHashem" rel="noopener noreferrer" target="_blank">YouTube Channel</a>
             <a href="/podcasts/">Podcasts</a>
-            <a href="/contact-us/">Contact</a>
           </div>
         </div>
 
@@ -152,13 +143,13 @@ const path = Astro.url.pathname;
 
       const splash = document.getElementById("welcome-splash");
       try {
-        if (splash && !sessionStorage.getItem("th-welcome-v3")) {
+        if (splash && !sessionStorage.getItem("th-welcome")) {
           splash.hidden = false;
-          sessionStorage.setItem("th-welcome-v3", "1");
+          sessionStorage.setItem("th-welcome", "1");
           window.setTimeout(() => {
             splash.classList.add("is-leaving");
             window.setTimeout(() => splash.remove(), 420);
-          }, 1600);
+          }, 1000);
         } else {
           splash?.remove();
         }

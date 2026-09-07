@@ -1,15 +1,14 @@
 ---
-import { site } from "../../data/site";
+import { teacherBio, site } from "../../data/site";
 import Base from "../../layouts/Base.astro";
-import TeacherBio from "../../components/TeacherBio.astro";
 ---
 
-<Base title="Who We Are" description="Rebbetzin Leah Donner teaches Bitachon and Emunah from Geula, Yerushalayim, with a free library of shiurim for Klal Yisrael.">
+<Base title="Who We Are" description="Rebbetzin Leah Donner teaches Bitachon and Emunah from Geula, Jerusalem, with a free library of shiurim for Klal Yisrael.">
   <section class="page-hero">
     <div class="wrap">
       <div class="eyebrow">About</div>
       <h1>Who We Are</h1>
-      <p class="lede">Trust Hashem is a Torah teaching home for Emunah and Bitachon, presented by Rebbetzin Leah Donner from Geula, Yerushalayim.</p>
+      <p class="lede">Trust Hashem is a Torah teaching home for Emunah and Bitachon, presented by Rebbetzin Leah Donner from Geula, Jerusalem.</p>
     </div>
   </section>
 
@@ -21,7 +20,13 @@ import TeacherBio from "../../components/TeacherBio.astro";
           <span class="eyebrow" style="color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:.75rem;font-weight:600;display:block;margin-bottom:.6rem">The teacher</span>
           <h2>Rebbetzin Leah Donner</h2>
           <div class="divider" style="margin-bottom:1.5rem"></div>
-          <TeacherBio />
+          <p>{teacherBio}</p>
+          <div class="bio-blessings">
+            <span class="bio-blessing">HaGaon HaRav Yacov Moshe Hillel</span>
+            <span class="bio-blessing">Rabbi Israel Moshe Levinsohn</span>
+            <span class="bio-blessing">HaRav Yonason David</span>
+            <span class="bio-blessing">HaGaon HaRav Itamar Schwartz</span>
+          </div>
         </div>
       </div>
     </div>
@@ -40,7 +45,7 @@ import TeacherBio from "../../components/TeacherBio.astro";
           <img class="card-thumb" src="/images/photo-sky.jpg" alt="Open sky over the mountains" />
           <div class="card-body">
             <div class="card-tag">Place</div>
-            <h3>Geula, Yerushalayim</h3>
+            <h3>Geula, Jerusalem</h3>
             <p>The teachings come from the heart of Jerusalem, offered to students near and far through audio, WhatsApp groups, and this library.</p>
           </div>
         </article>
@@ -68,24 +73,23 @@ import TeacherBio from "../../components/TeacherBio.astro";
     <div class="wrap">
       <div class="section-header">
         <span class="eyebrow">Also explore</span>
-        <h2>Podcasts, Sessions & Support</h2>
+        <h2>Podcasts & Mentorship</h2>
         <div class="divider"></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem">
-        <a class="btn btn-gold" href="/library/">Explore</a>
-        <a class="btn btn-wine" href="/mentorship/">Schedule Group/Private Sessions</a>
-        <a class="btn btn-gold" href="/donate/">Donate</a>
         <a class="btn btn-wine" href="/podcasts/">Browse Podcasts</a>
+        <a class="btn btn-gold" href="/mentorship/">Private Mentorship</a>
+        <a class="btn btn-wine" href="/library/">Open the library</a>
+        <a class="btn btn-gold" href="/contact-us/">Write to us</a>
       </div>
       <div class="attributes-grid">
         <div class="attr-item"><p>A complete audio library of Emunah and Bitachon shiurim, kept at the original lesson addresses.</p></div>
         <div class="attr-item"><p>WhatsApp groups for daily connection, so the learning does not stay only on a website.</p></div>
-        <div class="attr-item"><p>A public YouTube channel for anyone who prefers to watch, at <a href={site.youtube} rel="noopener noreferrer" target="_blank">@rebbetzinleahdonner</a>.</p></div>
-        <div class="attr-item"><p>Private and group sessions, and a simple way to give through PayPal so the library can remain free.</p></div>
+        <div class="attr-item"><p>A public YouTube channel for anyone who prefers to watch, at @TrustHashem.</p></div>
+        <div class="attr-item"><p>A simple way to give through PayPal so the library can remain free.</p></div>
       </div>
       <div style="margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:1rem">
         <a class="btn btn-wine" href={`mailto:${site.email}`}>{site.email}</a>
-        <a class="btn btn-gold" href={`mailto:${site.mentorshipEmail}`}>{site.mentorshipEmail}</a>
       </div>
     </div>
   </section>

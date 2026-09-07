@@ -25,33 +25,20 @@ export const site = {
   homeWhatsapp: content.homeWhatsapp,
   paypalButtonId: content.paypalButtonId,
   teacher: "Rebbetzin Leah Donner",
-  place: "Geula, Yerushalayim",
+  place: "Geula, Jerusalem",
   webDream: "https://yourwebdream.com",
-  officialSite: "https://leahdonnerofficial.com",
-  mentorshipEmail: "Ask@LeahDonnerOfficial.com",
-  youtube: "https://www.youtube.com/@rebbetzinleahdonner",
-  youtubeEmbed: "https://www.youtube.com/embed/videoseries?list=UUrjPPpQXzsB60_Z2m6Ux0LA",
 };
 
-export const nav: {
-  href: string;
-  label: string;
-  highlight?: boolean;
-  sessions?: boolean;
-  cta?: boolean;
-}[] = [
+export const nav = [
   { href: "/", label: "Home" },
-  { href: "/library/", label: "Explore", highlight: true },
+  { href: "/library/", label: "Library" },
+  { href: "/podcasts/", label: "Podcasts" },
   { href: "/audio/", label: "Audio" },
   { href: "/videos/", label: "Videos" },
-  {
-    href: "/mentorship/",
-    label: "Schedule Group/Private Sessions",
-    highlight: true,
-    sessions: true,
-  },
+  { href: "/mentorship/", label: "Mentorship" },
   { href: "/who-we-are/", label: "About" },
-  { href: "/donate/", label: "Donate", cta: true },
+  { href: "/contact-us/", label: "Contact" },
+  { href: "/donate/", label: "Donate" },
 ];
 
 export const moreNav = [
@@ -59,7 +46,7 @@ export const moreNav = [
   { href: "/bitachon/", label: "Bitachon" },
   { href: "/articles/", label: "Teachings" },
   { href: "/podcasts/", label: "Podcasts" },
-  { href: "/mentorship/", label: "Schedule Group/Private Sessions" },
+  { href: "/mentorship/", label: "Mentorship" },
   { href: "/videos/", label: "Videos" },
   { href: "/what-we-do/", label: "What We Do" },
   { href: "/why-trust-hashem/", label: "Why Trust Hashem" },
@@ -79,7 +66,7 @@ export const homeIntro =
   "Experience a spiritual transformation with Bitachon — trust in Hashem. These lessons enter the teachings of Shaar Habitachon, the Beis HaLevi, Torah, and the sages, so a person can find solace, resilience, and the peace that comes from trusting in Hashem’s love and protection.";
 
 export const teacherBio =
-  "Presenting these teachings is Rebbetzin Leah Donner, who lives with her husband and family in Geula, Yerushalayim. Her greatest passion is helping women and girls strengthen their relationship with Hashem through Emunah, Bitachon, Hashkafah, inner growth, and the refinement of middot.";
+  "Presenting these lectures is Rebbetzin Leah Donner, who resides with her husband and family in Geula, Jerusalem, Israel. Inspired by her students and Rabbaim, she shares these teachings of Bitachon and Knowing Hashem Yisborach. Rebbetzin Donner received blessings from HaGaon HaRav Yacov Moshe Hillel, world-renowned Rosh Yeshiva of Ahavat Shalom in Jerusalem; Rabbi Israel Moshe Levinsohn, of whom the Beis Yisrael of Gur said this tzadik has the power of brachos; HaRav Yonason David, Rosh Kollel Pachad Yitzhak in HarNof; and HaGaon HaRav Itamar Schwartz, author of Bilvavi Mishkan Evneh, to teach Klal Yisrael with these wisdoms, shortly before the tragic events of Simchat Torah 5784. May Hashem continue to guide His nation towards greater strength, and through our dedication to learning Bitachon, may we merit the arrival of Mashiach in achdut with love and mercy.";
 
 export const donationCopy = {
   title:

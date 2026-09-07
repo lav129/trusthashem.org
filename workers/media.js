@@ -1,5 +1,5 @@
-/** Proxies archived WordPress audio from the original hosting origin. */
-const ORIGIN = "https://ftp.trusthashem.org";
+/** Proxies existing FTP audio via local media proxy (localhost.run). No extra storage. */
+const ORIGIN = "https://e4e76878c119c9.lhr.life";
 
 const cors = {
   "Access-Control-Allow-Origin": "*",
