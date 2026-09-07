@@ -13,7 +13,7 @@ export default {
   async fetch(request) {
     const url = new URL(request.url);
     if (request.method === "OPTIONS") return new Response(null, { headers: cors });
-    if (!url.pathname.startsWith("/wp-content/")) {
+    if (!url.pathname.startsWith("/wp-content/") || url.pathname.includes("..")) {
       return new Response("Not found", { status: 404, headers: cors });
     }
 
@@ -23,7 +23,7 @@ export default {
 
     let res;
     try {
-      res = await fetch(ORIGIN + url.pathname, {
+      res = await fetch(ORIGIN + url.pathname + url.search, {
         method: request.method === "HEAD" ? "HEAD" : "GET",
         headers,
       });
