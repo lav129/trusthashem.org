@@ -4,13 +4,13 @@ import LessonGrid from "../components/LessonGrid.astro";
 import ShiurList from "../components/ShiurList.astro";
 import TopicBrowse from "../components/TopicBrowse.astro";
 import ExploreMore from "../components/ExploreMore.astro";
+import TeacherBio from "../components/TeacherBio.astro";
 import {
   bitachonAttributes,
   homeIntro,
   homeTracks,
   featuredSeries,
   audioTopics,
-  teacherBio,
   site,
   content,
 } from "../data/site";
@@ -30,12 +30,13 @@ const HERO_WOMAN = "/images/hero/hero-woman.png?v=20260904r";
     <div class="hero-content">
       <div class="wrap hero-split">
         <div class="hero-copy">
-          <div class="hero-eyebrow">Emunah & Bitachon · Geula, Jerusalem</div>
+          <div class="hero-eyebrow">Emunah & Bitachon · Geula, Yerushalayim</div>
           <h1>Trust&nbsp;Hashem.<br/>Find Your Peace.</h1>
           <p class="hero-subtitle">{homeIntro}</p>
           <div class="hero-actions">
-            <a class="btn btn-gold" href="/audio/">Explore Audio</a>
-            <a class="btn btn-outline-dark" href="/library/">Browse Library</a>
+            <a class="btn btn-gold" href="/library/">Explore</a>
+            <a class="btn btn-wine" href="/mentorship/">Schedule Group/Private Sessions</a>
+            <a class="btn btn-gold" href="/donate/">Donate</a>
           </div>
         </div>
       </div>
@@ -136,17 +137,17 @@ const HERO_WOMAN = "/images/hero/hero-woman.png?v=20260904r";
   <!-- ═══ MENTORSHIP ═══════════════════════════════════════════════════ -->
   <section class="home-mentor">
     <div class="wrap home-mentor-grid">
-      <figure class="home-mentor-emblem">
-        <img src="/images/mentorship-you-within.jpg" alt="The YOU Within" width="480" height="480" />
+      <figure class="home-mentor-photo">
+        <img src="/images/mentorship-session.jpg" alt="Rebbetzin Leah Donner teaching a warm group session on Bitachon" width="960" height="720" />
       </figure>
       <div class="home-mentor-copy">
         <p class="home-mentor-pillars">Peace · Power · Purpose</p>
-        <h2>Private Spiritual Mentorship</h2>
-        <p class="home-mentor-lead">Stop performing. Start becoming.</p>
-        <p>Tap into the power of the real YOU. Discover. Align. Become.</p>
+        <h2>Private & Group Sessions</h2>
+        <p class="home-mentor-lead">When we trust, we are never alone.</p>
+        <p>Schedule a private spiritual mentorship or a group session. A warm, practical space to strengthen Bitachon, refine middot, and come closer to Hashem.</p>
         <div class="hero-actions" style="margin-top:1.75rem">
-          <a class="btn btn-gold" href="/mentorship/">Enter Mentorship</a>
-          <a class="btn btn-outline" href="mailto:Ask@LeahDonnerOfficial.com">Ask@LeahDonnerOfficial.com</a>
+          <a class="btn btn-gold" href="/mentorship/">Schedule Group/Private Sessions</a>
+          <a class="btn btn-outline" href={`mailto:${site.mentorshipEmail}`}>{site.mentorshipEmail}</a>
         </div>
       </div>
     </div>
@@ -167,15 +168,7 @@ const HERO_WOMAN = "/images/hero/hero-woman.png?v=20260904r";
           <span class="eyebrow" style="color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:.75rem;font-weight:600;display:block;margin-bottom:.6rem">The Teacher</span>
           <h2>Rebbetzin Leah Donner</h2>
           <div class="divider" style="margin-bottom:1.5rem"></div>
-          <p>{teacherBio}</p>
-          <div class="bio-blessings">
-            <span class="bio-blessing">HaGaon HaRav Yacov Moshe Hillel</span>
-            <span class="bio-blessing">Rabbi Yonason David</span>
-            <span class="bio-blessing">HaRav Itamar Schwartz</span>
-          </div>
-          <div style="margin-top:2rem">
-            <a class="btn btn-gold" href="/who-we-are/">Learn more</a>
-          </div>
+          <TeacherBio showCta />
         </div>
       </div>
     </div>
@@ -321,37 +314,34 @@ const HERO_WOMAN = "/images/hero/hero-woman.png?v=20260904r";
   .home-mentor {
     padding: clamp(4rem, 8vw, 6.5rem) 0;
     background:
-      radial-gradient(ellipse at 80% 20%, rgba(212,175,55,0.16), transparent 45%),
-      linear-gradient(155deg, #0c1a12 0%, #163024 55%, #1b3022 100%);
+      radial-gradient(ellipse at 80% 20%, rgba(201,162,39,0.18), transparent 45%),
+      linear-gradient(155deg, #1a1433 0%, #12366d 55%, #3d246e 100%);
     color: #f7f1e4;
   }
   .home-mentor-grid {
     display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
+    grid-template-columns: 1.05fr 0.95fr;
     gap: clamp(2rem, 5vw, 4rem);
     align-items: center;
   }
-  .home-mentor-emblem {
+  .home-mentor-photo {
     margin: 0;
-    text-align: center;
   }
-  .home-mentor-emblem img {
-    width: min(100%, 360px);
+  .home-mentor-photo img {
+    width: 100%;
     height: auto;
-    aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
-    margin-inline: auto;
-    border-radius: 50%;
-    border: 2px solid rgba(212,175,55,0.5);
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center 30%;
+    border-radius: 24px;
+    border: 2px solid rgba(232,201,106,0.45);
     box-shadow: 0 24px 60px rgba(0,0,0,0.35);
-    background: #13261c;
   }
   .home-mentor-pillars {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     font-size: 0.75rem;
-    color: #d4af37;
+    color: #e8c96a;
     font-weight: 700;
     margin-bottom: 0.85rem;
   }
@@ -376,6 +366,5 @@ const HERO_WOMAN = "/images/hero/hero-woman.png?v=20260904r";
     .donate-home-grid { grid-template-columns: 1fr; gap: 2rem; }
     .home-podcast-grid { grid-template-columns: 1fr; }
     .home-mentor-grid { grid-template-columns: 1fr; }
-    .home-mentor-emblem img { width: min(100%, 280px); }
   }
 </style>

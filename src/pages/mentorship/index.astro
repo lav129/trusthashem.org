@@ -3,31 +3,32 @@ import Base from "../../layouts/Base.astro";
 ---
 
 <Base
-  title="Private Spiritual Mentorship"
-  description="Stop performing. Start becoming. Private spiritual mentorship with Leah Donner — Peace, Power, Purpose. Discover. Align. Become."
-  image="/images/mentorship-you-within.jpg"
+  title="Schedule Group & Private Sessions"
+  description="Schedule a private spiritual mentorship or group session with Rebbetzin Leah Donner — Peace, Power, Purpose. When we trust, we are never alone."
+  image="/images/mentorship-session.jpg"
 >
   <section class="mentor-hero">
     <div class="mentor-hero-glow" aria-hidden="true"></div>
     <div class="wrap mentor-hero-grid">
       <div class="mentor-hero-copy">
         <p class="mentor-pillars">Peace · Power · Purpose</p>
-        <h1>Private Spiritual Mentorship</h1>
-        <p class="mentor-lead">Stop performing. Start becoming.</p>
-        <p class="mentor-sub">Tap into the power of the real YOU.</p>
+        <h1>Schedule Group & Private Sessions</h1>
+        <p class="mentor-lead">When we trust, we are never alone.</p>
+        <p class="mentor-sub">A warm, personal space with Rebbetzin Leah Donner — private mentorship or a small group session to strengthen Bitachon, refine middot, and come closer to Hashem.</p>
         <div class="mentor-actions">
-          <a class="btn btn-mentor" href="mailto:Ask@LeahDonnerOfficial.com">Begin the conversation</a>
+          <a class="btn btn-mentor" href="mailto:Ask@LeahDonnerOfficial.com">Schedule a session</a>
           <a class="btn btn-mentor-outline" href="mailto:Ask@LeahDonnerOfficial.com">Ask@LeahDonnerOfficial.com</a>
         </div>
       </div>
-      <figure class="mentor-emblem">
+      <figure class="mentor-photo">
         <img
-          src="/images/mentorship-you-within.jpg"
-          alt="The YOU Within — Discover. Align. Become."
-          width="640"
-          height="640"
+          src="/images/mentorship-session.jpg"
+          alt="Rebbetzin Leah Donner teaching a warm Bitachon session"
+          width="960"
+          height="720"
         />
-        <figcaption>The YOU Within · Discover. Align. Become.</figcaption>
+        <figcaption>Group & private sessions · Discover. Align. Become.</figcaption>
+        <img class="mentor-badge" src="/images/mentorship-you-within.jpg" alt="The YOU Within" width="120" height="120" />
       </figure>
     </div>
   </section>
@@ -53,7 +54,7 @@ import Base from "../../layouts/Base.astro";
         </ul>
       </div>
       <aside class="mentor-card">
-        <img class="mentor-portrait" src="/images/leah-donner-portrait.jpg" alt="Leah Donner" />
+        <img class="mentor-portrait" src="/images/mentorship-session.jpg" alt="Rebbetzin Leah Donner teaching a warm group session" />
         <div>
           <p class="mentor-card-label">With</p>
           <h3>Leah Donner</h3>
@@ -82,8 +83,8 @@ import Base from "../../layouts/Base.astro";
     overflow: hidden;
     padding: clamp(3.5rem, 8vw, 6.5rem) 0;
     background:
-      radial-gradient(ellipse at 20% 20%, rgba(201,160,89,0.18), transparent 50%),
-      linear-gradient(160deg, #0c1a12 0%, #13261c 45%, #1b3022 100%);
+      radial-gradient(ellipse at 20% 20%, rgba(201,160,89,0.22), transparent 50%),
+      linear-gradient(160deg, #1a1433 0%, #12366d 45%, #3d246e 100%);
     color: #f7f1e4;
   }
   .mentor-hero-glow {
@@ -113,7 +114,7 @@ import Base from "../../layouts/Base.astro";
   .mentor-hero h1 {
     font-size: clamp(2.2rem, 5.5vw, 3.8rem);
     color: #fff;
-    max-width: 12ch;
+    max-width: 16ch;
     margin-bottom: 1rem;
   }
   .mentor-lead {
@@ -158,25 +159,34 @@ import Base from "../../layouts/Base.astro";
     margin: 0;
     text-align: center;
   }
-  .mentor-emblem img {
-    width: min(100%, 420px);
-    height: auto;
-    aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
-    margin-inline: auto;
-    border-radius: 50%;
-    border: 2px solid rgba(212,175,55,0.55);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 0 0 10px rgba(212,175,55,0.08);
-    animation: mentorFloat 8s ease-in-out infinite;
-    background: #13261c;
+  .mentor-photo {
+    margin: 0;
   }
+  .mentor-photo img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center 28%;
+    border-radius: 24px;
+    border: 2px solid rgba(212,175,55,0.55);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  }
+  .mentor-photo figcaption,
   .mentor-emblem figcaption {
     margin-top: 1.1rem;
     font-size: 0.82rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: rgba(212,175,55,0.9);
+  }
+  .mentor-badge {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 1rem;
+    border: 2px solid rgba(212,175,55,0.55);
   }
 
   .mentor-invite-grid {
@@ -208,7 +218,7 @@ import Base from "../../layouts/Base.astro";
     color: var(--ink-soft);
   }
   .mentor-card {
-    background: linear-gradient(165deg, #13261c, #1b3022);
+    background: linear-gradient(165deg, #12366d, #3d246e);
     color: #f7f1e4;
     border-radius: 28px;
     overflow: hidden;
@@ -217,9 +227,9 @@ import Base from "../../layouts/Base.astro";
   }
   .mentor-portrait {
     width: 100%;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
-    object-position: top center;
+    object-position: center 30%;
   }
   .mentor-card > div { padding: 1.5rem 1.5rem 1.75rem; }
   .mentor-card-label {

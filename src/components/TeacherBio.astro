@@ -1,0 +1,103 @@
+---
+interface Props {
+  showCta?: boolean;
+}
+
+const { showCta = false } = Astro.props;
+
+const rabbis = [
+  {
+    name: "HaGaon HaRav Yaakov Moshe Hillel",
+    href: "https://en.wikipedia.org/wiki/Yaakov_Moshe_Hillel",
+  },
+  {
+    name: "Rabbi Israel Moshe Levinsohn",
+    href: "",
+  },
+  {
+    name: "HaRav Yonason David",
+    href: "https://en.wikipedia.org/wiki/Yonasan_David",
+  },
+  {
+    name: "HaGaon HaRav Itamar Schwartz",
+    href: "https://eng.bilvavi.net/",
+  },
+];
+---
+
+<div class="teacher-bio">
+  <p>
+    Presenting these teachings is Rebbetzin Leah Donner, who lives with her husband and family in Geula, Yerushalayim.
+  </p>
+  <p>
+    Rebbetzin Donner’s journey toward a life of Torah began in 2011, after many years in the corporate world. Over time, she felt a growing calling to dedicate her heart, energy, and life experience to avodat Hashem and to helping others come closer to Him.
+  </p>
+  <p>
+    Today, her greatest passion is helping women and girls strengthen their relationship with Hashem through Emunah, Bitachon, Hashkafah, inner growth, and the refinement of middot. Her teachings are rooted in a deep love for Hashem’s daughters and a sincere desire to help each woman recognize how precious she is to Hashem.
+  </p>
+  <p>
+    Rebbetzin Donner speaks with deep gratitude about her husband’s dedicated Torah learning, which continues to inspire and elevate their home. He is a learned Talmid Chacham and a direct descendant of great Torah luminaries, including the Maharam of Rotenberg, the Rif, and others.
+  </p>
+  <p>
+    Inspired by her students and encouraged by respected Rabbanim, Rebbetzin Donner shares teachings of Bitachon and Knowing Hashem Yisborach in a warm, practical, and heartfelt way. She helps women begin to see Hashem not only in moments of prayer or learning, but throughout their waking life — in their thoughts, emotions, challenges, relationships, choices, and personal journey.
+  </p>
+  <p>
+    Rebbetzin Donner has received blessings and encouragement to teach these wisdoms to Klal Yisrael from
+    <a href="https://en.wikipedia.org/wiki/Yaakov_Moshe_Hillel" rel="noopener noreferrer" target="_blank">HaGaon HaRav Yaakov Moshe Hillel</a>,
+    world-renowned Rosh Yeshiva of Ahavat Shalom in Yerushalayim;
+    Rabbi Israel Moshe Levinsohn, of whom the Beis Yisrael of Gur said this tzadik has the power of brachos;
+    <a href="https://en.wikipedia.org/wiki/Yonasan_David" rel="noopener noreferrer" target="_blank">HaRav Yonason David</a>,
+    Rosh Kollel Pachad Yitzchak in Har Nof; and
+    <a href="https://eng.bilvavi.net/" rel="noopener noreferrer" target="_blank">HaGaon HaRav Itamar Schwartz</a>,
+    author of Bilvavi Mishkan Evneh. These brachos were received shortly before the tragic events of Simchat Torah 5784.
+  </p>
+  <p>
+    Her classes combine Torah depth with warmth, sensitivity, and practical tools for daily life. She teaches that when a woman understands her inner world, feels Hashem’s love, strengthens her Bitachon, and refines her middot, Torah and mitzvot can be embraced with more joy, trust, dignity, and purpose.
+  </p>
+  <p>
+    Through these teachings, many women find a renewed way to relate to Hashem — with more calm, more clarity, more connection, and a deeper desire to grow.
+  </p>
+  <p>
+    May Hashem continue to guide His nation toward strength, healing, achdut, and mercy. And through our dedication to learning Bitachon and coming closer to Hashem, may we merit the arrival of Mashiach, speedily in our days.
+  </p>
+
+  <div class="bio-blessings">
+    {rabbis.map((rabbi) =>
+      rabbi.href ? (
+        <a class="bio-blessing" href={rabbi.href} rel="noopener noreferrer" target="_blank">
+          {rabbi.name}
+        </a>
+      ) : (
+        <span class="bio-blessing">{rabbi.name}</span>
+      )
+    )}
+  </div>
+
+  {showCta && (
+    <div class="teacher-bio-cta">
+      <a class="btn btn-gold" href="/who-we-are/">Learn more</a>
+      <a class="btn btn-wine" href="/mentorship/">Schedule Group/Private Sessions</a>
+    </div>
+  )}
+</div>
+
+<style>
+  .teacher-bio p {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+  .teacher-bio a {
+    font-weight: 700;
+    color: var(--sapphire);
+  }
+  .teacher-bio a:hover {
+    color: var(--gold-deep);
+  }
+  .teacher-bio-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 2rem;
+  }
+</style>
