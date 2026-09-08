@@ -806,35 +806,39 @@ a.bio-blessing:hover {
 }
 .welcome-leaves {
   position: absolute;
-  inset: 0;
+  left: 8%;
+  right: 8%;
+  top: 6%;
+  height: 140%;
   pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
+  z-index: 3;
+  overflow: visible;
 }
 .welcome-leaf {
   position: absolute;
-  top: 18%;
-  left: calc(6% + var(--i) * 4.9%);
-  width: calc(16px + (var(--i) * 1.4px));
-  height: calc(24px + (var(--i) * 1.6px));
-  background: #5fd6dc;
+  top: 28%;
+  left: calc(18% + var(--i) * 2.9%);
+  width: calc(9px + (var(--i) * 0.55px));
+  height: calc(14px + (var(--i) * 0.7px));
+  background: #4ecad1;
   border-radius: 2px 80% 2px 80%;
-  opacity: 0.95;
-  box-shadow: 0 0 12px rgba(95, 214, 220, 0.45);
-  animation: leafFall 5.6s ease-in forwards;
-  animation-delay: calc(var(--i) * 0.12s);
+  opacity: 0;
+  box-shadow: 0 0 8px rgba(78, 202, 209, 0.35);
+  animation: leafFall 7.6s ease-in-out forwards;
+  animation-delay: calc(var(--i) * 0.14s);
   will-change: transform, opacity;
 }
 .welcome-leaf:nth-child(odd) {
-  background: #3ec8ce;
-}
-.welcome-leaf:nth-child(3n) {
-  background: #2bb3bc;
+  background: #6fdde2;
   top: 22%;
 }
+.welcome-leaf:nth-child(3n) {
+  background: #3bb8c0;
+  top: 32%;
+}
 .welcome-leaf:nth-child(4n) {
-  background: #5ad4da;
-  top: 12%;
+  background: #7fe8ec;
+  top: 18%;
 }
 .welcome-splash-card {
   position: relative;
@@ -844,8 +848,11 @@ a.bio-blessing:hover {
   background: transparent;
   box-shadow: none;
   padding: 0;
+  overflow: visible;
 }
 .welcome-splash-card img {
+  position: relative;
+  z-index: 2;
   width: min(78vw, 360px);
   height: auto;
   max-height: min(72vh, 420px);
@@ -854,7 +861,6 @@ a.bio-blessing:hover {
   border-radius: 0;
   box-shadow: none;
   background: transparent;
-  mix-blend-mode: multiply;
   filter: drop-shadow(0 18px 36px rgba(20, 60, 110, 0.22));
   display: block;
   margin-inline: auto;
@@ -877,14 +883,15 @@ a.bio-blessing:hover {
 }
 @keyframes leafFall {
   0% {
-    transform: translate3d(0, -8px, 0) rotate(18deg) scale(0.85);
-    opacity: 0.9;
+    transform: translate3d(0, 0, 0) rotate(-18deg);
+    opacity: 0;
   }
-  22% { transform: translate3d(26px, 18vh, 0) rotate(95deg) scale(1); }
-  48% { transform: translate3d(-30px, 44vh, 0) rotate(190deg) scale(1); }
-  74% { transform: translate3d(22px, 72vh, 0) rotate(275deg) scale(0.95); opacity: 0.85; }
+  10% { opacity: 0.95; }
+  28% { transform: translate3d(16px, 42px, 0) rotate(28deg); }
+  52% { transform: translate3d(-22px, 110px, 0) rotate(86deg); }
+  74% { transform: translate3d(14px, 190px, 0) rotate(142deg); opacity: 0.9; }
   100% {
-    transform: translate3d(-16px, 110vh, 0) rotate(360deg) scale(0.8);
+    transform: translate3d(-10px, 280px, 0) rotate(198deg);
     opacity: 0;
   }
 }
@@ -941,36 +948,35 @@ a.bio-blessing:hover {
 }
 @media (max-width: 600px) {
   .hero h1 { font-size: clamp(1.75rem, 8.5vw, 2.15rem); max-width: none; }
-  .hero-content { padding: 1.25rem 0 2.25rem; }
+  .hero-content { padding: 4.25rem 0 2.5rem; }
   .hero-copy { max-width: none; }
   .hero-with-cutout {
-    min-height: 0;
+    min-height: min(88vh, 720px);
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-end;
+    align-items: flex-end;
   }
   .hero-woman {
-    position: relative;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    margin: 0.75rem auto 0;
-    width: min(100%, 520px);
-    height: auto;
-    max-width: 100%;
-    max-height: 46vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
     z-index: 0;
-    opacity: 1;
-    object-fit: contain;
-    object-position: center bottom;
-    filter: drop-shadow(0 16px 32px rgba(20, 12, 6, 0.18));
-    -webkit-mask-image: none;
-    mask-image: none;
+    opacity: 0.95;
+    object-fit: cover;
+    object-position: center 32%;
+    filter:
+      contrast(1.08) saturate(1.04) brightness(0.7)
+      drop-shadow(0 16px 32px rgba(20, 12, 6, 0.35));
   }
   .hero-with-cutout .hero-content {
-    padding-top: 0.5rem;
-    padding-bottom: 1.75rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
   }
   .hero-with-cutout .hero-copy {
     position: relative;
@@ -978,35 +984,36 @@ a.bio-blessing:hover {
     max-width: 100%;
   }
   .hero.hero-with-cutout .hero-eyebrow {
-    color: var(--wine);
-    text-shadow: none;
+    color: #fff;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
   }
   .hero.hero-with-cutout .hero-eyebrow::before {
-    background: var(--gold);
+    background: rgba(255, 214, 140, 0.95);
   }
   .hero.hero-with-cutout h1 {
-    color: var(--ink);
-    text-shadow: none;
+    color: #fff;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.35);
   }
   .hero.hero-with-cutout .hero-subtitle {
-    color: var(--ink-soft);
-    text-shadow: none;
+    color: rgba(255, 255, 255, 0.94);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
   }
   .hero.hero-with-cutout .btn-outline-dark {
     color: var(--ink);
-    background: transparent;
-    border-color: rgba(107,36,29,0.35);
-    font-weight: 600;
+    background: rgba(247, 241, 228, 0.94);
+    border-color: rgba(247, 241, 228, 0.98);
+    font-weight: 700;
     text-shadow: none;
-    box-shadow: none;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
   }
   .hero.hero-with-cutout .btn-outline-dark:hover {
-    background: rgba(107,36,29,0.08);
+    background: #fff;
     color: var(--ink);
-    border-color: var(--wine);
+    border-color: #fff;
   }
   .hero-with-cutout .hero-wash {
-    background: linear-gradient(180deg, transparent 0%, rgba(247,241,228,0.2) 55%, rgba(247,241,228,0.92) 100%);
+    background:
+      linear-gradient(180deg, rgba(28, 18, 10, 0.18) 0%, rgba(28, 18, 10, 0.28) 38%, rgba(28, 18, 10, 0.55) 68%, rgba(20, 12, 8, 0.72) 100%);
   }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; justify-content: center; white-space: normal; }

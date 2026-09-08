@@ -53,13 +53,13 @@ const logoImage = new URL("/images/logo-512.png", site.url).href;
   </head>
   <body>
     <div id="welcome-splash" class="welcome-splash" hidden>
-      <div class="welcome-leaves" aria-hidden="true">
-        {Array.from({ length: 18 }, (_, i) => (
-          <span class="welcome-leaf" style={`--i:${i}`}></span>
-        ))}
-      </div>
       <div class="welcome-splash-card">
-        <img src="/images/welcome-tree.png" alt="Trust Hashem tree" width="360" height="360" />
+        <img src="/images/welcome-tree.png?v=20260908t" alt="Trust Hashem tree" width="360" height="360" />
+        <div class="welcome-leaves" aria-hidden="true">
+          {Array.from({ length: 22 }, (_, i) => (
+            <span class="welcome-leaf" style={`--i:${i}`}></span>
+          ))}
+        </div>
         <p>Welcome to Trust Hashem</p>
       </div>
     </div>
@@ -166,7 +166,7 @@ const logoImage = new URL("/images/logo-512.png", site.url).href;
       if (splash) {
         let seen = false;
         try {
-          seen = sessionStorage.getItem("th-welcome-v3") === "1";
+          seen = sessionStorage.getItem("th-welcome-v4") === "1";
         } catch {
           seen = false;
         }
@@ -174,13 +174,13 @@ const logoImage = new URL("/images/logo-512.png", site.url).href;
           splash.remove();
         } else {
           try {
-            sessionStorage.setItem("th-welcome-v3", "1");
+            sessionStorage.setItem("th-welcome-v4", "1");
           } catch {}
           splash.hidden = false;
           window.setTimeout(() => {
             splash.classList.add("is-leaving");
             window.setTimeout(() => splash.remove(), 450);
-          }, 6000);
+          }, 8000);
         }
       }
 
