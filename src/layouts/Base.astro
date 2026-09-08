@@ -166,7 +166,7 @@ const logoImage = new URL("/images/logo-512.png", site.url).href;
       if (splash) {
         let seen = false;
         try {
-          seen = sessionStorage.getItem("th-welcome-v4") === "1";
+          seen = sessionStorage.getItem("th-welcome-v5") === "1";
         } catch {
           seen = false;
         }
@@ -174,13 +174,21 @@ const logoImage = new URL("/images/logo-512.png", site.url).href;
           splash.remove();
         } else {
           try {
-            sessionStorage.setItem("th-welcome-v4", "1");
+            sessionStorage.setItem("th-welcome-v5", "1");
           } catch {}
           splash.hidden = false;
-          window.setTimeout(() => {
+          let closed = false;
+          const closeSplash = () => {
+            if (closed) return;
+            closed = true;
             splash.classList.add("is-leaving");
             window.setTimeout(() => splash.remove(), 450);
-          }, 8000);
+          };
+          const timer = window.setTimeout(closeSplash, 5000);
+          splash.addEventListener("pointerdown", () => {
+            window.clearTimeout(timer);
+            closeSplash();
+          }, { once: true });
         }
       }
 

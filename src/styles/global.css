@@ -794,6 +794,7 @@ a.bio-blessing:hover {
   place-items: center;
   background: #ffffff;
   overflow: hidden;
+  cursor: pointer;
   transition: opacity .45s ease, transform .45s ease;
 }
 .welcome-splash[hidden] {
