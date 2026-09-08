@@ -185,7 +185,8 @@ async function createCheckout(request, env, origin) {
     ui_mode: "embedded_page",
     redirect_on_completion: "if_required",
     return_url: returnUrl,
-    submit_type: "donate",
+    submit_type: "pay",
+    managed_payments: { enabled: false },
     integration_identifier: integrationId(),
     metadata: {
       kind: "processing_fee",
@@ -206,9 +207,7 @@ async function createCheckout(request, env, origin) {
           currency: "usd",
           unit_amount: feeCents,
           product_data: {
-            name: "Donation processing fee (2%)",
-            description:
-              "Covers card processing. Your full donation is given separately on PayPal.",
+            name: "Processing fee",
           },
         },
       },

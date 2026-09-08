@@ -20,42 +20,29 @@ const stripeApiUrl = (
 >
   <span class="eyebrow">Donate</span>
   <h2>Give securely</h2>
-  <p>
-    Enter the amount you want to give. A 2% processing fee is paid first through Stripe.
-    After that succeeds, you continue to the same PayPal donation. Your full gift still goes
-    through PayPal — the fee is separate and is not subtracted.
-  </p>
 
-  <div id="donate-step-amount">
-    <label class="donate-amount-label" for="donate-amount">Donation amount (USD)</label>
-    <input
-      class="donate-amount"
-      id="donate-amount"
-      name="donation_amount"
-      type="number"
-      inputmode="decimal"
-      min="1"
-      step="0.01"
-      placeholder="100.00"
-      required
-    />
-    <p class="donate-fee" id="donate-fee-line">Processing fee (2%): $0.00</p>
-    <p class="donate-hint">Minimum donation $1.00. Stripe’s card minimum may set a $0.50 fee floor.</p>
-    <p class="donate-msg" id="donate-msg" hidden></p>
-    <button class="btn btn-gold" id="donate-pay-fee" type="button">Pay 2% Processing Fee</button>
-    <button class="btn btn-outline-dark" id="donate-cancel" type="button" hidden>Cancel</button>
-  </div>
+  <label class="donate-amount-label" for="donate-amount">Amount (USD)</label>
+  <input
+    class="donate-amount"
+    id="donate-amount"
+    name="donation_amount"
+    type="number"
+    inputmode="decimal"
+    min="1"
+    step="0.01"
+    placeholder="100.00"
+    required
+  />
+  <p class="donate-fee" id="donate-fee-line">Processing fee: $0.00</p>
+  <p class="donate-msg" id="donate-msg" hidden></p>
 
   <div id="donate-stripe-embed" hidden></div>
 
-  <div id="donate-step-paypal" hidden>
-    <p class="donate-msg is-ok" id="donate-success-msg">Processing fee paid successfully.</p>
-    <p id="donate-paypal-note"></p>
-    <form action="https://www.paypal.com/donate" method="post" target="_blank">
-      <input type="hidden" name="hosted_button_id" value={site.paypalButtonId} />
-      <button class="btn btn-gold" type="submit">Continue to PayPal Donation</button>
-    </form>
-  </div>
+  <button class="btn btn-gold donate-btn" id="donate-pay-fee" type="button">Pay processing fee</button>
+  <form id="donate-paypal-form" action="https://www.paypal.com/donate" method="post" target="_blank">
+    <input type="hidden" name="hosted_button_id" value={site.paypalButtonId} />
+    <button class="btn btn-gold donate-btn" id="donate-paypal-btn" type="submit" disabled>Donate</button>
+  </form>
 </div>
 
 <script>
@@ -73,14 +60,13 @@ const stripeApiUrl = (
     const feeLine = document.getElementById("donate-fee-line");
     const msgEl = document.getElementById("donate-msg");
     const payBtn = document.getElementById("donate-pay-fee") as HTMLButtonElement | null;
-    const cancelBtn = document.getElementById("donate-cancel") as HTMLButtonElement | null;
+    const donateBtn = document.getElementById("donate-paypal-btn") as HTMLButtonElement | null;
+    const paypalForm = document.getElementById("donate-paypal-form") as HTMLFormElement | null;
     const embedEl = document.getElementById("donate-stripe-embed");
-    const amountStep = document.getElementById("donate-step-amount");
-    const paypalStep = document.getElementById("donate-step-paypal");
-    const paypalNote = document.getElementById("donate-paypal-note");
 
     let checkout: { mount: (el: Element) => void; destroy?: () => void } | null = null;
     let activeSessionId = "";
+    let feePaid = false;
 
     function setMsg(text: string, kind = "") {
       if (!msgEl) return;
@@ -97,11 +83,16 @@ const stripeApiUrl = (
     function updateFeeLine() {
       const cents = currentDonationCents();
       if (cents == null || cents < 100) {
-        if (feeLine) feeLine.textContent = "Processing fee (2%): $0.00";
+        if (feeLine) feeLine.textContent = "Processing fee: $0.00";
         return;
       }
       const fee = feeCentsFromDonation(cents);
-      if (feeLine) feeLine.textContent = `Processing fee (2%): ${formatUsdFromCents(fee)}`;
+      if (feeLine) feeLine.textContent = `Processing fee: ${formatUsdFromCents(fee)}`;
+    }
+
+    function setDonateEnabled(on: boolean) {
+      feePaid = on;
+      if (donateBtn) donateBtn.disabled = !on;
     }
 
     type StripeFactory = (key: string) => {
@@ -147,7 +138,7 @@ const stripeApiUrl = (
 
     async function mountCheckout(clientSecret) {
       const StripeCtor = await loadStripeJs();
-      if (!StripeCtor) throw new Error("Stripe.js is unavailable.");
+      if (!StripeCtor) throw new Error("Checkout is unavailable.");
       const stripe = StripeCtor(publishableKey);
       const fetchClientSecret = async () => clientSecret;
       const onComplete = async () => {
@@ -159,7 +150,7 @@ const stripeApiUrl = (
       } else if (typeof stripe.initEmbeddedCheckout === "function") {
         checkout = await stripe.initEmbeddedCheckout({ fetchClientSecret, onComplete });
       } else {
-        throw new Error("This Stripe.js build does not support Embedded Checkout.");
+        throw new Error("Checkout could not start.");
       }
       if (embedEl) {
         embedEl.hidden = false;
@@ -178,19 +169,6 @@ const stripeApiUrl = (
         embedEl.innerHTML = "";
         embedEl.hidden = true;
       }
-      if (cancelBtn) cancelBtn.hidden = true;
-    }
-
-    function unlockPaypal(donationCents) {
-      destroyCheckout();
-      if (amountStep) amountStep.hidden = true;
-      if (paypalStep) paypalStep.hidden = false;
-      if (paypalNote && donationCents) {
-        paypalNote.textContent = `Continue to PayPal to give ${formatUsdFromCents(donationCents)}. The 2% fee was already paid and is not deducted from this gift.`;
-      }
-      if (amountInput && donationCents) {
-        amountInput.value = (donationCents / 100).toFixed(2);
-      }
     }
 
     async function verifyAndUnlock(sessionId) {
@@ -199,7 +177,7 @@ const stripeApiUrl = (
       );
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.paid) {
-        setMsg(data.error || "Payment was not confirmed. PayPal stays locked until the fee is paid.", "error");
+        setMsg(data.error || "Processing fee was not confirmed.", "error");
         if (payBtn) payBtn.disabled = false;
         return false;
       }
@@ -209,7 +187,14 @@ const stripeApiUrl = (
         const next = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
         window.history.replaceState({}, "", next);
       }
-      unlockPaypal(data.donationCents);
+      destroyCheckout();
+      if (amountInput && data.donationCents) {
+        amountInput.value = (data.donationCents / 100).toFixed(2);
+        updateFeeLine();
+      }
+      setDonateEnabled(true);
+      setMsg("Processing fee paid. You can donate now.", "ok");
+      if (payBtn) payBtn.disabled = false;
       return true;
     }
 
@@ -217,11 +202,11 @@ const stripeApiUrl = (
       setMsg("");
       const donationCents = currentDonationCents();
       if (donationCents == null || donationCents < 100) {
-        setMsg("Enter a donation of at least $1.00.", "error");
+        setMsg("Enter an amount of at least $1.00.", "error");
         return;
       }
       if (!publishableKey || !stripeApiUrl) {
-        setMsg("Stripe keys are not configured yet. Add them to .env and rebuild.", "error");
+        setMsg("Checkout is not ready yet.", "error");
         return;
       }
 
@@ -248,31 +233,31 @@ const stripeApiUrl = (
         }
         activeSessionId = data.sessionId || "";
         await mountCheckout(data.clientSecret);
-        if (cancelBtn) cancelBtn.hidden = false;
       } catch (err) {
-        const message = err instanceof Error ? err.message : "Checkout failed. You can try again.";
+        const message = err instanceof Error ? err.message : "Checkout failed. Please try again.";
         setMsg(message, "error");
         if (payBtn) payBtn.disabled = false;
       }
     }
 
-    amountInput?.addEventListener("input", updateFeeLine);
+    amountInput?.addEventListener("input", () => {
+      if (feePaid) setDonateEnabled(false);
+      updateFeeLine();
+    });
     payBtn?.addEventListener("click", startCheckout);
-    cancelBtn?.addEventListener("click", () => {
-      destroyCheckout();
-      activeSessionId = "";
-      if (payBtn) payBtn.disabled = false;
-      setMsg("Checkout canceled. You can pay the processing fee again when ready.", "error");
+    paypalForm?.addEventListener("submit", (event) => {
+      if (!feePaid || donateBtn?.disabled) {
+        event.preventDefault();
+        setMsg("Pay the processing fee first.", "error");
+      }
     });
     updateFeeLine();
 
     const sessionId = new URLSearchParams(window.location.search).get("session_id");
     if (sessionId && stripeApiUrl) {
       if (payBtn) payBtn.disabled = true;
-      setMsg("Confirming your processing-fee payment…");
       verifyAndUnlock(sessionId).then((ok) => {
         if (!ok && payBtn) payBtn.disabled = false;
-        if (ok) setMsg("");
       });
     }
   }

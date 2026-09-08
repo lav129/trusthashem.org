@@ -667,11 +667,14 @@ a.bio-blessing:hover {
 .donate-box .donate-msg.is-error { color: #8a1f12; }
 .donate-box .donate-msg.is-ok { color: #1b5e3b; }
 .donate-box #donate-stripe-embed { margin: 1rem 0; min-height: 0; }
-.donate-box .btn { margin-top: 0.35rem; }
+.donate-box .donate-btn {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+.donate-box #donate-paypal-form { margin: 0; }
 .donate-box .btn[disabled] { opacity: 0.6; cursor: not-allowed; }
-.donate-box #donate-pay-fee { margin-top: 0.25rem; }
-.donate-box #donate-pay-fee { margin-top: 0.25rem; }
-.donate-box #donate-cancel { margin-top: 0.65rem; }
 
 /* ─── PAGE HERO ─────────────────────────────────────────────────────────── */
 .page-hero {
