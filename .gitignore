@@ -1,4 +1,5 @@
 node_modules/
+.vercel/
 dist/
 .astro/
 .wrangler/
@@ -10,3 +11,5 @@ dist/
 .DS_Store
 *.log
 STRIPE-KEYS-PASTE-HERE.txt
+
+.vercel

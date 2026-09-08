@@ -1,12 +1,13 @@
 import content from "./content.json";
 
-export const mediaBase = "https://trusthashem.org";
+export const mediaBase = "https://trusthashem-audio.vercel.app/media";
 
 export function mediaUrl(src = "") {
   return src
-    .replace("https://ftp.trusthashem.org/wp-content", `${mediaBase}/wp-content`)
-    .replace("http://ftp.trusthashem.org/wp-content", `${mediaBase}/wp-content`)
-    .replace("http://trusthashem.org/wp-content", `${mediaBase}/wp-content`);
+    .replace("https://ftp.trusthashem.org/wp-content", mediaBase)
+    .replace("http://ftp.trusthashem.org/wp-content", mediaBase)
+    .replace("https://trusthashem.org/wp-content", mediaBase)
+    .replace("http://trusthashem.org/wp-content", mediaBase);
 }
 
 export function audioType(src = "") {
