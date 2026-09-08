@@ -11,12 +11,14 @@ interface Props {
 const {
   title,
   description = "Teachings of Bitachon and Emunah with Rebbetzin Leah Donner in Geula, Jerusalem.",
-  image = "/images/hero/hero-sky.jpg",
+  image = "/images/logo-512.png",
 } = Astro.props;
 
 const pageTitle = title.includes("Trust Hashem") ? title : `${title} · Trust Hashem`;
 const canonical = new URL(Astro.url.pathname, site.url).href;
 const path = Astro.url.pathname;
+const shareImage = new URL(image, site.url).href;
+const logoImage = new URL("/images/logo-512.png", site.url).href;
 ---
 
 <!doctype html>
@@ -27,18 +29,35 @@ const path = Astro.url.pathname;
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/images/logo-192.jpeg" />
-    <link rel="apple-touch-icon" href="/images/logo-270.jpeg" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, site.url).href} />
+    <meta property="og:image" content={shareImage} />
+    <meta property="og:image:alt" content="Trust Hashem" />
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={shareImage} />
     <meta name="theme-color" content="#6b241d" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Trust Hashem",
+      url: site.url,
+      logo: logoImage,
+    })} />
   </head>
   <body>
     <div id="welcome-splash" class="welcome-splash" hidden>
+      <div class="welcome-leaves" aria-hidden="true">
+        {Array.from({ length: 18 }, (_, i) => (
+          <span class="welcome-leaf" style={`--i:${i}`}></span>
+        ))}
+      </div>
       <div class="welcome-splash-card">
         <img src="/images/welcome-tree.png" alt="Trust Hashem tree" width="360" height="360" />
         <p>Welcome to Trust Hashem</p>
@@ -144,19 +163,25 @@ const path = Astro.url.pathname;
       });
 
       const splash = document.getElementById("welcome-splash");
-      try {
-        if (splash && !sessionStorage.getItem("th-welcome")) {
+      if (splash) {
+        let seen = false;
+        try {
+          seen = sessionStorage.getItem("th-welcome-v3") === "1";
+        } catch {
+          seen = false;
+        }
+        if (seen) {
+          splash.remove();
+        } else {
+          try {
+            sessionStorage.setItem("th-welcome-v3", "1");
+          } catch {}
           splash.hidden = false;
-          sessionStorage.setItem("th-welcome", "1");
           window.setTimeout(() => {
             splash.classList.add("is-leaving");
-            window.setTimeout(() => splash.remove(), 420);
-          }, 1000);
-        } else {
-          splash?.remove();
+            window.setTimeout(() => splash.remove(), 450);
+          }, 6000);
         }
-      } catch {
-        splash?.remove();
       }
 
       document.addEventListener("click", async (e) => {
