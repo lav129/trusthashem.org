@@ -1,12 +1,12 @@
 import content from "./content.json";
 
-export const mediaBase = "https://ftp.trusthashem.org";
+export const mediaBase = "https://trusthashem.org";
 
 export function mediaUrl(src = "") {
   return src
-    .replace("https://trusthashem.org/wp-content", `${mediaBase}/wp-content`)
-    .replace("http://trusthashem.org/wp-content", `${mediaBase}/wp-content`)
-    .replace("https://ftp.trusthashem.org/wp-content", `${mediaBase}/wp-content`);
+    .replace("https://ftp.trusthashem.org/wp-content", `${mediaBase}/wp-content`)
+    .replace("http://ftp.trusthashem.org/wp-content", `${mediaBase}/wp-content`)
+    .replace("http://trusthashem.org/wp-content", `${mediaBase}/wp-content`);
 }
 
 export function audioType(src = "") {
