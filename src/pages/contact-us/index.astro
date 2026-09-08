@@ -1,9 +1,14 @@
 ---
 import { site } from "../../data/site";
 import Base from "../../layouts/Base.astro";
+
+const contactApi = (
+  import.meta.env.PUBLIC_CONTACT_API_URL ||
+  "https://trusthashem-contact.thelavglow.workers.dev"
+).replace(/\/$/, "");
 ---
 
-<Base title="Contact Us" description="Write to Trust Hashem at bitachon@trusthashem.org.">
+<Base title="Contact Us" description="Write to Trust Hashem at bitachon@trusthashem.org." image="/images/share-tree.png">
   <section class="page-hero">
     <div class="wrap">
       <div class="eyebrow">Reach us</div>
@@ -32,30 +37,92 @@ import Base from "../../layouts/Base.astro";
         </a>
       </div>
 
-      <form class="donate-box contact-form" action={`mailto:${site.email}`} method="post" enctype="text/plain">
+      <form
+        class="donate-box contact-form"
+        id="contact-form"
+        action={contactApi + "/"}
+        method="post"
+        data-api={contactApi}
+      >
         <h2>Send a message</h2>
-        <p>This opens your email app with the note addressed to {site.email}.</p>
+        <p>Your note is sent securely to {site.email}. You will see a confirmation here when it goes through.</p>
+        <p class="donate-msg" id="contact-msg" hidden></p>
         <div class="form-group">
           <label for="name">Name</label>
-          <input id="name" name="name" required />
+          <input id="name" name="name" autocomplete="name" required minlength="2" maxlength="400" />
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input id="email" type="email" name="email" required />
+          <input id="email" type="email" name="email" autocomplete="email" required maxlength="400" />
         </div>
         <div class="form-group">
           <label for="subject">Subject</label>
-          <input id="subject" name="subject" required />
+          <input id="subject" name="subject" required minlength="2" maxlength="400" />
         </div>
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="7" required></textarea>
+          <textarea id="message" name="message" rows="7" required minlength="10" maxlength="5000"></textarea>
         </div>
-        <button class="btn btn-wine" type="submit">Send by email</button>
+        <div class="contact-honeypot" aria-hidden="true">
+          <label for="company">Company</label>
+          <input id="company" name="company" tabindex="-1" autocomplete="off" />
+        </div>
+        <button class="btn btn-wine" id="contact-submit" type="submit">Send message</button>
       </form>
     </div>
   </section>
 </Base>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const msgEl = document.getElementById("contact-msg");
+  const submitBtn = document.getElementById("contact-submit") as HTMLButtonElement | null;
+  if (form) {
+    const api = (form.dataset.api || "").replace(/\/$/, "");
+    function setMsg(text: string, kind = "") {
+      if (!msgEl) return;
+      msgEl.hidden = !text;
+      msgEl.textContent = text || "";
+      msgEl.classList.toggle("is-error", kind === "error");
+      msgEl.classList.toggle("is-ok", kind === "ok");
+    }
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!api) {
+        setMsg("The contact form is not ready yet.", "error");
+        return;
+      }
+      const data = new FormData(form);
+      const payload = {
+        name: String(data.get("name") || ""),
+        email: String(data.get("email") || ""),
+        subject: String(data.get("subject") || ""),
+        message: String(data.get("message") || ""),
+        company: String(data.get("company") || ""),
+      };
+      if (submitBtn) submitBtn.disabled = true;
+      setMsg("Sending…");
+      try {
+        const res = await fetch(api + "/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const out = await res.json().catch(() => ({}));
+        if (!res.ok || !out.ok) {
+          throw new Error(out.error || "Could not send the message.");
+        }
+        form.reset();
+        setMsg("Message sent. Thank you — we will reply by email.", "ok");
+      } catch (err) {
+        const message = err instanceof Error ? err.message : "Could not send the message. Please try again.";
+        setMsg(message, "error");
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  }
+</script>
 
 <style>
   .contact-layout {
@@ -88,6 +155,13 @@ import Base from "../../layouts/Base.astro";
   .contact-form {
     width: 100%;
     max-width: none;
+  }
+  .contact-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
   }
   @media (max-width: 800px) {
     .contact-layout {

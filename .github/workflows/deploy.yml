@@ -28,6 +28,7 @@ jobs:
           PUBLIC_STRIPE_PUBLISHABLE_KEY: ${{ secrets.PUBLIC_STRIPE_PUBLISHABLE_KEY }}
           NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: ${{ secrets.PUBLIC_STRIPE_PUBLISHABLE_KEY }}
           PUBLIC_STRIPE_API_URL: https://trusthashem-stripe.thelavglow.workers.dev
+          PUBLIC_CONTACT_API_URL: https://trusthashem-contact.thelavglow.workers.dev
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
