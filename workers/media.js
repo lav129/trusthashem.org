@@ -1,5 +1,5 @@
-/** Proxies existing FTP audio via local media proxy (localhost.run). No extra storage. */
-const ORIGIN = "https://e4e76878c119c9.lhr.life";
+/** Proxies existing origin audio via the hosting IP. No extra storage. */
+const AUDIO_HOST = "trusthashem.org";
 
 const cors = {
   "Access-Control-Allow-Origin": "*",
@@ -9,6 +9,52 @@ const cors = {
     "Content-Length, Content-Range, Accept-Ranges, Content-Disposition",
 };
 
+function isAudioResponse(res) {
+  if (!(res.ok || res.status === 206)) return false;
+  const type = (res.headers.get("Content-Type") || "").toLowerCase();
+  if (!type || type.includes("text/html")) return false;
+  return (
+    type.includes("ogg") ||
+    type.includes("audio") ||
+    type.includes("mpeg") ||
+    type.includes("octet-stream") ||
+    type.includes("mp4")
+  );
+}
+
+async function fetchUpstream(pathname, request) {
+  const headers = new Headers();
+  if (request.headers.get("Range")) headers.set("Range", request.headers.get("Range"));
+  headers.set("User-Agent", "TrustHashemMedia/1.0");
+  headers.set("Accept", "*/*");
+  const method = request.method === "HEAD" ? "HEAD" : "GET";
+
+  const attempts = [
+    {
+      url: `https://${AUDIO_HOST}${pathname}`,
+      init: { cf: { resolveOverride: "ftp.trusthashem.org" } },
+    },
+    {
+      url: `https://ftp.trusthashem.org${pathname}`,
+    },
+  ];
+
+  for (const attempt of attempts) {
+    try {
+      const res = await fetch(attempt.url, {
+        method,
+        headers,
+        redirect: "manual",
+        ...attempt.init,
+      });
+      if (isAudioResponse(res)) return res;
+    } catch {
+      /* try next */
+    }
+  }
+  return null;
+}
+
 export default {
   async fetch(request) {
     const url = new URL(request.url);
@@ -17,17 +63,8 @@ export default {
       return new Response("Not found", { status: 404, headers: cors });
     }
 
-    const headers = new Headers();
-    if (request.headers.get("Range")) headers.set("Range", request.headers.get("Range"));
-    headers.set("User-Agent", "TrustHashemMedia/1.0");
-
-    let res;
-    try {
-      res = await fetch(ORIGIN + url.pathname, {
-        method: request.method === "HEAD" ? "HEAD" : "GET",
-        headers,
-      });
-    } catch {
+    const res = await fetchUpstream(url.pathname, request);
+    if (!res) {
       return new Response("Upstream unreachable", { status: 502, headers: cors });
     }
 

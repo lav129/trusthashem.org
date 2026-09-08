@@ -1,0 +1,2 @@
+# Copy to workers/.dev.vars (gitignored) for `npx wrangler dev --config workers/stripe.toml`
+STRIPE_SECRET_KEY=rk_test_your_restricted_or_secret_key_here

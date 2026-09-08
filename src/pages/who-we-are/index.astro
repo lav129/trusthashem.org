@@ -1,5 +1,5 @@
 ---
-import { teacherBio, site } from "../../data/site";
+import { teacherBioHtml, rabbiHref, site } from "../../data/site";
 import Base from "../../layouts/Base.astro";
 ---
 
@@ -20,12 +20,12 @@ import Base from "../../layouts/Base.astro";
           <span class="eyebrow" style="color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:.75rem;font-weight:600;display:block;margin-bottom:.6rem">The teacher</span>
           <h2>Rebbetzin Leah Donner</h2>
           <div class="divider" style="margin-bottom:1.5rem"></div>
-          <p>{teacherBio}</p>
+          <p set:html={teacherBioHtml()} />
           <div class="bio-blessings">
-            <span class="bio-blessing">HaGaon HaRav Yacov Moshe Hillel</span>
+            <a class="bio-blessing" href={rabbiHref("HaGaon HaRav Yacov Moshe Hillel")} rel="noopener noreferrer" target="_blank">HaGaon HaRav Yacov Moshe Hillel</a>
             <span class="bio-blessing">Rabbi Israel Moshe Levinsohn</span>
-            <span class="bio-blessing">HaRav Yonason David</span>
-            <span class="bio-blessing">HaGaon HaRav Itamar Schwartz</span>
+            <a class="bio-blessing" href={rabbiHref("HaRav Yonason David")} rel="noopener noreferrer" target="_blank">HaRav Yonason David</a>
+            <a class="bio-blessing" href={rabbiHref("HaGaon HaRav Itamar Schwartz")} rel="noopener noreferrer" target="_blank">HaGaon HaRav Itamar Schwartz</a>
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@ import Base from "../../layouts/Base.astro";
       <div class="attributes-grid">
         <div class="attr-item"><p>A complete audio library of Emunah and Bitachon shiurim, kept at the original lesson addresses.</p></div>
         <div class="attr-item"><p>WhatsApp groups for daily connection, so the learning does not stay only on a website.</p></div>
-        <div class="attr-item"><p>A public YouTube channel for anyone who prefers to watch, at @TrustHashem.</p></div>
+        <div class="attr-item"><p>A public YouTube channel for anyone who prefers to watch, at @rebbetzinleahdonner.</p></div>
         <div class="attr-item"><p>A simple way to give through PayPal so the library can remain free.</p></div>
       </div>
       <div style="margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:1rem">

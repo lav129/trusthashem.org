@@ -1,6 +1,6 @@
 import content from "./content.json";
 
-export const mediaBase = "https://trusthashem-media.thelavglow.workers.dev";
+export const mediaBase = "https://ftp.trusthashem.org";
 
 export function mediaUrl(src = "") {
   return src
@@ -67,6 +67,41 @@ export const homeIntro =
 
 export const teacherBio =
   "Presenting these lectures is Rebbetzin Leah Donner, who resides with her husband and family in Geula, Jerusalem, Israel. Inspired by her students and Rabbaim, she shares these teachings of Bitachon and Knowing Hashem Yisborach. Rebbetzin Donner received blessings from HaGaon HaRav Yacov Moshe Hillel, world-renowned Rosh Yeshiva of Ahavat Shalom in Jerusalem; Rabbi Israel Moshe Levinsohn, of whom the Beis Yisrael of Gur said this tzadik has the power of brachos; HaRav Yonason David, Rosh Kollel Pachad Yitzhak in HarNof; and HaGaon HaRav Itamar Schwartz, author of Bilvavi Mishkan Evneh, to teach Klal Yisrael with these wisdoms, shortly before the tragic events of Simchat Torah 5784. May Hashem continue to guide His nation towards greater strength, and through our dedication to learning Bitachon, may we merit the arrival of Mashiach in achdut with love and mercy.";
+
+export const social = {
+  youtube: "https://youtube.com/@rebbetzinleahdonner?si=aPhs7VLUWfTkRTEV",
+  youtubeEmbed: "https://www.youtube.com/embed/videoseries?list=UUJC-HR237Cc6Y4pPumCDfDQ",
+  instagram: "https://www.instagram.com/rabanitleahdonner/",
+  leahDonnerSite: "https://trusthashem.org",
+};
+
+export const rabbiLinks = [
+  { name: "HaGaon HaRav Yaakov Moshe Hillel", href: "https://en.wikipedia.org/wiki/Yaakov_Moshe_Hillel" },
+  { name: "HaGaon HaRav Yacov Moshe Hillel", href: "https://en.wikipedia.org/wiki/Yaakov_Moshe_Hillel" },
+  { name: "HaGaon HaRav Itamar Schwartz", href: "https://eng.bilvavi.net/" },
+  { name: "Rabbi Yonason David", href: "https://en.wikipedia.org/wiki/Yonasan_David" },
+  { name: "HaRav Yonason David", href: "https://en.wikipedia.org/wiki/Yonasan_David" },
+  { name: "HaRav Itamar Schwartz", href: "https://eng.bilvavi.net/" },
+  { name: "Rabbi Itamar Schwartz", href: "https://eng.bilvavi.net/" },
+] as const;
+
+export function rabbiHref(name: string) {
+  return rabbiLinks.find((item) => item.name === name)?.href || "";
+}
+
+export function teacherBioHtml() {
+  let html = teacherBio
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+  const names = [...rabbiLinks].sort((a, b) => b.name.length - a.name.length);
+  for (const { name, href } of names) {
+    html = html.split(name).join(
+      `<a class="bio-inline-link" href="${href}" rel="noopener noreferrer" target="_blank">${name}</a>`,
+    );
+  }
+  return html;
+}
 
 export const donationCopy = {
   title:

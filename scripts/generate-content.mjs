@@ -51,16 +51,20 @@ function cleanSummary(paragraphs) {
 
 function loadTracks(ids) {
   const tracks = [];
+  const seen = new Set();
   for (const id of ids || []) {
     const file = path.join(ROOT, "_recovery", "playlists", `${id}.json`);
     if (!fs.existsSync(file)) continue;
     const items = JSON.parse(fs.readFileSync(file, "utf8"));
     for (const item of items) {
       if (!item?.audio) continue;
+      const audio = String(item.audio);
+      if (seen.has(audio)) continue;
+      seen.add(audio);
       tracks.push({
         title: item.title || "Lesson",
         subtitle: item.subtitle || "",
-        audio: item.audio,
+        audio,
         cover: item.cover || "",
       });
     }

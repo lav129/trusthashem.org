@@ -1,13 +1,279 @@
 ---
 import { site } from "../data/site";
+
+const publishableKey = (
+  import.meta.env.PUBLIC_STRIPE_PUBLISHABLE_KEY ||
+  import.meta.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ||
+  ""
+).trim();
+const stripeApiUrl = (
+  import.meta.env.PUBLIC_STRIPE_API_URL ||
+  "https://trusthashem-stripe.thelavglow.workers.dev"
+).replace(/\/$/, "").trim();
 ---
 
-<div class="donate-box">
-  <span class="eyebrow">PayPal</span>
+<div
+  class="donate-box"
+  id="donate-flow"
+  data-pk={publishableKey}
+  data-api={stripeApiUrl}
+>
+  <span class="eyebrow">Donate</span>
   <h2>Give securely</h2>
-  <p>Use the same PayPal donation that has always been on TrustHashem.org. Any amount helps keep the shiurim free.</p>
-  <form action="https://www.paypal.com/donate" method="post" target="_blank">
-    <input type="hidden" name="hosted_button_id" value={site.paypalButtonId} />
-    <button class="btn btn-gold" type="submit">Donate with PayPal</button>
-  </form>
+  <p>
+    Enter the amount you want to give. A 2% processing fee is paid first through Stripe.
+    After that succeeds, you continue to the same PayPal donation. Your full gift still goes
+    through PayPal — the fee is separate and is not subtracted.
+  </p>
+
+  <div id="donate-step-amount">
+    <label class="donate-amount-label" for="donate-amount">Donation amount (USD)</label>
+    <input
+      class="donate-amount"
+      id="donate-amount"
+      name="donation_amount"
+      type="number"
+      inputmode="decimal"
+      min="1"
+      step="0.01"
+      placeholder="100.00"
+      required
+    />
+    <p class="donate-fee" id="donate-fee-line">Processing fee (2%): $0.00</p>
+    <p class="donate-hint">Minimum donation $1.00. Stripe’s card minimum may set a $0.50 fee floor.</p>
+    <p class="donate-msg" id="donate-msg" hidden></p>
+    <button class="btn btn-gold" id="donate-pay-fee" type="button">Pay 2% Processing Fee</button>
+    <button class="btn btn-outline-dark" id="donate-cancel" type="button" hidden>Cancel</button>
+  </div>
+
+  <div id="donate-stripe-embed" hidden></div>
+
+  <div id="donate-step-paypal" hidden>
+    <p class="donate-msg is-ok" id="donate-success-msg">Processing fee paid successfully.</p>
+    <p id="donate-paypal-note"></p>
+    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+      <input type="hidden" name="hosted_button_id" value={site.paypalButtonId} />
+      <button class="btn btn-gold" type="submit">Continue to PayPal Donation</button>
+    </form>
+  </div>
 </div>
+
+<script>
+  import {
+    donationDollarsToCents,
+    feeCentsFromDonation,
+    formatUsdFromCents,
+  } from "../lib/stripe-fee";
+
+  const root = document.getElementById("donate-flow");
+  if (root) {
+    const publishableKey = root.dataset.pk || "";
+    const stripeApiUrl = (root.dataset.api || "").replace(/\/$/, "");
+    const amountInput = document.getElementById("donate-amount") as HTMLInputElement | null;
+    const feeLine = document.getElementById("donate-fee-line");
+    const msgEl = document.getElementById("donate-msg");
+    const payBtn = document.getElementById("donate-pay-fee") as HTMLButtonElement | null;
+    const cancelBtn = document.getElementById("donate-cancel") as HTMLButtonElement | null;
+    const embedEl = document.getElementById("donate-stripe-embed");
+    const amountStep = document.getElementById("donate-step-amount");
+    const paypalStep = document.getElementById("donate-step-paypal");
+    const paypalNote = document.getElementById("donate-paypal-note");
+
+    let checkout: { mount: (el: Element) => void; destroy?: () => void } | null = null;
+    let activeSessionId = "";
+
+    function setMsg(text: string, kind = "") {
+      if (!msgEl) return;
+      msgEl.hidden = !text;
+      msgEl.textContent = text || "";
+      msgEl.classList.toggle("is-error", kind === "error");
+      msgEl.classList.toggle("is-ok", kind === "ok");
+    }
+
+    function currentDonationCents() {
+      return donationDollarsToCents(amountInput?.value || "");
+    }
+
+    function updateFeeLine() {
+      const cents = currentDonationCents();
+      if (cents == null || cents < 100) {
+        if (feeLine) feeLine.textContent = "Processing fee (2%): $0.00";
+        return;
+      }
+      const fee = feeCentsFromDonation(cents);
+      if (feeLine) feeLine.textContent = `Processing fee (2%): ${formatUsdFromCents(fee)}`;
+    }
+
+    type StripeFactory = (key: string) => {
+      createEmbeddedCheckoutPage?: (opts: object) => Promise<{ mount: (el: Element) => void; destroy?: () => void }>;
+      initEmbeddedCheckout?: (opts: object) => Promise<{ mount: (el: Element) => void; destroy?: () => void }>;
+    };
+
+    function stripeFactory(): StripeFactory | undefined {
+      return (window as Window & { Stripe?: StripeFactory }).Stripe;
+    }
+
+    function loadStripeJs() {
+      return new Promise<StripeFactory>((resolve, reject) => {
+        const existingFactory = stripeFactory();
+        if (existingFactory) {
+          resolve(existingFactory);
+          return;
+        }
+        const existing = document.querySelector('script[src^="https://js.stripe.com/v3"]');
+        if (existing) {
+          existing.addEventListener("load", () => {
+            const loaded = stripeFactory();
+            if (loaded) resolve(loaded);
+            else reject(new Error("Stripe.js failed to load"));
+          }, { once: true });
+          existing.addEventListener("error", () => reject(new Error("Stripe.js failed to load")), {
+            once: true,
+          });
+          return;
+        }
+        const script = document.createElement("script");
+        script.src = "https://js.stripe.com/v3/";
+        script.async = true;
+        script.onload = () => {
+          const loaded = stripeFactory();
+          if (loaded) resolve(loaded);
+          else reject(new Error("Stripe.js failed to load"));
+        };
+        script.onerror = () => reject(new Error("Stripe.js failed to load"));
+        document.head.appendChild(script);
+      });
+    }
+
+    async function mountCheckout(clientSecret) {
+      const StripeCtor = await loadStripeJs();
+      if (!StripeCtor) throw new Error("Stripe.js is unavailable.");
+      const stripe = StripeCtor(publishableKey);
+      const fetchClientSecret = async () => clientSecret;
+      const onComplete = async () => {
+        if (activeSessionId) await verifyAndUnlock(activeSessionId);
+      };
+
+      if (typeof stripe.createEmbeddedCheckoutPage === "function") {
+        checkout = await stripe.createEmbeddedCheckoutPage({ fetchClientSecret, onComplete });
+      } else if (typeof stripe.initEmbeddedCheckout === "function") {
+        checkout = await stripe.initEmbeddedCheckout({ fetchClientSecret, onComplete });
+      } else {
+        throw new Error("This Stripe.js build does not support Embedded Checkout.");
+      }
+      if (embedEl) {
+        embedEl.hidden = false;
+        checkout.mount(embedEl);
+      }
+    }
+
+    function destroyCheckout() {
+      try {
+        checkout?.destroy?.();
+      } catch {
+        /* ignore */
+      }
+      checkout = null;
+      if (embedEl) {
+        embedEl.innerHTML = "";
+        embedEl.hidden = true;
+      }
+      if (cancelBtn) cancelBtn.hidden = true;
+    }
+
+    function unlockPaypal(donationCents) {
+      destroyCheckout();
+      if (amountStep) amountStep.hidden = true;
+      if (paypalStep) paypalStep.hidden = false;
+      if (paypalNote && donationCents) {
+        paypalNote.textContent = `Continue to PayPal to give ${formatUsdFromCents(donationCents)}. The 2% fee was already paid and is not deducted from this gift.`;
+      }
+      if (amountInput && donationCents) {
+        amountInput.value = (donationCents / 100).toFixed(2);
+      }
+    }
+
+    async function verifyAndUnlock(sessionId) {
+      const res = await fetch(
+        `${stripeApiUrl}/verify-session?session_id=${encodeURIComponent(sessionId)}`,
+      );
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.paid) {
+        setMsg(data.error || "Payment was not confirmed. PayPal stays locked until the fee is paid.", "error");
+        if (payBtn) payBtn.disabled = false;
+        return false;
+      }
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("session_id") !== sessionId) {
+        params.set("session_id", sessionId);
+        const next = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
+        window.history.replaceState({}, "", next);
+      }
+      unlockPaypal(data.donationCents);
+      return true;
+    }
+
+    async function startCheckout() {
+      setMsg("");
+      const donationCents = currentDonationCents();
+      if (donationCents == null || donationCents < 100) {
+        setMsg("Enter a donation of at least $1.00.", "error");
+        return;
+      }
+      if (!publishableKey || !stripeApiUrl) {
+        setMsg("Stripe keys are not configured yet. Add them to .env and rebuild.", "error");
+        return;
+      }
+
+      if (payBtn) payBtn.disabled = true;
+      destroyCheckout();
+      const idempotencyKey = crypto.randomUUID();
+
+      try {
+        const res = await fetch(`${stripeApiUrl}/create-checkout-session`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Idempotency-Key": idempotencyKey,
+          },
+          body: JSON.stringify({
+            donationAmount: amountInput?.value || "",
+            returnPath: window.location.pathname,
+            idempotencyKey,
+          }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.clientSecret) {
+          throw new Error(data.error || "Could not start checkout.");
+        }
+        activeSessionId = data.sessionId || "";
+        await mountCheckout(data.clientSecret);
+        if (cancelBtn) cancelBtn.hidden = false;
+      } catch (err) {
+        const message = err instanceof Error ? err.message : "Checkout failed. You can try again.";
+        setMsg(message, "error");
+        if (payBtn) payBtn.disabled = false;
+      }
+    }
+
+    amountInput?.addEventListener("input", updateFeeLine);
+    payBtn?.addEventListener("click", startCheckout);
+    cancelBtn?.addEventListener("click", () => {
+      destroyCheckout();
+      activeSessionId = "";
+      if (payBtn) payBtn.disabled = false;
+      setMsg("Checkout canceled. You can pay the processing fee again when ready.", "error");
+    });
+    updateFeeLine();
+
+    const sessionId = new URLSearchParams(window.location.search).get("session_id");
+    if (sessionId && stripeApiUrl) {
+      if (payBtn) payBtn.disabled = true;
+      setMsg("Confirming your processing-fee payment…");
+      verifyAndUnlock(sessionId).then((ok) => {
+        if (!ok && payBtn) payBtn.disabled = false;
+        if (ok) setMsg("");
+      });
+    }
+  }
+</script>

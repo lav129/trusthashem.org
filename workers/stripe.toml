@@ -1,0 +1,13 @@
+name = "trusthashem-stripe"
+main = "stripe.js"
+compatibility_date = "2026-09-03"
+compatibility_flags = ["nodejs_compat"]
+account_id = "c41feade0545b8c24506226edb07ce55"
+workers_dev = true
+
+# Do not put STRIPE_SECRET_KEY here.
+# Local: workers/.dev.vars  →  STRIPE_SECRET_KEY=rk_...
+# Production: npx wrangler secret put STRIPE_SECRET_KEY --config workers/stripe.toml
+
+[vars]
+SITE_ORIGIN = "https://trusthashem.org"

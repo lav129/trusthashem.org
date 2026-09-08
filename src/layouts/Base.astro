@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { moreNav, nav, site } from "../data/site";
+import { moreNav, nav, site, social } from "../data/site";
 
 interface Props {
   title: string;
@@ -40,7 +40,7 @@ const path = Astro.url.pathname;
   <body>
     <div id="welcome-splash" class="welcome-splash" hidden>
       <div class="welcome-splash-card">
-        <img src="/images/logo-270.jpeg" alt="Trust Hashem" width="220" height="220" />
+        <img src="/images/welcome-tree.png" alt="Trust Hashem tree" width="360" height="360" />
         <p>Welcome to Trust Hashem</p>
       </div>
     </div>
@@ -112,10 +112,12 @@ const path = Astro.url.pathname;
           <div class="footer-col">
             <h4>Connect</h4>
             <a href={`mailto:${site.email}`}>{site.email}</a>
-            <a href="mailto:Ask@LeahDonnerOfficial.com">Mentorship</a>
+            <a href="/mentorship/">Mentorship</a>
+            <a href={social.leahDonnerSite}>LeahDonnerOfficial.com</a>
             <a href={site.homeWhatsapp} rel="noopener noreferrer" target="_blank">WhatsApp Group</a>
             <a href="/donate/">Support This Work</a>
-            <a href="https://www.youtube.com/@TrustHashem" rel="noopener noreferrer" target="_blank">YouTube Channel</a>
+            <a href={social.youtube} rel="noopener noreferrer" target="_blank">YouTube Channel</a>
+            <a href={social.instagram} rel="noopener noreferrer" target="_blank">Instagram</a>
             <a href="/podcasts/">Podcasts</a>
           </div>
         </div>

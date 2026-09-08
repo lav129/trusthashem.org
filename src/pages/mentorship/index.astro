@@ -5,29 +5,29 @@ import Base from "../../layouts/Base.astro";
 <Base
   title="Private Spiritual Mentorship"
   description="Stop performing. Start becoming. Private spiritual mentorship with Leah Donner — Peace, Power, Purpose. Discover. Align. Become."
-  image="/images/mentorship-you-within.jpg"
+  image="/images/mentorship-session.jpg"
 >
   <section class="mentor-hero">
     <div class="mentor-hero-glow" aria-hidden="true"></div>
     <div class="wrap mentor-hero-grid">
       <div class="mentor-hero-copy">
-        <p class="mentor-pillars">Peace · Power · Purpose</p>
+        <p class="mentor-pillars">Mentorship · Peace · Power · Purpose</p>
         <h1>Private Spiritual Mentorship</h1>
         <p class="mentor-lead">Stop performing. Start becoming.</p>
-        <p class="mentor-sub">Tap into the power of the real YOU.</p>
+        <p class="mentor-sub">Women can book their own private mentorship session with Rebbetzin Leah Donner. Tap into the power of the real YOU.</p>
         <div class="mentor-actions">
-          <a class="btn btn-mentor" href="mailto:Ask@LeahDonnerOfficial.com">Begin the conversation</a>
+          <a class="btn btn-mentor" href="mailto:Ask@LeahDonnerOfficial.com">Book Your Own Private Session</a>
           <a class="btn btn-mentor-outline" href="mailto:Ask@LeahDonnerOfficial.com">Ask@LeahDonnerOfficial.com</a>
         </div>
       </div>
       <figure class="mentor-emblem">
         <img
-          src="/images/mentorship-you-within.jpg"
-          alt="The YOU Within — Discover. Align. Become."
-          width="640"
+          src="/images/mentorship-session.jpg"
+          alt="Rebbetzin Leah Donner leading a Bitachon mentorship session with a group of women"
+          width="960"
           height="640"
         />
-        <figcaption>The YOU Within · Discover. Align. Become.</figcaption>
+        <figcaption>Book a private session · Discover. Align. Become.</figcaption>
       </figure>
     </div>
   </section>
@@ -60,7 +60,7 @@ import Base from "../../layouts/Base.astro";
           <p>
             Teacher of Bitachon and Emunah. A private invitation to discover, align, and become.
           </p>
-          <a class="btn btn-mentor" href="mailto:Ask@LeahDonnerOfficial.com">Ask@LeahDonnerOfficial.com</a>
+          <a class="btn btn-mentor" href="mailto:Ask@LeahDonnerOfficial.com">Book a Private Session</a>
         </div>
       </aside>
     </div>
@@ -71,7 +71,7 @@ import Base from "../../layouts/Base.astro";
       <p class="mentor-banner-kicker">The YOU Within</p>
       <h2>Discover. Align. Become.</h2>
       <p>When you are ready, write. The next step begins with a single message.</p>
-      <a class="btn btn-gold" href="mailto:Ask@LeahDonnerOfficial.com">Email Leah</a>
+      <a class="btn btn-gold" href="mailto:Ask@LeahDonnerOfficial.com">Book a Private Session</a>
     </div>
   </section>
 </Base>
@@ -159,13 +159,13 @@ import Base from "../../layouts/Base.astro";
     text-align: center;
   }
   .mentor-emblem img {
-    width: min(100%, 420px);
+    width: min(100%, 540px);
     height: auto;
-    aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center 30%;
     margin-inline: auto;
-    border-radius: 50%;
+    border-radius: 22px;
     border: 2px solid rgba(212,175,55,0.55);
     box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 0 0 10px rgba(212,175,55,0.08);
     animation: mentorFloat 8s ease-in-out infinite;
@@ -282,7 +282,7 @@ import Base from "../../layouts/Base.astro";
     .mentor-hero-grid,
     .mentor-invite-grid { grid-template-columns: 1fr; }
     .mentor-hero h1 { max-width: none; }
-    .mentor-emblem img { width: min(100%, 320px); }
+    .mentor-emblem img { width: 100%; }
     .mentor-banner { background-attachment: scroll; }
   }
   @media (max-width: 600px) {
