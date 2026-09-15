@@ -650,11 +650,6 @@ a.bio-blessing:hover {
   background: #fff;
   margin-bottom: 0.75rem;
 }
-.donate-box .donate-fee {
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 0.4rem;
-}
 .donate-box .donate-hint {
   font-size: 0.85rem;
   margin-bottom: 1rem;
@@ -664,7 +659,6 @@ a.bio-blessing:hover {
 }
 .donate-box .donate-msg.is-error { color: #8a1f12; }
 .donate-box .donate-msg.is-ok { color: #1b5e3b; }
-.donate-box #donate-stripe-embed { margin: 1rem 0; min-height: 0; }
 .donate-box .donate-btn {
   display: flex;
   width: 100%;
@@ -672,7 +666,6 @@ a.bio-blessing:hover {
   margin-top: 0.75rem;
 }
 .donate-box #donate-paypal-form { margin: 0; }
-.donate-box .btn[disabled] { opacity: 0.6; cursor: not-allowed; }
 
 /* ─── PAGE HERO ─────────────────────────────────────────────────────────── */
 .page-hero {

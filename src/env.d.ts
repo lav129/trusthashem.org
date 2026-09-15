@@ -1,9 +1,7 @@
 /// <reference types="astro/client" />
 
 interface ImportMetaEnv {
-  readonly PUBLIC_STRIPE_PUBLISHABLE_KEY?: string;
-  readonly NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY?: string;
-  readonly PUBLIC_STRIPE_API_URL?: string;
+  readonly PUBLIC_CONTACT_API_URL?: string;
 }
 
 interface ImportMeta {

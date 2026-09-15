@@ -6,8 +6,7 @@
     "content": "node scripts/generate-content.mjs",
     "dev": "npm run content && astro dev",
     "build": "npm run content && astro build",
-    "preview": "astro preview",
-    "stripe:dev": "wrangler dev --config workers/stripe.toml"
+    "preview": "astro preview"
   },
   "dependencies": {
     "astro": "^5.13.7"
