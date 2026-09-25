@@ -14,10 +14,10 @@ const apiUrl = (
   <div class="daily-lesson-backdrop" data-daily-close></div>
   <div class="daily-lesson-card" role="dialog" aria-modal="true" aria-labelledby="daily-lesson-title">
     <button class="daily-lesson-x" type="button" aria-label="Close" data-daily-close>&times;</button>
-    <p class="daily-lesson-eyebrow">Hisook Bitachon · Daily</p>
-    <h2 id="daily-lesson-title">Get your daily Bitachon lesson here</h2>
+    <p class="daily-lesson-eyebrow">Daily Bitachon · Chizuk</p>
+    <h2 id="daily-lesson-title">Get your daily Bitachon chizuk here</h2>
     <p class="daily-lesson-copy">
-      Subscribe with your email and receive a fresh lesson of trust in Hashem whenever a new Bitachon podcast is posted.
+      Subscribe with your email and receive daily chizuk — a fresh Bitachon lesson whenever a new podcast is posted.
     </p>
     <form id="daily-lesson-form" class="daily-lesson-form" novalidate>
       <label class="sr-only" for="daily-lesson-email">Email address</label>
@@ -31,7 +31,7 @@ const apiUrl = (
         placeholder="Enter your email to subscribe"
       />
       <input type="text" name="website" tabindex="-1" autocomplete="off" class="daily-honeypot" aria-hidden="true" />
-      <button class="btn btn-wine" type="submit">Subscribe for daily Bitachon</button>
+      <button class="btn btn-wine" type="submit">Subscribe for daily chizuk</button>
     </form>
     <p class="daily-lesson-msg" id="daily-lesson-msg" hidden></p>
     <p class="daily-lesson-note">Updates from {site.email} · reply anytime to unsubscribe.</p>
@@ -150,7 +150,7 @@ const apiUrl = (
 </style>
 
 <script define:vars={{ apiUrl, siteEmail: site.email }}>
-  const STORAGE_KEY = "th-daily-bitachon-optin-v2";
+  const STORAGE_KEY = "th-daily-bitachon-optin-v3";
   const DELAY_MS = 35000;
   const popup = document.getElementById("daily-lesson-popup");
   const form = document.getElementById("daily-lesson-form");
@@ -254,7 +254,7 @@ const apiUrl = (
       setMsg(err?.message || "Could not subscribe. Please try again.", "error");
       if (submitBtn) {
         submitBtn.removeAttribute("disabled");
-        submitBtn.textContent = "Subscribe for daily Bitachon";
+        submitBtn.textContent = "Subscribe for daily chizuk";
       }
     }
   });
