@@ -151,9 +151,18 @@ ${lines}
 Listen: ${BITACHON_URL}
 Watch: https://trusthashem.org/videos/
 
-— Trust Hashem daily lesson checker`;
+This update is from Trust Hashem (${CONTACT}).
+Reply to this email to unsubscribe.
 
-  await sendFormSubmit(CONTACT, { subject: `[Daily lesson] ${subject}`, message });
+With blessing,
+Trust Hashem · Rebbetzin Leah Donner`;
+
+  // Always notify the Network Solutions inbox
+  await sendFormSubmit(CONTACT, {
+    subject: `[Daily lesson] ${subject}`,
+    message,
+    replyTo: CONTACT,
+  });
 
   const subs = readJson(SUBS_FILE, { emails: [] });
   const emails = Array.isArray(subs.emails)
@@ -163,8 +172,9 @@ Watch: https://trusthashem.org/videos/
   let sent = 0;
   for (const email of emails) {
     try {
+      // Each opted-in address gets the update; reply-to is bitachon@trusthashem.org
       await sendFormSubmit(email, {
-        subject,
+        subject: `${subject} · Trust Hashem`,
         message,
         replyTo: CONTACT,
       });

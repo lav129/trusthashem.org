@@ -8,3 +8,5 @@ workers_dev = true
 SITE_ORIGIN = "https://trusthashem.org"
 CONTACT_TO = "bitachon@trusthashem.org"
 CONTACT_FROM_NAME = "Trust Hashem"
+GITHUB_REPO = "lav129/trusthashem.org"
+GITHUB_BRANCH = "main"

@@ -1,11 +1,14 @@
 ---
 /**
  * 35-second popup: daily Hisook Bitachon lesson email opt-in.
- * Independent of Cloudflare D1/KV — delivers to Network Solutions mail via FormSubmit.
+ * Saves the subscriber to the site list and emails via bitachon@trusthashem.org.
  */
 import { site } from "../data/site";
 
-const formSubmitUrl = `https://formsubmit.co/ajax/${encodeURIComponent(site.email)}`;
+const apiUrl = (
+  import.meta.env.PUBLIC_CONTACT_API_URL ||
+  "https://trusthashem-contact.thelavglow.workers.dev"
+).replace(/\/$/, "");
 ---
 
 <div id="daily-lesson-popup" class="daily-lesson-popup" hidden>
@@ -15,7 +18,7 @@ const formSubmitUrl = `https://formsubmit.co/ajax/${encodeURIComponent(site.emai
     <p class="daily-lesson-eyebrow">Free daily lesson</p>
     <h2 id="daily-lesson-title">Get your daily Hisook Bitachon lesson</h2>
     <p class="daily-lesson-copy">
-      Opt in with your email and receive a daily update whenever a new Bitachon podcast or video lesson is posted.
+      Opt in with your email and receive an update from {site.email} whenever a new Bitachon podcast or video lesson is posted.
     </p>
     <form id="daily-lesson-form" class="daily-lesson-form" novalidate>
       <label class="sr-only" for="daily-lesson-email">Email address</label>
@@ -32,7 +35,7 @@ const formSubmitUrl = `https://formsubmit.co/ajax/${encodeURIComponent(site.emai
       <button class="btn btn-wine" type="submit">Subscribe</button>
     </form>
     <p class="daily-lesson-msg" id="daily-lesson-msg" hidden></p>
-    <p class="daily-lesson-note">Sent to {site.email} · unsubscribe anytime by reply.</p>
+    <p class="daily-lesson-note">Updates come from {site.email} · reply to unsubscribe.</p>
   </div>
 </div>
 
@@ -139,7 +142,7 @@ const formSubmitUrl = `https://formsubmit.co/ajax/${encodeURIComponent(site.emai
   }
 </style>
 
-<script define:vars={{ formSubmitUrl, siteEmail: site.email }}>
+<script define:vars={{ apiUrl, siteEmail: site.email }}>
   const STORAGE_KEY = "th-daily-lesson-optin-v1";
   const DELAY_MS = 35000;
   const popup = document.getElementById("daily-lesson-popup");
@@ -209,33 +212,26 @@ const formSubmitUrl = `https://formsubmit.co/ajax/${encodeURIComponent(site.emai
     }
     setMsg("");
     try {
-      const res = await fetch(formSubmitUrl, {
+      const res = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          name: "Daily lesson opt-in",
+          intent: "daily-lesson-subscribe",
           email,
-          subject: "Daily Hisook Bitachon lesson subscribe",
-          message: `New daily lesson subscriber.\n\nEmail: ${email}\nSource: 35-second site popup\nPodcast: https://jewishpodcasts.fm/bitachon\nVideos: https://trusthashem.org/videos/\n\nPlease add this address to the daily lesson list so they receive update emails.`,
-          _subject: `Daily lesson subscribe: ${email}`,
-          _replyto: email,
-          _template: "box",
-          _captcha: "false",
-          _autoresponse: `Shalom,\n\nThank you for opting in to daily Hisook Bitachon lesson updates from Trust Hashem.\n\nWhen a new Bitachon podcast or video lesson is posted, you will receive an update.\n\nPodcast: https://jewishpodcasts.fm/bitachon\nVideos: https://trusthashem.org/videos/\n\nWith blessing,\nTrust Hashem · ${siteEmail}`,
+          source: "daily-popup-35s",
+          website: "",
         }),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok || data.success === "false" || data.success === false) {
-        throw new Error(data.message || "Could not subscribe.");
-      }
+      if (!res.ok) throw new Error(data.error || "Could not subscribe.");
       markHandled();
-      try {
-        const list = JSON.parse(localStorage.getItem("th-daily-lesson-emails") || "[]");
-        if (!list.includes(email)) list.push(email);
-        localStorage.setItem("th-daily-lesson-emails", JSON.stringify(list));
-      } catch {}
-      setMsg("You are subscribed. Watch for daily Hisook Bitachon updates.", "ok");
-      window.setTimeout(closePopup, 1800);
+      setMsg(
+        data.already
+          ? `You are already subscribed. Updates come from ${siteEmail}.`
+          : `You are subscribed. When a new podcast is posted, you will get an email from ${siteEmail}.`,
+        "ok",
+      );
+      window.setTimeout(closePopup, 2000);
     } catch (err) {
       setMsg(err?.message || "Could not subscribe. Please try again.", "error");
       if (submitBtn) {

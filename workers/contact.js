@@ -1,14 +1,16 @@
 /**
- * Contact form Worker — accepts HTTPS JSON and delivers email.
- * Never uses mailto (that triggers Chrome's "not secure" warning).
+ * Contact + daily-lesson subscribe Worker.
+ * No Cloudflare D1/KV — subscriber list lives in the GitHub repo JSON file.
+ * Emails go through FormSubmit to Network Solutions: bitachon@trusthashem.org
  */
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_FIELD = 400;
 const MAX_MESSAGE = 5000;
 const WINDOW_MS = 10 * 60 * 1000;
-const MAX_PER_WINDOW = 5;
+const MAX_PER_WINDOW = 8;
 const hits = new Map();
+const SUBSCRIBERS_PATH = "src/data/daily-subscribers.json";
 
 function corsHeaders(origin, extra = {}) {
   const headers = {
@@ -114,10 +116,11 @@ async function deliverWithFormsubmit(payload, to) {
       email: payload.email,
       subject: payload.subject,
       message: payload.message,
-      _subject: payload.subjectLine,
-      _replyto: payload.email,
+      _subject: payload.subjectLine || payload.subject,
+      _replyto: payload.replyTo || payload.email,
       _template: "box",
       _captcha: "false",
+      ...(payload.autoresponse ? { _autoresponse: payload.autoresponse } : {}),
     }),
   });
   const data = await res.json().catch(() => ({}));
@@ -127,6 +130,128 @@ async function deliverWithFormsubmit(payload, to) {
     throw err;
   }
   return true;
+}
+
+function githubHeaders(token) {
+  return {
+    Accept: "application/vnd.github+json",
+    Authorization: `Bearer ${token}`,
+    "X-GitHub-Api-Version": "2022-11-28",
+    "User-Agent": "trusthashem-contact-worker",
+  };
+}
+
+function encodeBase64Utf8(text) {
+  const bytes = new TextEncoder().encode(text);
+  let binary = "";
+  for (const b of bytes) binary += String.fromCharCode(b);
+  return btoa(binary);
+}
+
+async function addSubscriberToRepo(env, email) {
+  const token = env.GITHUB_TOKEN;
+  const repo = env.GITHUB_REPO || "lav129/trusthashem.org";
+  if (!token) {
+    throw new Error("Subscriber list is not configured yet.");
+  }
+
+  const url = `https://api.github.com/repos/${repo}/contents/${SUBSCRIBERS_PATH}`;
+  const getRes = await fetch(url, { headers: githubHeaders(token) });
+  if (!getRes.ok) {
+    const err = new Error("Could not read the subscriber list.");
+    err.status = getRes.status;
+    throw err;
+  }
+  const file = await getRes.json();
+  const raw = atob(String(file.content || "").replace(/\n/g, ""));
+  let data = { emails: [] };
+  try {
+    data = JSON.parse(raw);
+  } catch {
+    data = { emails: [] };
+  }
+  if (!Array.isArray(data.emails)) data.emails = [];
+
+  const normalized = email.toLowerCase();
+  if (data.emails.map((e) => String(e).toLowerCase()).includes(normalized)) {
+    return { already: true };
+  }
+
+  data.emails.push(normalized);
+  data.emails = [...new Set(data.emails.map((e) => String(e).trim().toLowerCase()).filter(Boolean))].sort();
+  data.updatedAt = new Date().toISOString();
+
+  const putRes = await fetch(url, {
+    method: "PUT",
+    headers: { ...githubHeaders(token), "Content-Type": "application/json" },
+    body: JSON.stringify({
+      message: `Add daily lesson subscriber ${normalized}`,
+      content: encodeBase64Utf8(`${JSON.stringify(data, null, 2)}\n`),
+      sha: file.sha,
+      branch: env.GITHUB_BRANCH || "main",
+    }),
+  });
+  if (!putRes.ok) {
+    const detail = await putRes.text();
+    const err = new Error(detail.slice(0, 200) || "Could not save the subscriber.");
+    err.status = putRes.status;
+    throw err;
+  }
+  return { already: false };
+}
+
+async function handleSubscribe(body, env, origin) {
+  const email = clean(body.email, MAX_FIELD).toLowerCase();
+  if (!EMAIL_RE.test(email)) {
+    return json({ error: "Please enter a valid email address." }, 400, origin);
+  }
+
+  const contactTo = env.CONTACT_TO || "bitachon@trusthashem.org";
+  let already = false;
+  try {
+    const saved = await addSubscriberToRepo(env, email);
+    already = Boolean(saved.already);
+  } catch (err) {
+    return json(
+      { error: err.message || "Could not save your subscription." },
+      err.status && err.status < 500 ? err.status : 502,
+      origin,
+    );
+  }
+
+  try {
+    await deliverWithFormsubmit(
+      {
+        name: "Daily lesson opt-in",
+        email,
+        subject: "Daily Hisook Bitachon lesson subscribe",
+        subjectLine: `Daily lesson subscribe: ${email}`,
+        message: `New daily lesson subscriber.\n\nEmail: ${email}\nSource: ${clean(body.source || "daily-popup", 80)}\nPodcast: https://jewishpodcasts.fm/bitachon\nVideos: https://trusthashem.org/videos/\n\nThey will receive an email from ${contactTo} when a new Bitachon podcast or video lesson is posted.`,
+        replyTo: email,
+      },
+      contactTo,
+    );
+  } catch {
+    /* list already saved */
+  }
+
+  try {
+    await deliverWithFormsubmit(
+      {
+        name: "Trust Hashem",
+        email: contactTo,
+        subject: "You are subscribed — daily Hisook Bitachon lessons",
+        subjectLine: "You are subscribed — daily Hisook Bitachon lessons",
+        message: `Shalom,\n\nThank you for opting in. When a new Bitachon podcast lesson is posted at https://jewishpodcasts.fm/bitachon (or a new video lesson), you will receive an update email from ${contactTo}.\n\nPodcast: https://jewishpodcasts.fm/bitachon\nVideos: https://trusthashem.org/videos/\n\nReply to unsubscribe.\n\nWith blessing,\nTrust Hashem`,
+        replyTo: contactTo,
+      },
+      email,
+    );
+  } catch {
+    /* welcome is best-effort; list is saved */
+  }
+
+  return json({ ok: true, already }, 200, origin);
 }
 
 export default {
@@ -163,6 +288,16 @@ export default {
 
     if (clean(body.company || body.website || "", 80)) {
       return json({ ok: true }, 200, origin);
+    }
+
+    const intent = clean(body.intent || body.type || "", 80).toLowerCase();
+    const source = clean(body.source || "", 80).toLowerCase();
+    if (
+      intent === "daily-lesson-subscribe" ||
+      intent === "subscribe" ||
+      source.startsWith("daily-popup")
+    ) {
+      return handleSubscribe(body, env, origin);
     }
 
     const name = clean(body.name, MAX_FIELD);
@@ -202,4 +337,3 @@ export default {
     }
   },
 };
-
