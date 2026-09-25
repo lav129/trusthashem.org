@@ -13,3 +13,4 @@ dist/
 STRIPE-KEYS-PASTE-HERE.txt
 
 .vercel
+scripts/.daily-lesson-state.json

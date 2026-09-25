@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import DailyLessonPopup from "../components/DailyLessonPopup.astro";
 import { moreNav, nav, site, social } from "../data/site";
 
 interface Props {
@@ -167,6 +168,8 @@ const treeImage = new URL("/images/share-tree.png", site.url).href;
         </div>
       </div>
     </footer>
+
+    <DailyLessonPopup />
 
     <script>
       const btn = document.querySelector(".menu-btn");

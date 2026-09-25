@@ -1,0 +1,941 @@
+{
+  "syncedAt": "2026-09-25T06:40:11.867Z",
+  "channels": {
+    "en": {
+      "lang": "en",
+      "handle": "rebbetzinleahdonner",
+      "channelId": "UCrjPPpQXzsB60_Z2m6Ux0LA",
+      "title": "English",
+      "label": "Trust Hashem — English",
+      "url": "https://www.youtube.com/@rebbetzinleahdonner",
+      "embedPlaylist": "https://www.youtube.com/embed/videoseries?list=UUrjPPpQXzsB60_Z2m6Ux0LA",
+      "uploadsPlaylistId": "UUrjPPpQXzsB60_Z2m6Ux0LA",
+      "count": 126,
+      "videos": [
+        {
+          "id": "QiLltzHaYRA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/QiLltzHaYRA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=QiLltzHaYRA",
+          "embed": "https://www.youtube.com/embed/QiLltzHaYRA"
+        },
+        {
+          "id": "SsSyUsK6eDU",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/SsSyUsK6eDU/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=SsSyUsK6eDU",
+          "embed": "https://www.youtube.com/embed/SsSyUsK6eDU"
+        },
+        {
+          "id": "Hy_tFzjGtGQ",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/Hy_tFzjGtGQ/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=Hy_tFzjGtGQ",
+          "embed": "https://www.youtube.com/embed/Hy_tFzjGtGQ"
+        },
+        {
+          "id": "dpT-uzsHkGc",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/dpT-uzsHkGc/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=dpT-uzsHkGc",
+          "embed": "https://www.youtube.com/embed/dpT-uzsHkGc"
+        },
+        {
+          "id": "mA130yKLDYE",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/mA130yKLDYE/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=mA130yKLDYE",
+          "embed": "https://www.youtube.com/embed/mA130yKLDYE"
+        },
+        {
+          "id": "54dE5CeJDL0",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/54dE5CeJDL0/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=54dE5CeJDL0",
+          "embed": "https://www.youtube.com/embed/54dE5CeJDL0"
+        },
+        {
+          "id": "X18cOoqAlI0",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/X18cOoqAlI0/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=X18cOoqAlI0",
+          "embed": "https://www.youtube.com/embed/X18cOoqAlI0"
+        },
+        {
+          "id": "GsATlpttmWI",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/GsATlpttmWI/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=GsATlpttmWI",
+          "embed": "https://www.youtube.com/embed/GsATlpttmWI"
+        },
+        {
+          "id": "WDrYCZNjGKk",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/WDrYCZNjGKk/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=WDrYCZNjGKk",
+          "embed": "https://www.youtube.com/embed/WDrYCZNjGKk"
+        },
+        {
+          "id": "4Rmjao7U3w4",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/4Rmjao7U3w4/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=4Rmjao7U3w4",
+          "embed": "https://www.youtube.com/embed/4Rmjao7U3w4"
+        },
+        {
+          "id": "HBAszg2JJM0",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/HBAszg2JJM0/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=HBAszg2JJM0",
+          "embed": "https://www.youtube.com/embed/HBAszg2JJM0"
+        },
+        {
+          "id": "pf5fkATrfv4",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/pf5fkATrfv4/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=pf5fkATrfv4",
+          "embed": "https://www.youtube.com/embed/pf5fkATrfv4"
+        },
+        {
+          "id": "NjbCwjOuh5o",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/NjbCwjOuh5o/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=NjbCwjOuh5o",
+          "embed": "https://www.youtube.com/embed/NjbCwjOuh5o"
+        },
+        {
+          "id": "pcGPqbusx_c",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/pcGPqbusx_c/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=pcGPqbusx_c",
+          "embed": "https://www.youtube.com/embed/pcGPqbusx_c"
+        },
+        {
+          "id": "n0YOXfdseAk",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/n0YOXfdseAk/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=n0YOXfdseAk",
+          "embed": "https://www.youtube.com/embed/n0YOXfdseAk"
+        },
+        {
+          "id": "e2OadfWylZ0",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/e2OadfWylZ0/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=e2OadfWylZ0",
+          "embed": "https://www.youtube.com/embed/e2OadfWylZ0"
+        },
+        {
+          "id": "9Dk8X2Bx2uQ",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/9Dk8X2Bx2uQ/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=9Dk8X2Bx2uQ",
+          "embed": "https://www.youtube.com/embed/9Dk8X2Bx2uQ"
+        },
+        {
+          "id": "QZ8lq-5FdlY",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/QZ8lq-5FdlY/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=QZ8lq-5FdlY",
+          "embed": "https://www.youtube.com/embed/QZ8lq-5FdlY"
+        },
+        {
+          "id": "9K4i9f2QoO4",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/9K4i9f2QoO4/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=9K4i9f2QoO4",
+          "embed": "https://www.youtube.com/embed/9K4i9f2QoO4"
+        },
+        {
+          "id": "YW-uJiIM0h4",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/YW-uJiIM0h4/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=YW-uJiIM0h4",
+          "embed": "https://www.youtube.com/embed/YW-uJiIM0h4"
+        },
+        {
+          "id": "wqdi7Kf9CUo",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/wqdi7Kf9CUo/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=wqdi7Kf9CUo",
+          "embed": "https://www.youtube.com/embed/wqdi7Kf9CUo"
+        },
+        {
+          "id": "UGk-FxR8mM0",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/UGk-FxR8mM0/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=UGk-FxR8mM0",
+          "embed": "https://www.youtube.com/embed/UGk-FxR8mM0"
+        },
+        {
+          "id": "XybxGV_TXU4",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/XybxGV_TXU4/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=XybxGV_TXU4",
+          "embed": "https://www.youtube.com/embed/XybxGV_TXU4"
+        },
+        {
+          "id": "-SYGU7fq9KA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/-SYGU7fq9KA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=-SYGU7fq9KA",
+          "embed": "https://www.youtube.com/embed/-SYGU7fq9KA"
+        },
+        {
+          "id": "wmPtk8XoyIA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/wmPtk8XoyIA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=wmPtk8XoyIA",
+          "embed": "https://www.youtube.com/embed/wmPtk8XoyIA"
+        },
+        {
+          "id": "9c-N5NwFOKg",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/9c-N5NwFOKg/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=9c-N5NwFOKg",
+          "embed": "https://www.youtube.com/embed/9c-N5NwFOKg"
+        },
+        {
+          "id": "AslPQnXWy_k",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/AslPQnXWy_k/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=AslPQnXWy_k",
+          "embed": "https://www.youtube.com/embed/AslPQnXWy_k"
+        },
+        {
+          "id": "I7pWsYILOKU",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/I7pWsYILOKU/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=I7pWsYILOKU",
+          "embed": "https://www.youtube.com/embed/I7pWsYILOKU"
+        },
+        {
+          "id": "zbBTfxPctK4",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/zbBTfxPctK4/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=zbBTfxPctK4",
+          "embed": "https://www.youtube.com/embed/zbBTfxPctK4"
+        },
+        {
+          "id": "tfYeM5d75d0",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/tfYeM5d75d0/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=tfYeM5d75d0",
+          "embed": "https://www.youtube.com/embed/tfYeM5d75d0"
+        },
+        {
+          "id": "E2tv-U8mS5s",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/E2tv-U8mS5s/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=E2tv-U8mS5s",
+          "embed": "https://www.youtube.com/embed/E2tv-U8mS5s"
+        },
+        {
+          "id": "nsZzygb_-4U",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/nsZzygb_-4U/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=nsZzygb_-4U",
+          "embed": "https://www.youtube.com/embed/nsZzygb_-4U"
+        },
+        {
+          "id": "Ai_xl-sP84Q",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/Ai_xl-sP84Q/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=Ai_xl-sP84Q",
+          "embed": "https://www.youtube.com/embed/Ai_xl-sP84Q"
+        },
+        {
+          "id": "XGINjbuHyH4",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/XGINjbuHyH4/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=XGINjbuHyH4",
+          "embed": "https://www.youtube.com/embed/XGINjbuHyH4"
+        },
+        {
+          "id": "w9_2FE46L68",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/w9_2FE46L68/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=w9_2FE46L68",
+          "embed": "https://www.youtube.com/embed/w9_2FE46L68"
+        },
+        {
+          "id": "iDkBBiEJCHw",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/iDkBBiEJCHw/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=iDkBBiEJCHw",
+          "embed": "https://www.youtube.com/embed/iDkBBiEJCHw"
+        },
+        {
+          "id": "obbBoJYVK6w",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/obbBoJYVK6w/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=obbBoJYVK6w",
+          "embed": "https://www.youtube.com/embed/obbBoJYVK6w"
+        },
+        {
+          "id": "kNl1VZGxylA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/kNl1VZGxylA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=kNl1VZGxylA",
+          "embed": "https://www.youtube.com/embed/kNl1VZGxylA"
+        },
+        {
+          "id": "bKlF6Gwub60",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/bKlF6Gwub60/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=bKlF6Gwub60",
+          "embed": "https://www.youtube.com/embed/bKlF6Gwub60"
+        },
+        {
+          "id": "7zCUCQFQDks",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/7zCUCQFQDks/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=7zCUCQFQDks",
+          "embed": "https://www.youtube.com/embed/7zCUCQFQDks"
+        },
+        {
+          "id": "TnjNwnqnzGw",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/TnjNwnqnzGw/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=TnjNwnqnzGw",
+          "embed": "https://www.youtube.com/embed/TnjNwnqnzGw"
+        },
+        {
+          "id": "QmsvVttSrcw",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/QmsvVttSrcw/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=QmsvVttSrcw",
+          "embed": "https://www.youtube.com/embed/QmsvVttSrcw"
+        },
+        {
+          "id": "8GVfW8YbgoQ",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/8GVfW8YbgoQ/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=8GVfW8YbgoQ",
+          "embed": "https://www.youtube.com/embed/8GVfW8YbgoQ"
+        },
+        {
+          "id": "-ZwR3l4FwJE",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/-ZwR3l4FwJE/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=-ZwR3l4FwJE",
+          "embed": "https://www.youtube.com/embed/-ZwR3l4FwJE"
+        },
+        {
+          "id": "rVzHYEXIWk8",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/rVzHYEXIWk8/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=rVzHYEXIWk8",
+          "embed": "https://www.youtube.com/embed/rVzHYEXIWk8"
+        },
+        {
+          "id": "gj3NFpUJkKw",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/gj3NFpUJkKw/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=gj3NFpUJkKw",
+          "embed": "https://www.youtube.com/embed/gj3NFpUJkKw"
+        },
+        {
+          "id": "Qowd2vdHunE",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/Qowd2vdHunE/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=Qowd2vdHunE",
+          "embed": "https://www.youtube.com/embed/Qowd2vdHunE"
+        },
+        {
+          "id": "CFEGAnXxdkc",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/CFEGAnXxdkc/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=CFEGAnXxdkc",
+          "embed": "https://www.youtube.com/embed/CFEGAnXxdkc"
+        },
+        {
+          "id": "cKab2AJvz7c",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/cKab2AJvz7c/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=cKab2AJvz7c",
+          "embed": "https://www.youtube.com/embed/cKab2AJvz7c"
+        },
+        {
+          "id": "OaGx4PIm0Hg",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/OaGx4PIm0Hg/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=OaGx4PIm0Hg",
+          "embed": "https://www.youtube.com/embed/OaGx4PIm0Hg"
+        },
+        {
+          "id": "HKuLY28FUFM",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/HKuLY28FUFM/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=HKuLY28FUFM",
+          "embed": "https://www.youtube.com/embed/HKuLY28FUFM"
+        },
+        {
+          "id": "xALX2ePUhZg",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/xALX2ePUhZg/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=xALX2ePUhZg",
+          "embed": "https://www.youtube.com/embed/xALX2ePUhZg"
+        },
+        {
+          "id": "t2ZGtnhRAWk",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/t2ZGtnhRAWk/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=t2ZGtnhRAWk",
+          "embed": "https://www.youtube.com/embed/t2ZGtnhRAWk"
+        },
+        {
+          "id": "8VTMk7MXDsc",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/8VTMk7MXDsc/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=8VTMk7MXDsc",
+          "embed": "https://www.youtube.com/embed/8VTMk7MXDsc"
+        },
+        {
+          "id": "0O8OLVSINsM",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/0O8OLVSINsM/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=0O8OLVSINsM",
+          "embed": "https://www.youtube.com/embed/0O8OLVSINsM"
+        },
+        {
+          "id": "7HY77sb4Cv0",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/7HY77sb4Cv0/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=7HY77sb4Cv0",
+          "embed": "https://www.youtube.com/embed/7HY77sb4Cv0"
+        },
+        {
+          "id": "bGGQcP2vxm0",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/bGGQcP2vxm0/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=bGGQcP2vxm0",
+          "embed": "https://www.youtube.com/embed/bGGQcP2vxm0"
+        },
+        {
+          "id": "RrJX3C8mLV4",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/RrJX3C8mLV4/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=RrJX3C8mLV4",
+          "embed": "https://www.youtube.com/embed/RrJX3C8mLV4"
+        },
+        {
+          "id": "t0RPggYqhPw",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/t0RPggYqhPw/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=t0RPggYqhPw",
+          "embed": "https://www.youtube.com/embed/t0RPggYqhPw"
+        },
+        {
+          "id": "-rwqrbCc0ks",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/-rwqrbCc0ks/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=-rwqrbCc0ks",
+          "embed": "https://www.youtube.com/embed/-rwqrbCc0ks"
+        },
+        {
+          "id": "xUm52HXXEXA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/xUm52HXXEXA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=xUm52HXXEXA",
+          "embed": "https://www.youtube.com/embed/xUm52HXXEXA"
+        },
+        {
+          "id": "MkYfDHZ-aWE",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/MkYfDHZ-aWE/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=MkYfDHZ-aWE",
+          "embed": "https://www.youtube.com/embed/MkYfDHZ-aWE"
+        },
+        {
+          "id": "e_6xyYuqmHo",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/e_6xyYuqmHo/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=e_6xyYuqmHo",
+          "embed": "https://www.youtube.com/embed/e_6xyYuqmHo"
+        },
+        {
+          "id": "LfGVBuJ4Mfs",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/LfGVBuJ4Mfs/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=LfGVBuJ4Mfs",
+          "embed": "https://www.youtube.com/embed/LfGVBuJ4Mfs"
+        },
+        {
+          "id": "RjL1XOqz434",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/RjL1XOqz434/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=RjL1XOqz434",
+          "embed": "https://www.youtube.com/embed/RjL1XOqz434"
+        },
+        {
+          "id": "RdqSwAU7N4M",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/RdqSwAU7N4M/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=RdqSwAU7N4M",
+          "embed": "https://www.youtube.com/embed/RdqSwAU7N4M"
+        },
+        {
+          "id": "PiycVXCt0AA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/PiycVXCt0AA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=PiycVXCt0AA",
+          "embed": "https://www.youtube.com/embed/PiycVXCt0AA"
+        },
+        {
+          "id": "GnVr0vYhaco",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/GnVr0vYhaco/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=GnVr0vYhaco",
+          "embed": "https://www.youtube.com/embed/GnVr0vYhaco"
+        },
+        {
+          "id": "sa5QtAKTjDE",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/sa5QtAKTjDE/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=sa5QtAKTjDE",
+          "embed": "https://www.youtube.com/embed/sa5QtAKTjDE"
+        },
+        {
+          "id": "kz1uXXQZwRM",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/kz1uXXQZwRM/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=kz1uXXQZwRM",
+          "embed": "https://www.youtube.com/embed/kz1uXXQZwRM"
+        },
+        {
+          "id": "5hdWRGDxUcM",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/5hdWRGDxUcM/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=5hdWRGDxUcM",
+          "embed": "https://www.youtube.com/embed/5hdWRGDxUcM"
+        },
+        {
+          "id": "blVKBqs5y6U",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/blVKBqs5y6U/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=blVKBqs5y6U",
+          "embed": "https://www.youtube.com/embed/blVKBqs5y6U"
+        },
+        {
+          "id": "WuBbA_47glk",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/WuBbA_47glk/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=WuBbA_47glk",
+          "embed": "https://www.youtube.com/embed/WuBbA_47glk"
+        },
+        {
+          "id": "AxZRK54DE74",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/AxZRK54DE74/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=AxZRK54DE74",
+          "embed": "https://www.youtube.com/embed/AxZRK54DE74"
+        },
+        {
+          "id": "a828N1a5CkM",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/a828N1a5CkM/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=a828N1a5CkM",
+          "embed": "https://www.youtube.com/embed/a828N1a5CkM"
+        },
+        {
+          "id": "MbHptnI2obA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/MbHptnI2obA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=MbHptnI2obA",
+          "embed": "https://www.youtube.com/embed/MbHptnI2obA"
+        },
+        {
+          "id": "V4YT16-_KIk",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/V4YT16-_KIk/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=V4YT16-_KIk",
+          "embed": "https://www.youtube.com/embed/V4YT16-_KIk"
+        },
+        {
+          "id": "FyPwj9Jy8eQ",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/FyPwj9Jy8eQ/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=FyPwj9Jy8eQ",
+          "embed": "https://www.youtube.com/embed/FyPwj9Jy8eQ"
+        },
+        {
+          "id": "cx0TpwUkTNA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/cx0TpwUkTNA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=cx0TpwUkTNA",
+          "embed": "https://www.youtube.com/embed/cx0TpwUkTNA"
+        },
+        {
+          "id": "XsPpfA6n2Qo",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/XsPpfA6n2Qo/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=XsPpfA6n2Qo",
+          "embed": "https://www.youtube.com/embed/XsPpfA6n2Qo"
+        },
+        {
+          "id": "uyZmw-9a3KY",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/uyZmw-9a3KY/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=uyZmw-9a3KY",
+          "embed": "https://www.youtube.com/embed/uyZmw-9a3KY"
+        },
+        {
+          "id": "5ab4mJvRoQA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/5ab4mJvRoQA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=5ab4mJvRoQA",
+          "embed": "https://www.youtube.com/embed/5ab4mJvRoQA"
+        },
+        {
+          "id": "ta-e3a0Oed0",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/ta-e3a0Oed0/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=ta-e3a0Oed0",
+          "embed": "https://www.youtube.com/embed/ta-e3a0Oed0"
+        },
+        {
+          "id": "IIBqI_fucTs",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/IIBqI_fucTs/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=IIBqI_fucTs",
+          "embed": "https://www.youtube.com/embed/IIBqI_fucTs"
+        },
+        {
+          "id": "TMeNDSiCBTY",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/TMeNDSiCBTY/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=TMeNDSiCBTY",
+          "embed": "https://www.youtube.com/embed/TMeNDSiCBTY"
+        },
+        {
+          "id": "bqI6CUZk_mo",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/bqI6CUZk_mo/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=bqI6CUZk_mo",
+          "embed": "https://www.youtube.com/embed/bqI6CUZk_mo"
+        },
+        {
+          "id": "Y38HDzXUXK8",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/Y38HDzXUXK8/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=Y38HDzXUXK8",
+          "embed": "https://www.youtube.com/embed/Y38HDzXUXK8"
+        },
+        {
+          "id": "Ck6FY2-k3O8",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/Ck6FY2-k3O8/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=Ck6FY2-k3O8",
+          "embed": "https://www.youtube.com/embed/Ck6FY2-k3O8"
+        },
+        {
+          "id": "EWyzrTsr-cw",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/EWyzrTsr-cw/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=EWyzrTsr-cw",
+          "embed": "https://www.youtube.com/embed/EWyzrTsr-cw"
+        },
+        {
+          "id": "rYQLtiiJhzM",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/rYQLtiiJhzM/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=rYQLtiiJhzM",
+          "embed": "https://www.youtube.com/embed/rYQLtiiJhzM"
+        },
+        {
+          "id": "XBEqFvnUFE4",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/XBEqFvnUFE4/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=XBEqFvnUFE4",
+          "embed": "https://www.youtube.com/embed/XBEqFvnUFE4"
+        },
+        {
+          "id": "pc3BXEV24VA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/pc3BXEV24VA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=pc3BXEV24VA",
+          "embed": "https://www.youtube.com/embed/pc3BXEV24VA"
+        },
+        {
+          "id": "ZdtlXZrHW-0",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/ZdtlXZrHW-0/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=ZdtlXZrHW-0",
+          "embed": "https://www.youtube.com/embed/ZdtlXZrHW-0"
+        },
+        {
+          "id": "Ec5pTsGZqwI",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/Ec5pTsGZqwI/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=Ec5pTsGZqwI",
+          "embed": "https://www.youtube.com/embed/Ec5pTsGZqwI"
+        },
+        {
+          "id": "SlSO4by2MXc",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/SlSO4by2MXc/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=SlSO4by2MXc",
+          "embed": "https://www.youtube.com/embed/SlSO4by2MXc"
+        },
+        {
+          "id": "zodkZqrGiVU",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/zodkZqrGiVU/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=zodkZqrGiVU",
+          "embed": "https://www.youtube.com/embed/zodkZqrGiVU"
+        },
+        {
+          "id": "2TaPe7iy8EY",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/2TaPe7iy8EY/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=2TaPe7iy8EY",
+          "embed": "https://www.youtube.com/embed/2TaPe7iy8EY"
+        },
+        {
+          "id": "wMLSDqJDqfs",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/wMLSDqJDqfs/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=wMLSDqJDqfs",
+          "embed": "https://www.youtube.com/embed/wMLSDqJDqfs"
+        },
+        {
+          "id": "pq3bWJ9CcbI",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/pq3bWJ9CcbI/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=pq3bWJ9CcbI",
+          "embed": "https://www.youtube.com/embed/pq3bWJ9CcbI"
+        },
+        {
+          "id": "t_06yHWLfOA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/t_06yHWLfOA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=t_06yHWLfOA",
+          "embed": "https://www.youtube.com/embed/t_06yHWLfOA"
+        },
+        {
+          "id": "kwfAPqjrGSw",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/kwfAPqjrGSw/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=kwfAPqjrGSw",
+          "embed": "https://www.youtube.com/embed/kwfAPqjrGSw"
+        },
+        {
+          "id": "M4lM2SyYQTA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/M4lM2SyYQTA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=M4lM2SyYQTA",
+          "embed": "https://www.youtube.com/embed/M4lM2SyYQTA"
+        },
+        {
+          "id": "djAVZKc7xBw",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/djAVZKc7xBw/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=djAVZKc7xBw",
+          "embed": "https://www.youtube.com/embed/djAVZKc7xBw"
+        },
+        {
+          "id": "Q0vRTpJZIno",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/Q0vRTpJZIno/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=Q0vRTpJZIno",
+          "embed": "https://www.youtube.com/embed/Q0vRTpJZIno"
+        },
+        {
+          "id": "Ubty_jHtCCA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/Ubty_jHtCCA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=Ubty_jHtCCA",
+          "embed": "https://www.youtube.com/embed/Ubty_jHtCCA"
+        },
+        {
+          "id": "Lsj8FJ33Wrc",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/Lsj8FJ33Wrc/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=Lsj8FJ33Wrc",
+          "embed": "https://www.youtube.com/embed/Lsj8FJ33Wrc"
+        },
+        {
+          "id": "8gyVjVNP-k0",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/8gyVjVNP-k0/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=8gyVjVNP-k0",
+          "embed": "https://www.youtube.com/embed/8gyVjVNP-k0"
+        },
+        {
+          "id": "tH7TrANUnwE",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/tH7TrANUnwE/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=tH7TrANUnwE",
+          "embed": "https://www.youtube.com/embed/tH7TrANUnwE"
+        },
+        {
+          "id": "HdOPGfdslos",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/HdOPGfdslos/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=HdOPGfdslos",
+          "embed": "https://www.youtube.com/embed/HdOPGfdslos"
+        },
+        {
+          "id": "9sf9wp4F-y0",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/9sf9wp4F-y0/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=9sf9wp4F-y0",
+          "embed": "https://www.youtube.com/embed/9sf9wp4F-y0"
+        },
+        {
+          "id": "328RwmW8glY",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/328RwmW8glY/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=328RwmW8glY",
+          "embed": "https://www.youtube.com/embed/328RwmW8glY"
+        },
+        {
+          "id": "cCLljaCyRHw",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/cCLljaCyRHw/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=cCLljaCyRHw",
+          "embed": "https://www.youtube.com/embed/cCLljaCyRHw"
+        },
+        {
+          "id": "h2r9BwPwMyE",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/h2r9BwPwMyE/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=h2r9BwPwMyE",
+          "embed": "https://www.youtube.com/embed/h2r9BwPwMyE"
+        },
+        {
+          "id": "FODaV-0g8yg",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/FODaV-0g8yg/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=FODaV-0g8yg",
+          "embed": "https://www.youtube.com/embed/FODaV-0g8yg"
+        },
+        {
+          "id": "fivOVI3A0Pk",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/fivOVI3A0Pk/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=fivOVI3A0Pk",
+          "embed": "https://www.youtube.com/embed/fivOVI3A0Pk"
+        },
+        {
+          "id": "4u1d-uMdUfY",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/4u1d-uMdUfY/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=4u1d-uMdUfY",
+          "embed": "https://www.youtube.com/embed/4u1d-uMdUfY"
+        },
+        {
+          "id": "K0ojFZqc7aA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/K0ojFZqc7aA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=K0ojFZqc7aA",
+          "embed": "https://www.youtube.com/embed/K0ojFZqc7aA"
+        },
+        {
+          "id": "g7cGaD77lKs",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/g7cGaD77lKs/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=g7cGaD77lKs",
+          "embed": "https://www.youtube.com/embed/g7cGaD77lKs"
+        },
+        {
+          "id": "sd2wqgHMz64",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/sd2wqgHMz64/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=sd2wqgHMz64",
+          "embed": "https://www.youtube.com/embed/sd2wqgHMz64"
+        },
+        {
+          "id": "7xJnXrbuLXg",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/7xJnXrbuLXg/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=7xJnXrbuLXg",
+          "embed": "https://www.youtube.com/embed/7xJnXrbuLXg"
+        },
+        {
+          "id": "pZmxJM32FkA",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/pZmxJM32FkA/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=pZmxJM32FkA",
+          "embed": "https://www.youtube.com/embed/pZmxJM32FkA"
+        },
+        {
+          "id": "M-4oTeqUrDs",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/M-4oTeqUrDs/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=M-4oTeqUrDs",
+          "embed": "https://www.youtube.com/embed/M-4oTeqUrDs"
+        },
+        {
+          "id": "TFmm9kjYe8U",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/TFmm9kjYe8U/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=TFmm9kjYe8U",
+          "embed": "https://www.youtube.com/embed/TFmm9kjYe8U"
+        },
+        {
+          "id": "J3_8ipmb0Zg",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/J3_8ipmb0Zg/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=J3_8ipmb0Zg",
+          "embed": "https://www.youtube.com/embed/J3_8ipmb0Zg"
+        },
+        {
+          "id": "h-gOeykXaYk",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/h-gOeykXaYk/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=h-gOeykXaYk",
+          "embed": "https://www.youtube.com/embed/h-gOeykXaYk"
+        },
+        {
+          "id": "qZxbErHVijU",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/qZxbErHVijU/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=qZxbErHVijU",
+          "embed": "https://www.youtube.com/embed/qZxbErHVijU"
+        }
+      ]
+    },
+    "es": {
+      "lang": "es",
+      "handle": "RabanitLeahDonner",
+      "channelId": "UCri3wFr3GBlAt9EJ7xUCJtA",
+      "title": "Spanish",
+      "label": "Bitajón — Español",
+      "url": "https://www.youtube.com/@RabanitLeahDonner",
+      "embedPlaylist": "https://www.youtube.com/embed/videoseries?list=UUri3wFr3GBlAt9EJ7xUCJtA",
+      "uploadsPlaylistId": "UUri3wFr3GBlAt9EJ7xUCJtA",
+      "count": 4,
+      "videos": [
+        {
+          "id": "W0QgG_LCJp0",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/W0QgG_LCJp0/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=W0QgG_LCJp0",
+          "embed": "https://www.youtube.com/embed/W0QgG_LCJp0"
+        },
+        {
+          "id": "1Bm_3Z5djl0",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/1Bm_3Z5djl0/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=1Bm_3Z5djl0",
+          "embed": "https://www.youtube.com/embed/1Bm_3Z5djl0"
+        },
+        {
+          "id": "wrlVldWQwxE",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/wrlVldWQwxE/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=wrlVldWQwxE",
+          "embed": "https://www.youtube.com/embed/wrlVldWQwxE"
+        },
+        {
+          "id": "NMqwMXhFRYE",
+          "title": "Lesson",
+          "thumb": "https://i.ytimg.com/vi/NMqwMXhFRYE/hqdefault.jpg",
+          "watch": "https://www.youtube.com/watch?v=NMqwMXhFRYE",
+          "embed": "https://www.youtube.com/embed/NMqwMXhFRYE"
+        }
+      ]
+    }
+  }
+}

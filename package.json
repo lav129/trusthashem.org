@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "content": "node scripts/generate-content.mjs",
-    "dev": "npm run content && astro dev",
-    "build": "npm run content && astro build",
+    "youtube": "node scripts/sync-youtube.mjs",
+    "daily-lesson": "node scripts/daily-lesson-check.mjs",
+    "dev": "npm run content && npm run youtube && astro dev",
+    "build": "npm run content && npm run youtube && astro build",
     "preview": "astro preview"
   },
   "dependencies": {

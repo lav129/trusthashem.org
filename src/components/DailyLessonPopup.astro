@@ -1,0 +1,247 @@
+---
+/**
+ * 35-second popup: daily Hisook Bitachon lesson email opt-in.
+ * Independent of Cloudflare D1/KV — delivers to Network Solutions mail via FormSubmit.
+ */
+import { site } from "../data/site";
+
+const formSubmitUrl = `https://formsubmit.co/ajax/${encodeURIComponent(site.email)}`;
+---
+
+<div id="daily-lesson-popup" class="daily-lesson-popup" hidden>
+  <div class="daily-lesson-backdrop" data-daily-close></div>
+  <div class="daily-lesson-card" role="dialog" aria-modal="true" aria-labelledby="daily-lesson-title">
+    <button class="daily-lesson-x" type="button" aria-label="Close" data-daily-close>&times;</button>
+    <p class="daily-lesson-eyebrow">Free daily lesson</p>
+    <h2 id="daily-lesson-title">Get your daily Hisook Bitachon lesson</h2>
+    <p class="daily-lesson-copy">
+      Opt in with your email and receive a daily update whenever a new Bitachon podcast or video lesson is posted.
+    </p>
+    <form id="daily-lesson-form" class="daily-lesson-form" novalidate>
+      <label class="sr-only" for="daily-lesson-email">Email address</label>
+      <input
+        id="daily-lesson-email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+        maxlength="400"
+        placeholder="Your email address"
+      />
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="daily-honeypot" aria-hidden="true" />
+      <button class="btn btn-wine" type="submit">Subscribe</button>
+    </form>
+    <p class="daily-lesson-msg" id="daily-lesson-msg" hidden></p>
+    <p class="daily-lesson-note">Sent to {site.email} · unsubscribe anytime by reply.</p>
+  </div>
+</div>
+
+<style>
+  .daily-lesson-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    display: grid;
+    place-items: center;
+    padding: 1.25rem;
+  }
+  .daily-lesson-popup[hidden] { display: none; }
+  .daily-lesson-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 18, 10, 0.48);
+  }
+  .daily-lesson-card {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 420px);
+    background: var(--paper, #fffaf2);
+    border: 1px solid var(--border, rgba(90, 58, 28, 0.16));
+    border-radius: 22px;
+    padding: 1.6rem 1.5rem 1.35rem;
+    box-shadow: 0 24px 60px rgba(20, 12, 6, 0.28);
+    animation: dailyLessonIn 0.35s ease both;
+  }
+  .daily-lesson-x {
+    position: absolute;
+    top: 0.55rem;
+    right: 0.7rem;
+    appearance: none;
+    border: 0;
+    background: transparent;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--ink-soft, #5c4c3a);
+    cursor: pointer;
+  }
+  .daily-lesson-eyebrow {
+    margin: 0 0 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--wine, #6b241d);
+  }
+  .daily-lesson-card h2 {
+    margin: 0 0 0.65rem;
+    font-size: clamp(1.35rem, 3.5vw, 1.7rem);
+    line-height: 1.2;
+  }
+  .daily-lesson-copy {
+    margin: 0 0 1.15rem;
+    color: var(--ink-soft, #5c4c3a);
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+  .daily-lesson-form {
+    display: grid;
+    gap: 0.7rem;
+  }
+  .daily-lesson-form input[type="email"] {
+    width: 100%;
+    border: 1px solid var(--border, rgba(90, 58, 28, 0.22));
+    border-radius: 12px;
+    padding: 0.85rem 0.95rem;
+    font: inherit;
+    background: #fff;
+  }
+  .daily-honeypot {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+  .daily-lesson-msg {
+    margin: 0.75rem 0 0;
+    font-size: 0.92rem;
+  }
+  .daily-lesson-msg.is-ok { color: #1b5e3b; }
+  .daily-lesson-msg.is-error { color: #8a1f12; }
+  .daily-lesson-note {
+    margin: 0.85rem 0 0;
+    font-size: 0.78rem;
+    color: var(--ink-soft, #5c4c3a);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  @keyframes dailyLessonIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+  }
+</style>
+
+<script define:vars={{ formSubmitUrl, siteEmail: site.email }}>
+  const STORAGE_KEY = "th-daily-lesson-optin-v1";
+  const DELAY_MS = 35000;
+  const popup = document.getElementById("daily-lesson-popup");
+  const form = document.getElementById("daily-lesson-form");
+  const msg = document.getElementById("daily-lesson-msg");
+  const emailInput = document.getElementById("daily-lesson-email");
+
+  function alreadyHandled() {
+    try {
+      return localStorage.getItem(STORAGE_KEY) === "1";
+    } catch {
+      return false;
+    }
+  }
+
+  function markHandled() {
+    try {
+      localStorage.setItem(STORAGE_KEY, "1");
+    } catch {}
+  }
+
+  function setMsg(text, kind = "") {
+    if (!msg) return;
+    msg.hidden = !text;
+    msg.textContent = text || "";
+    msg.classList.toggle("is-ok", kind === "ok");
+    msg.classList.toggle("is-error", kind === "error");
+  }
+
+  function closePopup() {
+    popup?.setAttribute("hidden", "");
+  }
+
+  function openPopup() {
+    if (!popup || alreadyHandled()) return;
+    popup.hidden = false;
+  }
+
+  if (!alreadyHandled()) {
+    window.setTimeout(openPopup, DELAY_MS);
+  }
+
+  popup?.querySelectorAll("[data-daily-close]").forEach((el) => {
+    el.addEventListener("click", () => {
+      markHandled();
+      closePopup();
+    });
+  });
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const email = String(emailInput?.value || "").trim().toLowerCase();
+    const honeypot = String(form.querySelector('[name="website"]')?.value || "");
+    if (honeypot) {
+      markHandled();
+      closePopup();
+      return;
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setMsg("Please enter a valid email address.", "error");
+      return;
+    }
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.setAttribute("disabled", "true");
+      submitBtn.textContent = "Subscribing…";
+    }
+    setMsg("");
+    try {
+      const res = await fetch(formSubmitUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: "Daily lesson opt-in",
+          email,
+          subject: "Daily Hisook Bitachon lesson subscribe",
+          message: `New daily lesson subscriber.\n\nEmail: ${email}\nSource: 35-second site popup\nPodcast: https://jewishpodcasts.fm/bitachon\nVideos: https://trusthashem.org/videos/\n\nPlease add this address to the daily lesson list so they receive update emails.`,
+          _subject: `Daily lesson subscribe: ${email}`,
+          _replyto: email,
+          _template: "box",
+          _captcha: "false",
+          _autoresponse: `Shalom,\n\nThank you for opting in to daily Hisook Bitachon lesson updates from Trust Hashem.\n\nWhen a new Bitachon podcast or video lesson is posted, you will receive an update.\n\nPodcast: https://jewishpodcasts.fm/bitachon\nVideos: https://trusthashem.org/videos/\n\nWith blessing,\nTrust Hashem · ${siteEmail}`,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.success === "false" || data.success === false) {
+        throw new Error(data.message || "Could not subscribe.");
+      }
+      markHandled();
+      try {
+        const list = JSON.parse(localStorage.getItem("th-daily-lesson-emails") || "[]");
+        if (!list.includes(email)) list.push(email);
+        localStorage.setItem("th-daily-lesson-emails", JSON.stringify(list));
+      } catch {}
+      setMsg("You are subscribed. Watch for daily Hisook Bitachon updates.", "ok");
+      window.setTimeout(closePopup, 1800);
+    } catch (err) {
+      setMsg(err?.message || "Could not subscribe. Please try again.", "error");
+      if (submitBtn) {
+        submitBtn.removeAttribute("disabled");
+        submitBtn.textContent = "Subscribe";
+      }
+    }
+  });
+</script>

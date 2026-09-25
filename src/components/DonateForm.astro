@@ -1,22 +1,70 @@
 ---
 import { site } from "../data/site";
+
+/** Major world currencies — amounts convert to USD for the PayPal hosted button. */
+const currencies = [
+  { code: "USD", label: "US Dollar (USD)", symbol: "$" },
+  { code: "ILS", label: "Israeli Shekel (₪)", symbol: "₪" },
+  { code: "EUR", label: "Euro (EUR)", symbol: "€" },
+  { code: "GBP", label: "British Pound (GBP)", symbol: "£" },
+  { code: "CAD", label: "Canadian Dollar (CAD)", symbol: "C$" },
+  { code: "AUD", label: "Australian Dollar (AUD)", symbol: "A$" },
+  { code: "CHF", label: "Swiss Franc (CHF)", symbol: "CHF" },
+  { code: "JPY", label: "Japanese Yen (JPY)", symbol: "¥" },
+  { code: "CNY", label: "Chinese Yuan (CNY)", symbol: "¥" },
+  { code: "INR", label: "Indian Rupee (INR)", symbol: "₹" },
+  { code: "BRL", label: "Brazilian Real (BRL)", symbol: "R$" },
+  { code: "MXN", label: "Mexican Peso (MXN)", symbol: "MX$" },
+  { code: "ZAR", label: "South African Rand (ZAR)", symbol: "R" },
+  { code: "SGD", label: "Singapore Dollar (SGD)", symbol: "S$" },
+  { code: "HKD", label: "Hong Kong Dollar (HKD)", symbol: "HK$" },
+  { code: "NZD", label: "New Zealand Dollar (NZD)", symbol: "NZ$" },
+  { code: "SEK", label: "Swedish Krona (SEK)", symbol: "kr" },
+  { code: "NOK", label: "Norwegian Krone (NOK)", symbol: "kr" },
+  { code: "DKK", label: "Danish Krone (DKK)", symbol: "kr" },
+  { code: "PLN", label: "Polish Zloty (PLN)", symbol: "zł" },
+  { code: "TRY", label: "Turkish Lira (TRY)", symbol: "₺" },
+  { code: "KRW", label: "South Korean Won (KRW)", symbol: "₩" },
+  { code: "THB", label: "Thai Baht (THB)", symbol: "฿" },
+  { code: "IDR", label: "Indonesian Rupiah (IDR)", symbol: "Rp" },
+  { code: "PHP", label: "Philippine Peso (PHP)", symbol: "₱" },
+  { code: "MYR", label: "Malaysian Ringgit (MYR)", symbol: "RM" },
+  { code: "CZK", label: "Czech Koruna (CZK)", symbol: "Kč" },
+  { code: "HUF", label: "Hungarian Forint (HUF)", symbol: "Ft" },
+  { code: "RON", label: "Romanian Leu (RON)", symbol: "lei" },
+  { code: "ISK", label: "Icelandic Krona (ISK)", symbol: "kr" },
+];
 ---
 
 <div class="donate-box" id="donate-flow">
   <span class="eyebrow">Donate</span>
   <h2>Give securely</h2>
+  <p class="donate-intro">Choose any currency. We convert to USD for PayPal checkout.</p>
 
-  <label class="donate-amount-label" for="donate-amount">Amount (USD)</label>
-  <input
-    class="donate-amount"
-    id="donate-amount"
-    name="donation_amount"
-    type="number"
-    inputmode="decimal"
-    min="1"
-    step="0.01"
-    placeholder="100.00"
-  />
+  <label class="donate-amount-label" for="donate-currency">Currency</label>
+  <select class="donate-currency" id="donate-currency" name="donation_currency">
+    {currencies.map((c) => (
+      <option value={c.code} selected={c.code === "ILS"} data-symbol={c.symbol}>
+        {c.label}
+      </option>
+    ))}
+  </select>
+
+  <label class="donate-amount-label" for="donate-amount">Amount</label>
+  <div class="donate-amount-row">
+    <span class="donate-currency-symbol" id="donate-currency-symbol">₪</span>
+    <input
+      class="donate-amount"
+      id="donate-amount"
+      name="donation_amount"
+      type="number"
+      inputmode="decimal"
+      min="1"
+      step="0.01"
+      placeholder="100"
+    />
+  </div>
+  <p class="donate-hint" id="donate-usd-hint">PayPal charges in USD. Enter an amount to see the conversion.</p>
   <p class="donate-msg" id="donate-msg" hidden></p>
 
   <form id="donate-paypal-form" action="https://www.paypal.com/donate" method="post" target="_blank">
@@ -27,11 +75,56 @@ import { site } from "../data/site";
   </form>
 </div>
 
+<style>
+  .donate-intro {
+    margin: -0.35rem 0 1.15rem;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+  .donate-currency {
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.8rem 0.9rem;
+    font: inherit;
+    background: #fff;
+    color: var(--ink);
+  }
+  .donate-amount-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .donate-currency-symbol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.75rem;
+    padding: 0 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(107, 36, 29, 0.05);
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .donate-amount-row .donate-amount {
+    flex: 1;
+    margin: 0;
+  }
+</style>
+
 <script>
   const amountInput = document.getElementById("donate-amount") as HTMLInputElement | null;
+  const currencySelect = document.getElementById("donate-currency") as HTMLSelectElement | null;
+  const symbolEl = document.getElementById("donate-currency-symbol");
+  const hintEl = document.getElementById("donate-usd-hint");
   const msgEl = document.getElementById("donate-msg");
   const paypalForm = document.getElementById("donate-paypal-form") as HTMLFormElement | null;
   const amountField = document.getElementById("donate-paypal-amount") as HTMLInputElement | null;
+
+  let ratesToUsd: Record<string, number> = { USD: 1 };
+  let ratesReady = false;
 
   function setMsg(text: string, kind = "") {
     if (!msgEl) return;
@@ -41,22 +134,104 @@ import { site } from "../data/site";
     msgEl.classList.toggle("is-ok", kind === "ok");
   }
 
-  function donationDollarsToCents(value: string): number | null {
-    const n = Number(String(value).trim());
-    if (!Number.isFinite(n) || n <= 0) return null;
-    return Math.round(n * 100);
+  function selectedCurrency() {
+    return (currencySelect?.value || "USD").toUpperCase();
   }
+
+  function selectedSymbol() {
+    const opt = currencySelect?.selectedOptions?.[0];
+    return opt?.dataset.symbol || selectedCurrency();
+  }
+
+  function toUsd(amount: number, code: string): number | null {
+    if (!Number.isFinite(amount) || amount <= 0) return null;
+    if (code === "USD") return amount;
+    const perUsd = ratesToUsd[code];
+    if (!perUsd || perUsd <= 0) return null;
+    // frankfurter: rates[code] = units of code per 1 USD → USD = amount / rate
+    return amount / perUsd;
+  }
+
+  function formatUsd(n: number) {
+    return n.toLocaleString("en-US", { style: "currency", currency: "USD" });
+  }
+
+  function updateHint() {
+    if (!hintEl) return;
+    const code = selectedCurrency();
+    if (symbolEl) symbolEl.textContent = selectedSymbol();
+    const raw = amountInput?.value?.trim() || "";
+    if (!raw) {
+      hintEl.textContent =
+        code === "USD"
+          ? "PayPal charges in USD."
+          : `PayPal charges in USD. Enter an amount in ${code} to see the conversion.`;
+      return;
+    }
+    const n = Number(raw);
+    if (!Number.isFinite(n) || n <= 0) {
+      hintEl.textContent = "Enter a valid amount.";
+      return;
+    }
+    if (!ratesReady && code !== "USD") {
+      hintEl.textContent = "Loading exchange rates…";
+      return;
+    }
+    const usd = toUsd(n, code);
+    if (usd == null) {
+      hintEl.textContent = `Could not convert ${code} to USD right now.`;
+      return;
+    }
+    hintEl.textContent =
+      code === "USD"
+        ? `PayPal amount: ${formatUsd(usd)}`
+        : `${selectedSymbol()}${n.toLocaleString()} ${code} ≈ ${formatUsd(usd)} USD on PayPal`;
+  }
+
+  async function loadRates() {
+    try {
+      const res = await fetch("https://api.frankfurter.app/latest?from=USD");
+      const data = await res.json();
+      ratesToUsd = { USD: 1, ...(data.rates || {}) };
+      ratesReady = true;
+    } catch {
+      ratesReady = false;
+    }
+    updateHint();
+  }
+
+  currencySelect?.addEventListener("change", updateHint);
+  amountInput?.addEventListener("input", updateHint);
+  loadRates();
 
   paypalForm?.addEventListener("submit", (event) => {
     const raw = amountInput?.value?.trim() || "";
+    const code = selectedCurrency();
     if (!raw) {
       if (amountField) amountField.value = "";
       return;
     }
-    const cents = donationDollarsToCents(raw);
-    if (cents == null || cents < 100) {
+    const n = Number(raw);
+    if (!Number.isFinite(n) || n <= 0) {
       event.preventDefault();
-      setMsg("Enter an amount of at least $1.00, or leave it blank to choose on PayPal.", "error");
+      setMsg("Enter a valid donation amount, or leave it blank to choose on PayPal.", "error");
+      return;
+    }
+    if (!ratesReady && code !== "USD") {
+      event.preventDefault();
+      setMsg("Exchange rates are still loading. Please try again in a moment.", "error");
+      return;
+    }
+    const usd = toUsd(n, code);
+    if (usd == null) {
+      event.preventDefault();
+      setMsg(`Could not convert ${code} to USD. Try USD or try again shortly.`, "error");
+      return;
+    }
+    const cents = Math.round(usd * 100);
+    if (cents < 100) {
+      event.preventDefault();
+      setMsg("Enter an amount of at least $1.00 USD (after conversion), or leave blank to choose on PayPal.", "error");
       return;
     }
     setMsg("");

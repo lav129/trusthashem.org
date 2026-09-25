@@ -70,8 +70,10 @@ export const teacherBio =
   "Presenting these lectures is Rebbetzin Leah Donner, who resides with her husband and family in Geula, Jerusalem, Israel. Inspired by her students and Rabbaim, she shares these teachings of Bitachon and Knowing Hashem Yisborach. Rebbetzin Donner received blessings from HaGaon HaRav Yacov Moshe Hillel, world-renowned Rosh Yeshiva of Ahavat Shalom in Jerusalem; Rabbi Israel Moshe Levinsohn, of whom the Beis Yisrael of Gur said this tzadik has the power of brachos; HaRav Yonason David, Rosh Kollel Pachad Yitzhak in HarNof; and HaGaon HaRav Itamar Schwartz, author of Bilvavi Mishkan Evneh, to teach Klal Yisrael with these wisdoms, shortly before the tragic events of Simchat Torah 5784. May Hashem continue to guide His nation towards greater strength, and through our dedication to learning Bitachon, may we merit the arrival of Mashiach in achdut with love and mercy.";
 
 export const social = {
-  youtube: "https://youtube.com/@rebbetzinleahdonner?si=aPhs7VLUWfTkRTEV",
-  youtubeEmbed: "https://www.youtube.com/embed/videoseries?list=UUJC-HR237Cc6Y4pPumCDfDQ",
+  youtube: "https://youtube.com/@rebbetzinleahdonner",
+  youtubeEmbed: "https://www.youtube.com/embed/videoseries?list=UUrjPPpQXzsB60_Z2m6Ux0LA",
+  youtubeSpanish: "https://youtube.com/@RabanitLeahDonner",
+  youtubeSpanishEmbed: "https://www.youtube.com/embed/videoseries?list=UUri3wFr3GBlAt9EJ7xUCJtA",
   instagram: "https://www.instagram.com/rabanitleahdonner/",
   leahDonnerSite: "https://trusthashem.org",
 };
